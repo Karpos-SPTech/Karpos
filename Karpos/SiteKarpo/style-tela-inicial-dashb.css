@@ -30,7 +30,7 @@ ul {
 
 ul a {
     text-decoration: none;
-    color: #000000; /* Cor do texto do menu */
+    color: #FFFFFF; /* Cor do texto do menu */
     margin: 0 49px; /* Espaçamento entre os itens do menu */
 }
 
@@ -42,33 +42,52 @@ ul a {
     background-color: #AA6550;
     border-radius: 10px;
     border-color: #AA6550;
+    color: #FFFFFF;
+    border: none;
+    width: 107px;
+    height: 32px;
 }
 
 #botao-login{
     background-color: #AA6550;
     border-color: #AA6550;
     border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+    width: 107px;
+    height: 32px;
 }
 
 .container1{
     display: flex;
-    justify-content: center;
-    align-items: center;
-
+    width: 500px;
+    color: #FFFFFF;
+    flex-direction: column;
 }
 
-#saiba-mais{
-    background-color: #000000;
+.saiba-mais{
+    background-color: #b7a19a;
     color: #FFFFFF;
     border-radius: 6px;
     width: 147px;
     height: 50px;
+    border: none;
 }
 
-#customize{
-    border-radius: 6px;
-    width: 147px;
-    height: 50px;
-    background-color: #AA6550;
-    border-color: #000000;
+.container2{
+    display: flex;  
+    width: 900%;
+    height: 530px;
+    max-width: 1200px;
+    margin-left: 800px;
+    margin-top: -400px;
+
 }
+
+ .imagemFundo{
+    background-image: url(../SiteKarpo/assets/cotton-dashb.png);
+    width: 50%;
+    height: 800px;
+    justify-content: flex-end;
+    align-items: flex-end;
+} 
