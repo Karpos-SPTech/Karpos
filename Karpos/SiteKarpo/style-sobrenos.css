@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     margin: 0;
@@ -49,10 +50,11 @@ ul a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     color: #DBEAEC;
     font-family: 'Inter', sans-serif;
+    margin-top: 100px;
  
 }
 
@@ -60,20 +62,24 @@ ul a {
     justify-content: center;
     font-size: 45px;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .texto-sn {  
     justify-content: center;
     align-items: center;
+    font-size: 25px;
 }
 
 .container2 {
+    font-size: 19px;
     display: flex;
     justify-content: center ;
     align-items: center;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
     height: 500px;
     color: #DBEAEC ;
+    margin-top: 80px;
 
 }
