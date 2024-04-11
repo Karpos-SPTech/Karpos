@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; /* Aplicando a fonte Inter */
+}
+
+.pai {
+    display: flex; /* Tornando o pai um flex container */
+    height: 100vh; /* Altura da tela */
+}
+
+.esquerda {
+    flex: 1; /* A div esquerda ocupará metade do espaço disponível */
+    background-color: #B7A19A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo,
+.vetor {
+    margin: 14px 0; /* Espaçamento entre as imagens */
+}
+
+.direita {
+    flex: 1;
+    background-color: #AA6550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .formulario {
+    width: 564px;
+    height: 625px;
+    background-color: #263238;
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario h2 {
+    font-weight: bold;
+    font-size: 25px;
+    color: #fff;
+}
+
+.formulario p {
+    font-size: 18px;
+    color: #A9A9AC;
+} */
+
+.formulario {
+    width: 430px;
+    height: 720px;
+    background-color: #263238;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.formulario h2 {
+    font-weight: bold;
+    font-size: 25px;
+    color: #fff;
+}
+
+.formulario p {
+    font-size: 18px;
+    color: #A9A9AC;
+}
+
+.campo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo label {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.campo input {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    
+}
+.botao {
+    width: 90%;
+    height: 65px;
+    background-color: #AA6550;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(170, 101, 80, 0.5); /* Adicionando drop shadow */
+    box-shadow: 4px 4px 4px rgba(170, 101, 80, 0.5); /* Adicionando drop shadow */
+    padding: 0; /* Removendo o padding */
+    margin: 0; /* Removendo a margem */
+    line-height: 65px; /* Definindo a mesma altura da linha que a altura do botão */
+    cursor: pointer;
+}
+
+.registre-se {
+    font-size: 16px;
+    color: #fff;
+}
+
+.registre-se a {
+    color: #AA6550;
+    text-decoration: none;
+}
+
+.registre-se a:hover {
+    text-decoration: underline;
+}
+
+
+
