@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karpos</title>
+    <title>Karpos Dash</title>
     <link rel="shortcut icon" href="../SiteKarpo/assets/logo-contato.png" type="image/x-icon">
     <link rel="stylesheet" href="style-tela-inicial-dashb.css">
 </head>
 <body>
     <header>
-        <a href="../SiteKarpo/tela_inicial_dashb.html"><div id="logo-karpos"><img src="../SiteKarpo/assets/Logo.png" alt="logo"></div></a>
+        <div class="logo"><a href="../SiteDashboard/tela_inicial_dashb.html"><div id="logo-karpos"><img src="../SiteKarpo/assets/Logo.png" alt="logo"></div></a></div>
+        <div class="cabeçalhos">
         <ul>
-            <a href="../SiteKarpo/tela_inicial_dashb.html">
+            <a href="../SiteDashboard/tela_inicial_dashb.html">
                 <li>Início</li>
             </a>
             <a href="">
@@ -23,12 +24,19 @@
             <a href="../SiteKarpo/contato.html">
                 <li>Contato</li>
             </a>
+        </div>
+        <div class="botões">    
             <button onclick="registrar()" id="botao-registrar">
+                <a id="registro" href="../SiteDashboard/registro.html">
                 REGISTRAR
+                </a>
             </button>
             <button onclick="login()" id="botao-login">
-                LOGIN
+                <a id="entrar" href="../SiteDashboard/login.html">
+                    LOGIN
+                </a>
             </button>
+        </div>
     </header>
     <div class="container1">
         <div id="textos">
@@ -37,11 +45,11 @@
         </div>
             <button class="saiba-mais">
                     Saiba Mais
-                </button>
+            </button>
     </div>
-    <div class="container2">
+    <!-- <div class="container2">
         <div class="imagemFundo">
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
