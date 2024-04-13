@@ -66,6 +66,7 @@ ul a {
     justify-content: center;
     align-items: center;
     height: 100%; /* Ocupa toda a altura da div */
+    
 }
 
 .logo-contato img {
@@ -92,8 +93,8 @@ ul a {
     align-items: center;
 }
 
-.label {
-    color: #000; /* Cor do texto do label */
+label {
+    color: #DBEAEC; /* Cor do texto do label */
     margin-bottom: 5px; /* Adiciona um espaçamento entre o rótulo e o campo de entrada */
 }
 
@@ -113,6 +114,7 @@ ul a {
     border: 0px solid #000000; /* Adicionando uma borda */
     padding: 10px;
     resize: none; /* Impede o redimensionamento do textarea */
+    
 }
 
 .titulo {
@@ -130,3 +132,56 @@ ul a {
     margin-bottom: 26px; /* Adiciona um espaçamento abaixo do subtitulo */
     color: #DBEAEC;
 }
+
+.botaoSimular{
+    background-color: #B7A19A;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 4px 8px #B7A19A; /* Sombra */
+    cursor: pointer; /* Altera o cursor ao passar por cima */
+    width: 326px;
+    height: 64px;
+    color: #DBEAEC;
+}
+
+#resultadoSimulacao {
+    width: 1029px;
+    height: 510px;
+    background-color: #DBB19B;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -23%);
+    z-index: 10;
+    display: none;
+    border-radius: 40px;
+  }
+  
+  #resultadoSimulacao.ativa {
+    display: block;
+  }
+  
+  .conteudoSimulacao {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .fecharSimulacao {
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: #fff;
+    border: 1px solid #DBB19B;
+    color: #DBB19B;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 70px;
+  }
+  
+  .fecharSimulacao:hover {
+    background-color: #DBB19B;
+    color: #fff;
+
+  }
+  
