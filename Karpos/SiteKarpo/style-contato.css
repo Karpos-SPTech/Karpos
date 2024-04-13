@@ -92,8 +92,8 @@ ul a {
     align-items: center;
 }
 
-.label {
-    color: #000; /* Cor do texto do label */
+label {
+    color: #DBEAEC; /* Cor do texto do label */
     margin-bottom: 5px; /* Adiciona um espaçamento entre o rótulo e o campo de entrada */
 }
 
@@ -129,4 +129,21 @@ ul a {
     text-align: center; /* Centraliza o texto do subtitulo */
     margin-bottom: 26px; /* Adiciona um espaçamento abaixo do subtitulo */
     color: #DBEAEC;
+}
+
+.botao-enviar {
+    width: 326px;
+    height: 64px;
+    margin-top: 30px;
+    background-color: #B7A19A; /* Cor de fundo do botão */
+    color: #DBEAEC; /* Cor do texto */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 64px; /* Centraliza o texto verticalmente */
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 4px 8px rgba(219, 177, 155, 0.3); /* Sombra */
+    cursor: pointer; /* Altera o cursor ao passar por cima */
+    margin-bottom: 10px; /* Adicionando espaço entre o botão e o texto pequeno */
 }
