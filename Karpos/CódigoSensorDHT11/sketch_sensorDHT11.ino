@@ -1,4 +1,3 @@
-
 #include "DHT.h"
 #define dht_type DHT11
 
@@ -18,5 +17,5 @@ void loop() {
     Serial.print(umidade);
     Serial.print(";");
     Serial.println(temperatura);
-    delay(1000);
+    delay(5000);
 }
