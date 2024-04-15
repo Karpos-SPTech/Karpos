@@ -1,7 +1,4 @@
 
-​
-VICTOR MORALLES ARAUJO PAIVA .
-​
 #include "DHT.h"
 #define dht_type DHT11
 
