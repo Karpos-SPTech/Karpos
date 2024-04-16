@@ -1,9 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../SiteDashboard/assets/background-Dash.jpg);
+    background-image: url(../SiteDashboard/assets/fundo-fashboard-sobre.png);
     background-repeat: no-repeat;
     background-color: #AA6550;
     background-size: cover; /* ou background-size: contain; dependendo da preferência */
@@ -35,23 +34,25 @@ ul a {
     margin: 0 49px; /* Espaçamento entre os itens do menu */
 }
 
-#social-medias img {
-    margin-right: auto; /* Espaçamento da direita */
+.botoes{
+    
 }
 
+
 #botao-registrar{
-    background-color: #AA6550;
+    background-color: #b7a19a;
     border-radius: 10px;
-    border-color: #AA6550;
+    border-color: #b7a19a;
     color: #FFFFFF;
     border: none;
     width: 107px;
     height: 32px;
+
 }
 
 #botao-login{
-    background-color: #AA6550;
-    border-color: #AA6550;
+    background-color: #b7a19a;
+    border-color: #b7a19a;
     border-radius: 10px;
     color: #FFFFFF;
     border: none;
@@ -59,25 +60,6 @@ ul a {
     height: 32px;
 }
 
-.container1{
-    display: flex;
-    width: 500px;
-    color: #FFFFFF;
-    flex-direction: column;
-    margin-left: 235px;
-    margin-top: 145px;
-}
-
-.saiba-mais{
-    margin-top: 50px;
-    background-color: #b7a19a;
-    color: #FFFFFF;
-    border-radius: 6px;
-    width: 147px;
-    height: 50px;
-    border: none;
-    margin-top: 50px;
-}
 #entrar{
     text-decoration: none;
     color: #FFFFFF;
@@ -87,5 +69,3 @@ ul a {
     text-decoration: none;
     color: #FFFFFF;
 }
-
-
