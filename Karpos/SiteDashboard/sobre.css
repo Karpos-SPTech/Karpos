@@ -34,11 +34,6 @@ ul a {
     margin: 0 49px; /* Espaçamento entre os itens do menu */
 }
 
-.botoes{
-    
-}
-
-
 #botao-registrar{
     background-color: #b7a19a;
     border-radius: 10px;
@@ -47,6 +42,7 @@ ul a {
     border: none;
     width: 107px;
     height: 32px;
+    cursor: pointer;
 
 }
 
@@ -58,6 +54,7 @@ ul a {
     border: none;
     width: 107px;
     height: 32px;
+    cursor: pointer;
 }
 
 #entrar{
@@ -68,4 +65,21 @@ ul a {
 #registro{
     text-decoration: none;
     color: #FFFFFF;
+}
+
+.container1{
+    display: flex;
+    color: #FFFFFF;
+    width: 352px;
+    height: 454px;
+    margin-left: 60%;
+    flex-direction: column;
+}
+
+#titulo{
+    font-size: 35px;
+}
+
+.grupo-imagens{
+    margin-top: 45px;
 }
