@@ -51,12 +51,11 @@ INSERT INTO fazenda VALUES
 CREATE TABLE sensor (
 	idSensor INT AUTO_INCREMENT,
 	fkTerreno int, constraint fkTerrenoSensor PRIMARY KEY(idSensor,fkTerreno),
+    umidade FLOAT,
     temperatura DECIMAL(4,2),
-	umidade FLOAT,
     CONSTRAINT fkFazendaSensor
     FOREIGN KEY(fkTerreno) REFERENCES fazenda(idFazenda)
 );
-
 create table parametros(
 idParametro int primary key auto_increment,
 espécie varchar(45),
@@ -65,8 +64,11 @@ tempMin float,
 UmidadeMax float,
 UmidadeMin float);
 
+drop table sensor;
 SELECT concat('O(a) produtor(a) ', nome, ' possui o email ', email) 
 FROM cadastro;
 
-SELECT concat('Atualmente, sua temperatura se encontra em ', temperatura, ', e a umidade está em:', umidade) 
+SELECT concat('Atualmente,a umidade está em:', umidade, ', e a temperatura do plantio se encontra em: ', temperatura) 
 FROM sensor;
+
+select * from sensor;
