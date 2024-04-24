@@ -119,14 +119,14 @@ body {
 
 .campo label {
     display: block;
-    font-size: 18px;
+    font-size: 15px;
     color: #fff;
     margin-bottom: 5px;
 }
 
 .campo input {
     width: 500px;
-    height: 40px;
+    height: 30px;
     border-radius: 10px;
     border: none;
     background-color: #fff;

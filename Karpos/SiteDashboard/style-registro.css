@@ -42,6 +42,8 @@ body {
 
 }
 
+
+
 .formulario {
     width: 80%;
     height: 90%;
@@ -66,13 +68,13 @@ body {
 }
 
 .campo {
-    margin-bottom: 20px;
+    margin-bottom: 13px;
     text-align: left;
 }
 
  .campo label {
     display: block;
-    font-size: 10px;
+    font-size: 15px;
     color: #fff;
     margin-bottom: 5px;
 }
@@ -80,13 +82,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 65px;
+    margin-left: 15px;
 }
 
 
 .campo input {
     width: 500px;
-    height: 40px;
+    height: 25px;
     border-radius: 10px;
     border: none;
     background-color: #fff;
@@ -108,6 +110,7 @@ body {
     box-shadow: 4px 4px 4px rgba(170, 101, 80, 0.5); 
     padding: 0; 
     margin: 0; 
+
     line-height: 65px; 
     cursor: pointer;
     text-align: center;
