@@ -79,6 +79,7 @@ body {
     margin-bottom: 5px;
 }
 .inputs{
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,7 +88,7 @@ body {
 
 
 .campo input {
-    width: 500px;
+    width: 93%;
     height: 25px;
     border-radius: 10px;
     border: none;
