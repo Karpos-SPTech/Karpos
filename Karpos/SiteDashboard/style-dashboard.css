@@ -4,7 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif; /* Aplicando a fonte Inter */
+    font-family: 'Inter', sans-serif;
+    /* Aplicando a fonte Inter */
 }
 
 body {
@@ -75,6 +76,10 @@ main {
 }
 
 .side-item.active {
+    background-color: #AA6550;
+}
+
+.active {
     background-color: #AA6550;
 }
 
@@ -165,4 +170,59 @@ main {
 #sidebar.open-sidebar .side-item a {
     justify-content: flex-start;
     gap: 14px;
+}
+
+.fade {
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#section_areaDoUsuario {
+    display: flex;
+    height: 100vh;
+    width: 93vw;
+    margin: auto;
+}
+
+#section_temperatura {
+    display: flex;
+    height: 100vh;
+    width: 93vw;
+    
+    margin: auto;
+}
+
+#section_umidade {
+    display: flex;
+    height: 100vh;
+    width: 93vw;
+    
+    margin: auto;
+}
+
+#section_tabelas {
+    display: flex;
+    height: 100vh;
+    width: 93vw;
+    
+    margin: auto;
+}
+
+#section_areaDoUsuario h1{
+    width: fit-content;
+    margin: auto;
+}
+
+#section_tabelas h1{
+    width: fit-content;
+    margin: auto;
 }
