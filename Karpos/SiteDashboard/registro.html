@@ -32,27 +32,28 @@
                     </div>
                     <div class="campo">
                         <label for="telefone">Telefone</label>
-                        <input type="text" id="input_telefone" name="telefone" placeholder="Seu telefone">
+                        <input type="number" id="input_telefone" name="telefone" placeholder="Seu telefone">
                     </div>
                     <div class="campo">
                         <label for="documento">Documento</label>
-                        <input type="text" id="input_documento" name="documento" placeholder="Seu documento">
+                        <input type="number" id="input_documento" name="documento" placeholder="Seu documento">
                         <select id="select_doc" name="documento_select" placeholder="Seu documento">
                             <option value="cpf">CPF</option>
                             <option value="rg">RG</option>
                             <option value="cnpj">CNPJ</option>
                             <option value="rne">RNE</option>
                         </select>
-                        <div id="div_alertasValidacao"></div>
                     </div>
                 </div>
-                <button type="submit" class="botao" onclick="registrar()">Registre-se</button>
+                <button type="button" class="botao" id="login_btn" onclick="registrar()">Registre-se</button>
                 <p class="registre-se">Já tem uma conta? <a href="login.html">Entre aqui</a></p>
             </form>
-
         </div>
     </div>
     <div class="esquerda">
+        <div id="div_paiAlertas">
+        <div id="div_alertasValidacao"></div>
+        </div>
         <div class="logo">
             <img src="../SiteDashboard/assets/Vector.png" alt="Logo">
         </div>
