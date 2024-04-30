@@ -36,13 +36,16 @@
                     </div>
                     <div class="campo">
                         <label for="documento">Documento</label>
+                        <div class="documento">
                         <input type="number" id="input_documento" name="documento" placeholder="Seu documento">
                         <select id="select_doc" name="documento_select" placeholder="Seu documento">
+                            <option value="#">---</option>
                             <option value="cpf">CPF</option>
                             <option value="rg">RG</option>
                             <option value="cnpj">CNPJ</option>
                             <option value="rne">RNE</option>
                         </select>
+                        </div>
                     </div>
                 </div>
                 <button type="button" class="botao" id="login_btn" onclick="registrar()">Registre-se</button>
