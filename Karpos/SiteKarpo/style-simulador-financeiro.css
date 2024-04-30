@@ -59,6 +59,8 @@ ul a {
     width: 375px;
     background-color: #B7A19A;
     border-radius: 40px; /* Adicionando border-radius */
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
 }
 
 .logo-contato {
@@ -83,6 +85,8 @@ ul a {
     flex-direction: column; /* Organiza os elementos em coluna */
     justify-content: center;
     align-items: center;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
 }
 
 .input-container {

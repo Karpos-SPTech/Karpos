@@ -5,6 +5,7 @@ function registrar() {
     const senhaConfirmada = input_senhaConfirmada.value
     const documento = input_documento.value
     const documentacao = select_doc.value
+    const select = select_doc.value
     let verificarLetraMaiuscula = false
     let verificarCaracterEspecial = false
     let caracteresEspeciais = "!@#$%^&*(),.?/:{}|<>"
@@ -18,25 +19,26 @@ function registrar() {
         senha == "" ||
         telefone == "" ||
         senhaConfirmada == "" ||
-        documento == "") {
+        documento == "" ||
+        select == "#") {
         div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "PREENCHA TODOS OS CAMPOS!"
+        div_alertasValidacao.innerHTML = "PREENCHA TODOS <br> OS CAMPOS!"
 
     }
     // verificação telefone
     else if (telefone.length < 11 || telefone.length > 11) {
         div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "O telefone não esta completo!"
+        div_alertasValidacao.innerHTML = "O TELEFONE NÃO ESTA COMPLETO!"
     }
     // verificação senha igual
     else if (senha != senhaConfirmada) {
         div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "As senhas precisam ser iguais!"
+        div_alertasValidacao.innerHTML = "AS SENHAS PRECISAM SER IGUAIS!"
     }
     // verificação email
     else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
         div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "Digite um e-mail válido!"
+        div_alertasValidacao.innerHTML = "DIGITE UM E-MAIL VÁLIDO!"
     } else if (documentacao == "cpf" && documento.length < 11) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "O CPF deve ter no mínimo 11 dígitos";
@@ -53,7 +55,7 @@ function registrar() {
     // verificação de senha
     else if (senha.length < 8) {
         div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "A senha tem que ter no minimo 8 caracteres"
+        div_alertasValidacao.innerHTML = "A SENHA TEM QUE TER NO MINIMO 8 CARACTERES"
     }
     // verificação de caracter especial + letra maiuscula + for
     else {
@@ -72,7 +74,7 @@ function registrar() {
 
         if (senhaValidada == false) {
             div_paiAlertas.style.display = 'block';
-            div_alertasValidacao.innerHTML = "Digite um senha com caracteres especial e letra maiscula"
+            div_alertasValidacao.innerHTML = "DIGITE UMA SENHA COM CARACTER ESPECIAL E LETRA MAISCULA"
         } else {
             window.location.href = "login.html";
         }
@@ -86,3 +88,4 @@ function login() {
 function exit() {
     window.location.href = "tela_inicial_dashb.html";
 }
+

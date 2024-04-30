@@ -145,6 +145,25 @@ body {
     margin-top: 17px;
     margin-left: 12px;
     color: #FF0000;
+    text-align: center;
 }
 
 
+.documento {
+   
+    display: flex;
+    align-items: center; 
+}
+
+.documento select {
+    margin-left: 10px; 
+    border-radius: 60px;
+    background-color: #AA6550;
+    color: #fff;
+    width: 65px;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+}
