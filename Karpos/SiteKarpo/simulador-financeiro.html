@@ -15,33 +15,19 @@
             <div id="logo-karpos"><img src="../SiteKarpo/assets/Logo.png" alt="logo"></div>
         </a>
         <ul>
-            <a href="../SiteKarpo/index.html">
-                <li>Início</li>
-            </a>
-            <a href="../SiteKarpo/sobre-nos.html">
-                <li>Sobre Nós</li>
-            </a>
-            <a href="../SiteKarpo/serviços.html">
-                <li>Serviços</li>
-            </a>
-            <a href="../SiteKarpo/simulador-financeiro.html">
-                <li>Simulador Financeiro</li>
-            </a>
-            <a href="../SiteKarpo/contato.html">
-                <li>Contato</li>
-            </a>
+            <li><a href="../SiteKarpo/index.html">Início</a></li>
+            <li><a href="../SiteKarpo/sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="../SiteKarpo/serviços.html">Serviços</a></li>
+            <li><a href="../SiteKarpo/simulador-financeiro.html">Simulador Financeiro</a></li>
+            <li><a href="../SiteKarpo/contato.html">Contato</a></li>
         </ul>
-        <a href="https://linktr.ee/karpostech" target="_blank">
-            <div id="social-medias"><img src="../SiteKarpo/assets/Socials.png" alt=""></div>
-        </a>
+        <a href="https://linktr.ee/karpostech" target="_blank" id="social-medias"><img
+                src="../SiteKarpo/assets/Socials.png" alt=""></a>
     </header>
 
-    <!-- Página de Contato -->
-    <!-- Página de Contato -->
-    <!-- Página de Contato -->
     <div class="pagina-contato">
-        <h1 class="titulo">Bem Vindo</h1>
-        <h2 class="subtitulo">Preencha o formulário abaixo e faremos um orçamento para a sua empresa</h2>
+        <h1 class="titulo" id="bemvindo">Bem Vindo!</h1>
+        <h2 class="subtitulo" id="preencha">Preencha o formulário abaixo e faremos um orçamento para a sua empresa</h2>
         <div class="conteudo-contato">
             <div class="container">
                 <div class="esquerda">
@@ -49,56 +35,167 @@
                     <div class="logo-contato">
                         <img src="../SiteKarpo/assets/logo-contato.png" alt="Logo de Contato">
                     </div>
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
                 </div>
                 <div class="direita">
                     <!-- Campo Nome da Empresa -->
                     <div class="input-container">
                         <label for="nome-empresa">Nome da Empresa</label>
-                        <input type="text" id="nome_empresa" placeholder="Digite o nome da sua empresa" class="input">
+                        <input type="text" id="nome_empresa" placeholder="Ex: Karpos Technology" class="input">
                     </div>
-                    <!-- Campo Email -->
+                    <!-- Campo Custo médio do plantio -->
                     <div class="input-container">
+<<<<<<< HEAD
+                        <label for="plantioMedio">Custo médio do plantio (Hectare)</label>
+                        <div class="currency">R$</div>
+                        <input type="number" id="plantioMedio_input" placeholder="xxxxxxx " class="input">
+=======
                         <label for="faturamento">Faturamento mensal da empresa</label>
                         <input type="text" id="faturamento_input" placeholder="Digite o seu faturamento" class="input">
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
                     </div>
-                    <!-- Campo Assunto -->
+                    <!-- Campo Média de perdas -->
                     <div class="input-container">
+<<<<<<< HEAD
+                        <label for="perdas">Média de perdas (Hectare)</label>
+                        <div class="currency">R$</div>
+                        <input type="number" id="quantidade_perdas_input" placeholder="xxxxxxxx" class="input">
+=======
                         <label for="perdas">Quantidade de perdas estimadas por mes</label>
                         <input type="text" id="quantidade_perdas_input" placeholder="Digite as perdas estimadas"
                             class="input">
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
                     </div>
+                    <!-- Botão de Simular -->
                     <button class="botaoSimular" onclick="calcular()">Simular</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Resultado da Simulação -->
     <div id="resultadoSimulacao">
         <div class="conteudoSimulacao">
-            <h2>Simulação Pronta!</h2>
-            <p id="nomeempresa" class="empresaNome"> Conteúdo do titulo </p>
-            <div class="cartoes">
-                <div class="cartao">
-                    <h2>Título do Cartão 1</h2>
-                    <p>Conteúdo do Cartão 1</p>
+            <div class="boxSimulacao">
+                <div class="cartoes">
+                    <div class="cartao">
+                        <h2>Título do Cartão 1</h2>
+                        <p>Conteúdo do Cartão 1</p>
+                    </div>
+                    <div class="cartao">
+                        <h2>Título do Cartão 2</h2>
+                        <p>Conteúdo do Cartão 2</p>
+                    </div>
+                    <div class="cartao">
+                        <h2>Título do Cartão 3</h2>
+                        <p>Conteúdo do Cartão 3</p>
+                    </div>
                 </div>
-                <div class="cartao">
-                    <h2>Título do Cartão 2</h2>
-                    <p>Conteúdo do Cartão 2</p>
+                <div class="grafico-container">
+                    <canvas id="myChart"></canvas>
                 </div>
-                <div class="cartao">
-                    <h2>Título do Cartão 3</h2>
-                    <p>Conteúdo do Cartão 3</p>
-                </div>
-            </div>
 
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
             <button onclick="limpar()" class="fecharSimulacao">Voltar</button>
         </div>
     </div>
 
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const botaoSimular = document.querySelector('.botaoSimular');
+            const resultadoSimulacao = document.querySelector('#resultadoSimulacao');
+            const conteudoContato = document.querySelector('.conteudo-contato');
+            const botaoFechar = document.querySelector('.fecharSimulacao');
+
+            botaoSimular.addEventListener('click', () => {
+                resultadoSimulacao.classList.add('ativa'); // Mostra o resultado da simulação
+                conteudoContato.classList.add('ativa'); // Oculta o conteúdo de contato
+            });
+
+            botaoFechar.addEventListener('click', () => {
+                resultadoSimulacao.classList.remove('ativa'); // Esconde o resultado da simulação
+                conteudoContato.classList.remove('ativa'); // Mostra o conteúdo de contato
+            });
+        });
+
+        function limpar() {
+            quantidade_perdas_input.value = "";
+            plantioMedio_input.value = "";
+            nome_empresa.value = "";
+            const tituloPaginaContato = document.querySelector('.titulo');
+            const subtituloPaginaContato = document.querySelector('.subtitulo');
+
+            tituloPaginaContato.textContent = "Bem vindo!";
+            subtituloPaginaContato.textContent = "Preencha o formulário abaixo e faremos um orçamento para a sua empresa";
+        }
+
+        function calcular() {
+            let perdaFungoCiclo = Number(quantidade_perdas_input.value);
+            let custoPlantioCiclo = Number(plantioMedio_input.value);
+            let porcentagemRecuperacao = (perdaFungoCiclo / custoPlantioCiclo) * 100;
+
+            let formatCustoPlantioCiclo = custoPlantioCiclo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let formatPerdaFungoCiclo = perdaFungoCiclo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            const tituloPaginaContato = document.querySelector('.titulo');
+            const subtituloPaginaContato = document.querySelector('.subtitulo');
+
+            tituloPaginaContato.textContent = "Simulação Pronta!";
+            subtituloPaginaContato.textContent = "Aqui está a sua simulação de perdas e o quanto você pode lucrar com a nossa solução";
+
+            const cartaoCustoPlantio = document.querySelector('.cartao:nth-child(1)');
+            const cartaoPerda = document.querySelector('.cartao:nth-child(2)');
+            const cartaoOportunidade = document.querySelector('.cartao:nth-child(3)');
+
+            cartaoCustoPlantio.querySelector('h2').textContent = 'Custo total do Plantio';
+            cartaoCustoPlantio.querySelector('p').innerHTML = `<b>${formatCustoPlantioCiclo}</b>`;
+
+            cartaoPerda.querySelector('h2').textContent = 'Média de perda por ciclo';
+            cartaoPerda.querySelector('p').innerHTML = `<b style="color:red;">${formatPerdaFungoCiclo}</b>`;
+
+            cartaoOportunidade.querySelector('h2').textContent = 'Oportunidade';
+            cartaoOportunidade.querySelector('p').innerHTML = `Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b> sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
+
+            const config = {
+                type: 'pie',
+                data: {
+                    labels: ['Custo Total do Plantio', 'Média de Perda por Ciclo'],
+                    datasets: [{
+                        data: [custoPlantioCiclo, perdaFungoCiclo],
+                        backgroundColor: [
+                            '#a17f6c',
+                            '#795f50'
+                        ],
+                        borderColor: [
+                            '#a17f6c',
+                            '#795f50'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+            };
+
+            // Criação do gráfico
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, config);
+        }
+    </script>
 </body>
 
+<<<<<<< HEAD
+</html>
+=======
 </html>
 
 <script src="simulador-financeira.js"></script>
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
