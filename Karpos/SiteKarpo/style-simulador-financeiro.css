@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos gerais */
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #38291b;
     background-image: url(../SiteKarpo/assets/algodao.png);
     background-repeat: no-repeat;
-    background-color: #B7A19A;
-    background-size: cover; /* ou background-size: contain; dependendo da preferência */
-    font-family: 'Inter', sans-serif; /* Aplicando a fonte Inter */
+    background-size: cover;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 100px; /* Espaçamento do cabeçalho */
-    
+    padding: 40px 100px;
 }
 
 #logo-karpos img {
-    margin-left: auto; /* Espaçamento da esquerda */
+    margin-left: auto;
 }
 
 ul {
@@ -30,28 +31,25 @@ ul {
 
 ul a {
     text-decoration: none;
-    color: #DBEAEC; /* Cor do texto do menu */
-    margin: 0 49px; /* Espaçamento entre os itens do menu */
+    color: #DBEAEC;
+    margin: 0 49px;
 }
 
 #social-medias img {
-    margin-right: auto; /* Espaçamento da direita */
+    margin-right: auto;
 }
 
 /* Estilos para a página de contato */
-
 .pagina-contato {
     width: 1029px;
-    margin: 40px auto 20px; /* Adiciona uma margem de 97px em cima */
-}
-
-
-.conteudo-contato {
-    height: 100%; /* Adicionando altura para garantir que as divs filhas tenham altura */
+    margin: 40px auto 20px;
 }
 
 .container {
     display: flex;
+<<<<<<< HEAD
+    height: 100%;
+=======
     height: 100%; /* Distribui o espaço igualmente entre as divs da esquerda e da direita */
 }
 
@@ -61,93 +59,156 @@ ul a {
     border-radius: 40px; /* Adicionando border-radius */
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
 }
 
 .logo-contato {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Ocupa toda a altura da div */
-    
+    height: 100%;
 }
 
 .logo-contato img {
-    max-width: 80%; /* Ajuste conforme necessário */
-    max-height: 80%; /* Ajuste conforme necessário */
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.esquerda {
+    position: relative;
+    width: 45%;
+    background-color: #B7A19A;
+    border-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 .direita {
-    flex: 1; /* Ocupa o restante do espaço disponível */
+    flex: 1;
     background-color: #DBB19B;
-    border-radius: 40px; /* Adicionando border-radius */
-    padding: 20px; /* Adicionando um espaçamento interno */
+    border-radius: 40px;
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* Organiza os elementos em coluna */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+=======
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
 }
 
 .input-container {
-    text-align: center;
-    margin-bottom: 13px; /* Adicionando espaçamento entre os campos */
-    display: flex;
-    flex-direction: column; /* Organiza os elementos em coluna */
-    align-items: center;
+    position: relative;
+    margin-bottom: 13px;
+}
+
+.currency {
+    position: absolute;
+    left: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+#resultadoSimulacao {
+    width: 50%;
+    max-width: 900px;
+    height: auto;
+    background-color: #DBB19B;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 50px 50px #b99a7933;
+    border: 4px solid #4A403A;
+    outline: 8px solid #DBB19B;
+    border-radius: 40px;
+    padding: 20px;
+    display: none;
+}
+
+#resultadoSimulacao.ativa {
+    display: block;
+    opacity: 1;
+}
+
+.conteudo-contato.ativa {
+    display: none;
 }
 
 label {
-    color: #DBEAEC; /* Cor do texto do label */
-    margin-bottom: 5px; /* Adiciona um espaçamento entre o rótulo e o campo de entrada */
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .input {
     width: 425px;
     height: 62px;
     border-radius: 10px;
-    border: 0px solid #000; /* Adicionando uma borda */
-    padding: 10px;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura do input */
+    border: 2px solid #c4a38c;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.input:hover,
+.input:focus {
+    border-color: #140e0e;
 }
 
 .textarea {
     width: 448px;
     height: 159px;
     border-radius: 10px;
-    border: 0px solid #000000; /* Adicionando uma borda */
+    border: 0px solid #000000;
     padding: 10px;
-    resize: none; /* Impede o redimensionamento do textarea */
-    
+    resize: none;
 }
 
 .titulo {
-    font-size: 60px; /* Tamanho da fonte do título */
-    font-weight: medium; /* Peso da fonte do título */
-    text-align: center; /* Centraliza o texto do título */
-    margin-bottom: 26px; /* Adiciona um espaçamento abaixo do título */
+    font-size: 60px;
+    font-weight: medium;
+    text-align: center;
+    margin-bottom: 26px;
     color: #DBEAEC;
 }
 
 .subtitulo {
-    font-size: 30px; /* Tamanho da fonte do subtitulo */
-    font-weight: normal; /* Peso da fonte do subtitulo */
-    text-align: center; /* Centraliza o texto do subtitulo */
-    margin-bottom: 26px; /* Adiciona um espaçamento abaixo do subtitulo */
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 26px;
     color: #DBEAEC;
 }
 
-.botaoSimular{
-    background-color: #B7A19A;
+.botaoSimular {
+    background-color: #a17f6c;
     border: none;
     border-radius: 40px;
-    box-shadow: 0px 4px 8px #B7A19A; /* Sombra */
-    cursor: pointer; /* Altera o cursor ao passar por cima */
-    width: 326px;
-    height: 64px;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px #B7A19A;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
     color: #DBEAEC;
+    font-family: Georgia;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
 }
 
+<<<<<<< HEAD
+.botaoSimular:hover {
+    background-color: rgba(168, 127, 115, 0.788);
+}
+
+.conteudoSimulacao {
+=======
 #resultadoSimulacao {
     width: 1029px;
     height: 650px;
@@ -166,26 +227,45 @@ label {
   }
   
   .conteudoSimulacao {
+>>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
     width: 80%;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-  }
-  
-  .fecharSimulacao {
+}
+.boxSimulacao{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cartoes {
+    flex: 1;
+    width: 50%;
+    margin-right: 10px; /* Espaço entre os elementos */
+}
+
+.grafico-container {
+    flex: 1;
+    width: 50%;
+    margin-left: 10px; /* Espaço entre os elementos */
+}
+#myChart {
+
+    width: 100%;
+    height: auto;
+}
+
+.fecharSimulacao {
     margin-top: 20px;
     padding: 10px 40px;
-    background-color: #fff;
+    background-color: #a17f6c;
     border: 1px solid #DBB19B;
-    color: #DBB19B;
+    color: #dad7d5;
     font-weight: bold;
     cursor: pointer;
     border-radius: 70px;
-  }
-  
-  .fecharSimulacao:hover {
-    background-color: #DBB19B;
-    color: #fff;
+}
 
-  }
-  
+.fecharSimulacao:hover {
+    background-color: #a17f6cd7;
+    color: #e6d7cf;
+}
