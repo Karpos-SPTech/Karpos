@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <a href="../SiteKarpo/index.html">
             <div id="logo-karpos"><img src="../SiteKarpo/assets/Logo.png" alt="logo"></div>
@@ -35,11 +36,6 @@
                     <div class="logo-contato">
                         <img src="../SiteKarpo/assets/logo-contato.png" alt="Logo de Contato">
                     </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
                 </div>
                 <div class="direita">
                     <!-- Campo Nome da Empresa -->
@@ -49,26 +45,15 @@
                     </div>
                     <!-- Campo Custo médio do plantio -->
                     <div class="input-container">
-<<<<<<< HEAD
                         <label for="plantioMedio">Custo médio do plantio (Hectare)</label>
                         <div class="currency">R$</div>
                         <input type="number" id="plantioMedio_input" placeholder="xxxxxxx " class="input">
-=======
-                        <label for="faturamento">Faturamento mensal da empresa</label>
-                        <input type="text" id="faturamento_input" placeholder="Digite o seu faturamento" class="input">
->>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
                     </div>
                     <!-- Campo Média de perdas -->
                     <div class="input-container">
-<<<<<<< HEAD
                         <label for="perdas">Média de perdas (Hectare)</label>
                         <div class="currency">R$</div>
                         <input type="number" id="quantidade_perdas_input" placeholder="xxxxxxxx" class="input">
-=======
-                        <label for="perdas">Quantidade de perdas estimadas por mes</label>
-                        <input type="text" id="quantidade_perdas_input" placeholder="Digite as perdas estimadas"
-                            class="input">
->>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
                     </div>
                     <!-- Botão de Simular -->
                     <button class="botaoSimular" onclick="calcular()">Simular</button>
@@ -101,10 +86,6 @@
 
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
             <button onclick="limpar()" class="fecharSimulacao">Voltar</button>
         </div>
     </div>
@@ -164,38 +145,37 @@
             cartaoPerda.querySelector('p').innerHTML = `<b style="color:red;">${formatPerdaFungoCiclo}</b>`;
 
             cartaoOportunidade.querySelector('h2').textContent = 'Oportunidade';
-            cartaoOportunidade.querySelector('p').innerHTML = `Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b> sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
+            cartaoOportunidade.querySelector('p').innerHTML = `Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b>sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
 
             const config = {
                 type: 'pie',
                 data: {
                     labels: ['Custo Total do Plantio', 'Média de Perda por Ciclo'],
                     datasets: [{
+                        label: 'Valores',
                         data: [custoPlantioCiclo, perdaFungoCiclo],
                         backgroundColor: [
                             '#a17f6c',
-                            '#795f50'
+                            '#805b46'
                         ],
                         borderColor: [
                             '#a17f6c',
-                            '#795f50'
+                            '#805b46'
                         ],
                         borderWidth: 1
                     }]
                 },
+                options: {
+                        y: {
+                            beginAtZero: true
+                    }
+                }
             };
-
-            // Criação do gráfico
             const ctx = document.getElementById('myChart').getContext('2d');
             const myChart = new Chart(ctx, config);
+
         }
     </script>
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
-
-<script src="simulador-financeira.js"></script>
->>>>>>> ee46b6c2a54fa112ab41708c43a6de319cfe15b2
