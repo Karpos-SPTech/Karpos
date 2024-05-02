@@ -334,6 +334,34 @@ main {
     border-radius: 10px;
 }
 
+#tempo{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #AA6550;
+    color: white;
+}
+
+.fazenda{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #AA6550;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    flex-direction: column;
+}
+
 .principal {
     font-size: 25px;
     margin-left: 200px;
@@ -342,14 +370,12 @@ main {
 
 }
 
-#alertasU {
+#alertas{
     width: 100%;
-    margin: 15px;
-    height: 180px;
+    height: 200px;
     display: flex;
-    justify-content: start;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .titulotemp {

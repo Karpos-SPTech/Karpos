@@ -119,7 +119,11 @@
             <canvas id="lm35Temperatura"></canvas>
             <h1 class="titulograf">Situação Atual:</h1>
             <div id="alertas">
-                <div id="textboxTemp">
+                <div id="textboxTemp"></div>
+                <div id="tempo"></div>
+                <div class="fazenda">
+                    <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
+                    Fazenda XPTO
                 </div>
             </div>
         </section>
@@ -139,22 +143,25 @@
                         <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
                         FAVORÁVEL
                     </div>
-                    <p class="desc">Tudo sob controle, mas continue monitorando para garantir a estabilidade e o crescimento saudável da plantação. </p>
+                    <p class="desc">Tudo sob controle, mas continue monitorando para garantir a estabilidade e o
+                        crescimento saudável da plantação. </p>
                 </div>
                 <div class="cada">
                     <div class="boxcuidado">
                         <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
                         CUIDADO
                     </div>
-                    <p class="desc">A temperatura e/ou umidade estão prestes a sair do controle. Monitore de perto e tome medidas preventivas para garantir a saúde dos algodões.</p>
+                    <p class="desc">A temperatura e/ou umidade estão prestes a sair do controle. Monitore de perto e
+                        tome medidas preventivas para garantir a saúde dos algodões.</p>
                 </div>
-               
+
                 <div class="cada">
                     <div class="boxalerta">
                         <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
                         ALERTA
                     </div>
-                    <p class="desc">A temperatura e/ou umidade estão fora do padrão. Recomendamos ação imediata para evitar possíveis danos à plantação.</p>
+                    <p class="desc">A temperatura e/ou umidade estão fora do padrão. Recomendamos ação imediata para
+                        evitar possíveis danos à plantação.</p>
                 </div>
             </div>
         </section>
@@ -264,12 +271,6 @@
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada segundo)
     setInterval(updateChartData, 3000); // 5000ms = 5 segundos
 
-
-
-
-
-
-
     // lm35Temperatura
 
     function generateRandomData1() {
@@ -364,4 +365,21 @@
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada cinco segundos)
     setInterval(updateChartData1, 3000); // 5000ms = 5 segundos
 
+
+
+    function updateDateTime() {
+        var now = new Date();
+        var datetimeElement = document.getElementById('tempo');
+        datetimeElement.innerHTML = 'Data e Hora Atuais: ' + now.toLocaleString(); // Exibe a data e hora no formato local
+    }
+
+    // Chama inicialmente a função para exibir a data e hora atual
+    updateDateTime();
+
+    // Chama a função a cada segundo para manter a data e hora atualizada
+    setInterval(updateDateTime, 1000); // 1000ms = 1 segundo
+
+   
+
 </script>
+
