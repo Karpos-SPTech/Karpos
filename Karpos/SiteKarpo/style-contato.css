@@ -101,14 +101,14 @@ label {
     margin-bottom: 5px; /* Adiciona um espaçamento entre o rótulo e o campo de entrada */
 }
 
-.input {
-    width: 425px;
-    height: 62px;
-    border-radius: 10px;
-    border: 0px solid #000; /* Adicionando uma borda */
-    padding: 10px;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura do input */
-}
+    .input {
+        width: 425px;
+        height: 62px;
+        border-radius: 10px;
+        border: 0px solid #000; /* Adicionando uma borda */
+        padding: 10px;
+        box-sizing: border-box; /* Garante que o padding não aumente a largura do input */
+    }
 
 .textarea {
     width: 448px;
