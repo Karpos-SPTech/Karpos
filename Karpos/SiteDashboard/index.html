@@ -102,7 +102,7 @@
             </button>
         </div>
     </nav>
-    <main id="main-class">
+    <main id="main-class" style="height: 100%;">
         <section id="section_umidade" style="display:none; width: 900px;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
             <h1 class="titulograf">Análise de Umidade</h1>
@@ -112,6 +112,7 @@
                 <div class="fazenda">
                     <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
                     Fazenda XPTO
+                    <p class="setor">Lote 1</p>
                 </div>
                 <div id="tempo1"></div>
                 <div id="umiData">Umidade Atual:</div>
@@ -123,12 +124,13 @@
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
             <h1 class="titulograf">Análise de Temperatura</h1>
             <canvas id="lm35Temperatura"></canvas>
-            
+
             <h1 class="titulograf">Dados Atuais:</h1>
             <div id="alertas">
                 <div class="fazenda">
                     <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
                     Fazenda XPTO
+                    <p class="setor">Lote 1</p>
                 </div>
                 <div id="tempo"></div>
                 <div id="tempData">Temperatura Atual:</div>
@@ -137,13 +139,35 @@
         </section>
 
         <section id="section_areaDoUsuario" style="display: block;">
-            <h1>Área do Usuário - Dashboard</h1>
-            <h3 class="mensagem">Seja bem-vindo à tela de monitoramento de dados da sua plantação de algodão! Fique
-                atento aos nossos
-                avisos para aprimorar sua produtividade e evitar problemas com fungos. Estamos aqui para ajudá-lo a
-                obter os
-                melhores resultados.</h3>
+            <h1 style="font-size: 20px;">Área do Usuário</h1>
+            <img class="imgf" src="../SiteDashboard/assets/fazendaa.png" width="80px" alt="">
+            <h3 class="mensagem">Fazenda Karpos</h3>
+            <div class="lotes">
+                <a href="#section_temperatura">
+                    <div class="boxlote"> <img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">Lote 1
+                        <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
+                            <i id="iconUmi" class="fas fa-tint icon"></i>
+                        </div>
+                    </div>
+                </a>
+                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">
+                    <p>Lote 2</p>
+                    <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi" class="fas fa-tint icon"></i>
+                    </div>
 
+                </div>
+                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">Lote 3
+                    <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi" class="fas fa-tint icon"></i>
+                    </div>
+                </div>
+                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">Lote 4
+                    <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi" class="fas fa-tint icon"></i>
+                    </div>
+                </div>
+            </div>
             <h3 class="nossosavisos">Nossos Avisos:</h3>
             <div class="nossos">
                 <div class="cada">
@@ -243,7 +267,7 @@
 
         dht11Umidade.update();
 
-        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> ${newUmidad}`;
+        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> ${newUmidad}%`;
 
         if (newUmidad > 70) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
@@ -277,7 +301,7 @@
             document.getElementById('textboxUmi').style.border = '1px solid black';
         }
 
-        
+
     }
 
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada segundo)
@@ -337,7 +361,7 @@
         // Atualiza o gráfico
         lm35Temperatura.update();
 
-        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> ${newTemperature}`;
+        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> ${newTemperature}ºC`;
 
         // Verifica se a temperatura ultrapassou 35°C
         if (newTemperature > 30) {
@@ -374,10 +398,10 @@
     }
 
     function getFormattedDateTime() {
-    var now = new Date();
-    var formattedDateTime = now.toLocaleString(); // Obtém a data e hora atual no formato local
-    return formattedDateTime;
-}
+        var now = new Date();
+        var formattedDateTime = now.toLocaleString(); // Obtém a data e hora atual no formato local
+        return formattedDateTime;
+    }
 
     // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
     updateChartData1();
@@ -401,7 +425,6 @@
     // Chama a função a cada segundo para manter a data e hora atualizada
     setInterval(updateDateTime, 1000); // 1000ms = 1 segundo
 
-   
+
 
 </script>
-
