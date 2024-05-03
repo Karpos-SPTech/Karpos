@@ -109,6 +109,12 @@
             <canvas id="dht11Umidade"></canvas>
             <h1 class="titulograf">Situação Atual:</h1>
             <div id="alertasU">
+                <div class="fazenda">
+                    <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
+                    Fazenda XPTO
+                </div>
+                <div id="tempo1"></div>
+                <div id="umiData">Umidade Atual:</div>
                 <div id="textboxUmi"></div>
             </div>
         </section>
@@ -117,14 +123,16 @@
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
             <h1 class="titulograf">Análise de Temperatura</h1>
             <canvas id="lm35Temperatura"></canvas>
-            <h1 class="titulograf">Situação Atual:</h1>
+            
+            <h1 class="titulograf">Dados Atuais:</h1>
             <div id="alertas">
-                <div id="textboxTemp"></div>
-                <div id="tempo"></div>
                 <div class="fazenda">
                     <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
                     Fazenda XPTO
                 </div>
+                <div id="tempo"></div>
+                <div id="tempData">Temperatura Atual:</div>
+                <div id="textboxTemp"></div>
             </div>
         </section>
 
@@ -226,7 +234,7 @@
         // Remove o primeiro elemento da matriz de labels
         dht11Umidade.data.labels.shift();
         // Adiciona uma nova label ao final da matriz de labels
-        dht11Umidade.data.labels.push('Data Atualizada');
+        dht11Umidade.data.labels.push(getFormattedDateTime());
         // Remove o primeiro elemento da matriz de dados
         dht11Umidade.data.datasets[0].data.shift();
         // Adiciona um novo valor aleatório ao final da matriz de dados
@@ -234,6 +242,8 @@
         dht11Umidade.data.datasets[0].data.push(newUmidad);
 
         dht11Umidade.update();
+
+        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> ${newUmidad}`;
 
         if (newUmidad > 70) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
@@ -266,6 +276,8 @@
             document.getElementById('textboxUmi').style.color = 'black';
             document.getElementById('textboxUmi').style.border = '1px solid black';
         }
+
+        
     }
 
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada segundo)
@@ -316,7 +328,7 @@
         // Remove o primeiro elemento da matriz de labels
         lm35Temperatura.data.labels.shift();
         // Adiciona uma nova label ao final da matriz de labels
-        lm35Temperatura.data.labels.push('Data Atualizada');
+        lm35Temperatura.data.labels.push(getFormattedDateTime());
         // Remove o primeiro elemento da matriz de dados
         lm35Temperatura.data.datasets[0].data.shift();
         // Adiciona um novo valor aleatório ao final da matriz de dados
@@ -324,6 +336,8 @@
         lm35Temperatura.data.datasets[0].data.push(newTemperature);
         // Atualiza o gráfico
         lm35Temperatura.update();
+
+        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> ${newTemperature}`;
 
         // Verifica se a temperatura ultrapassou 35°C
         if (newTemperature > 30) {
@@ -359,6 +373,12 @@
         }
     }
 
+    function getFormattedDateTime() {
+    var now = new Date();
+    var formattedDateTime = now.toLocaleString(); // Obtém a data e hora atual no formato local
+    return formattedDateTime;
+}
+
     // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
     updateChartData1();
 
@@ -370,7 +390,9 @@
     function updateDateTime() {
         var now = new Date();
         var datetimeElement = document.getElementById('tempo');
+        var datetimeElement1 = document.getElementById('tempo1');
         datetimeElement.innerHTML = 'Data e Hora Atuais: ' + now.toLocaleString(); // Exibe a data e hora no formato local
+        datetimeElement1.innerHTML = 'Data e Hora Atuais: ' + now.toLocaleString(); // Exibe a data e hora no formato local
     }
 
     // Chama inicialmente a função para exibir a data e hora atual
