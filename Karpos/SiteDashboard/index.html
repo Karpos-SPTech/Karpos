@@ -141,12 +141,11 @@
             <h1 style="font-size: 25px;">Área do Usuário</h1>
             <img class="imgf" src="../SiteDashboard/assets/fazendaa.png" width="150px" alt="">
             <h3 class="mensagem">Fazenda Karpos</h3>
-            <h3>Lotes:</h3>
+            <h3 style="font-size: 22px;">Lotes:</h3>
             <div class="lotes">
                 <div class="boxlote"> <img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">Lote 1
-                    <div style="margin-top: 5%;"><i id="iconTemp1"
-                            onclick="scrollToSection('section_temperatura', 'Lote 1')"
+                    <div class="lotesbox"><i id="iconTemp1" onclick="scrollToSection('section_temperatura', 'Lote 1')"
                             class="fas fa-thermometer-half icon"></i>
                         <i id="iconUmi1" onclick="scrollToSection('section_umidade', 'Lote 1 ')"
                             class="fas fa-tint icon"></i>
@@ -155,8 +154,7 @@
                 <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">
                     <p>Lote 2</p>
-                    <div style="margin-top: 5%;"><i id="iconTemp2"
-                            onclick="scrollToSection('section_temperatura', 'Lote 2')"
+                    <div class="lotesbox"><i id="iconTemp2" onclick="scrollToSection('section_temperatura', 'Lote 2')"
                             class="fas fa-thermometer-half icon"></i>
                         <i id="iconUmi2" onclick="scrollToSection('section_umidade', 'Lote 2 ')"
                             class="fas fa-tint icon"></i>
@@ -165,8 +163,7 @@
                 </div>
                 <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">Lote 3
-                    <div style="margin-top: 5%;"><i id="iconTemp3"
-                            onclick="scrollToSection('section_temperatura','Lote 3')"
+                    <div class="lotesbox"><i id="iconTemp3" onclick="scrollToSection('section_temperatura','Lote 3')"
                             class="fas fa-thermometer-half icon"></i>
                         <i id="iconUmi3" onclick="scrollToSection('section_umidade','Lote 3 ')"
                             class="fas fa-tint icon"></i>
@@ -174,19 +171,32 @@
                 </div>
                 <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">Lote 4
-                    <div style="margin-top: 5%;"><i id="iconTemp4"
-                            onclick="scrollToSection('section_temperatura', 'Lote 4')"
+                    <div class="lotesbox"><i id="iconTemp4" onclick="scrollToSection('section_temperatura', 'Lote 4')"
                             class="fas fa-thermometer-half icon"></i>
                         <i id="iconUmi4" onclick="scrollToSection('section_umidade', 'Lote 4 ')"
                             class="fas fa-tint icon"></i>
                     </div>
                 </div>
             </div>
-            <h3 class="nossosavisos" style="margin-top: 2%;">Nossos Avisos:</h3>
+            <div class="legenda">
+                <div class="legendaicones">
+                    <i style="color: black;" id="iconTemp" class="fas fa-thermometer-half icon1 tempe"> <span
+                            class="temp">Temperatura (ºC)</span></i>
+                    <i style="color: black;" id="iconUmi" class="fas fa-tint icon1"> <span class="temp">Umidade
+                            (%)</span></i>
+                </div>
+                <div class="legendacores">
+                    <div class="branco"> <span class="corb"></span>Números Favoráveis</div>
+                    <div class="amarelo"><span class="cora"></span>Números Próximos ao Limite</div>
+                    <div class="vermelho"><span class="corv"></span>Números Fora de Controle</div>
+                </div>
+            </div>
+            <h3 class="nossosavisos" style="font-size: 22px;">Avisos:</h3>
             <div class="nossos">
                 <div class="cada">
                     <div class="boxbom">
-                        <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
+                        <img width="50px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg"
+                            alt="">
                         <b>FAVORÁVEL</b>
                     </div>
                     <p class="desc">Tudo sob controle, mas continue monitorando para garantir a estabilidade e o
@@ -213,6 +223,7 @@
         </section>
         <section id="section_tabelas" style="display: none;">
             <h1>Área das tabelas</h1>
+            <h3 style="display: flex; justify-content: center; margin-bottom: 1%;">Últimas 20 Leituras</h3>
             <table id="dadosTabela">
                 <thead>
                     <tr>
@@ -239,31 +250,8 @@
 
 <script>
 
-    // function scrollToSection(section_temperatura, lote) {
-    //     // Encontra a seção pelo ID fornecido
-    //     var section = document.getElementById(section_temperatura);
 
-    //     // Define a propriedade display para 'block'
-    //     section.style.display = 'block';
-    //     section_areaDoUsuario.style.display = 'none';
-
-    //     // Rola até a seção
-    //     section.scrollIntoView({ behavior: 'smooth' });
-    //     document.getElementById('setor').innerText = lote;
-    // }
-
-    // function scrollToSection1(section_umidade, lote) {
-    //     // Encontra a seção pelo ID fornecido
-    //     var section1 = document.getElementById(section_umidade);
-
-    //     // Define a propriedade display para 'block'
-    //     section1.style.display = 'block';
-    //     section_areaDoUsuario.style.display = 'none';
-
-    //     // Rola até a seção
-    //     section1.scrollIntoView({ behavior: 'smooth' });
-    //     document.getElementById('setor').innerText = lote;
-    // }
+    /* ---------------------------------------------------- AREA GRAFICOS ----------------------------------------------------*/
 
     function scrollToSection(sectionId, lote) {
         // Encontra a seção pelo ID fornecido
@@ -281,7 +269,7 @@
         section.scrollIntoView({ behavior: 'smooth' });
     }
 
-    /* -- dht11Umidade -- */
+    /* ------- DHT11UMIDADE ------- */
 
     // Função para gerar números aleatórios entre um intervalo específico
     function generateRandomData() {
@@ -308,20 +296,32 @@
                 label: 'Umidade (%)',
                 type: 'line',
                 borderColor: ['#45b3e7'],
-                backgroundColor: 'rgba(137, 207, 240, 0.6)',
-                borderWidth: 1
+                backgroundColor: 'rgba(137, 207, 240)',
+                borderWidth: 2
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: 'black'
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: 'black' 
+                }
+            }]
+        },
+        legend: {
+            labels: {
+                fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
             }
         }
-    });
+    }
+});
 
     function updateChartData() {
         // Remove o primeiro elemento da matriz de labels
@@ -380,7 +380,7 @@
             document.getElementById('iconUmi4').style.color = 'red';
         } else {
             // Caso a temperatura não esteja acima de 35°C, limpa o conteúdo e o estilo da div de texto
-            document.getElementById('textboxUmi').innerHTML = '<b>Tudo Sob-Controle Algodões Protegidos</b>';
+            document.getElementById('textboxUmi').innerHTML = ' <img width="50px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg" <b>Tudo Sob-Controle Algodões Protegidos</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'white';
             document.getElementById('textboxUmi').style.color = 'black';
             document.getElementById('textboxUmi').style.border = '1px solid black';
@@ -392,7 +392,7 @@
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada segundo)
     setInterval(updateChartData, 3000); // 5000ms = 5 segundos
 
-    // lm35Temperatura
+    /* ------- LM35TEMPERATURA ------- */
 
     function generateRandomData1() {
         var data1 = [];
@@ -417,21 +417,33 @@
                 data: randomData1,
                 label: 'Temperatura (°C)',
                 type: 'line',
-                borderColor: ['#ffd902'],
-                backgroundColor: 'rgba(255, 225, 53, 0.6)',
-                borderWidth: 1
+                borderColor: ['#caac01'],
+                backgroundColor: 'rgba(255, 225, 53)',
+                borderWidth: 2
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: 'black'
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: 'black' 
+                }
+            }]
+        },
+        legend: {
+            labels: {
+                fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
             }
         }
-    });
+    }
+});
 
     function updateChartData1() {
         // Remove o primeiro elemento da matriz de labels
@@ -491,12 +503,15 @@
             document.getElementById('iconTemp4').style.color = 'red';
         } else {
             // Caso a temperatura não esteja acima de 35°C, limpa o conteúdo e o estilo da div de texto
-            document.getElementById('textboxTemp').innerHTML = '<b>Tudo Sob-Controle Algodões Protegidos</b>';
+            document.getElementById('textboxTemp').innerHTML = ' <img width="60px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg" <b>Tudo Sob-Controle Algodões Protegidos</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'white';
             document.getElementById('textboxTemp').style.color = 'black';
             document.getElementById('textboxTemp').style.border = '1px solid black';
         }
     }
+
+
+    /* ---------------------------------------------------- DATA E HORARIO ATUAL ----------------------------------------------------*/
 
     function getFormattedDateTime() {
         var now = new Date();
@@ -509,8 +524,6 @@
 
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada cinco segundos)
     setInterval(updateChartData1, 3000); // 5000ms = 5 segundos
-
-
 
     function updateDateTime() {
         var now = new Date();
@@ -526,37 +539,49 @@
     // Chama a função a cada segundo para manter a data e hora atualizada
     setInterval(updateDateTime, 1000); // 1000ms = 1 segundo
 
-   // Função para adicionar uma nova linha à tabela com os últimos dados
-function adicionarLinhaTabela(dataHora, temperatura, umidade, lote) {
-    var tabela = document.getElementById('dadosTabela').getElementsByTagName('tbody')[0];
-    var novaLinha = tabela.insertRow(0);
-    var novaCelulaDataHora = novaLinha.insertCell(0);
-    var novaCelulaTemperatura = novaLinha.insertCell(1);
-    var novaCelulaUmidade = novaLinha.insertCell(2);
-    var novaCelulaLote = novaLinha.insertCell(3); // Nova célula para o campo de lote
-    novaCelulaDataHora.innerHTML = dataHora;
-    novaCelulaTemperatura.innerHTML = temperatura;
-    novaCelulaUmidade.innerHTML = umidade;
-    novaCelulaLote.innerHTML = lote; // Define o valor do campo de lote
-}
 
-// Função para atualizar os dados da tabela com os últimos dados de temperatura e umidade
-function atualizarTabela() {
-    // Obtenha os últimos dados de temperatura e umidade (você precisará adaptar isso com sua lógica de geração de dados)
-    var novaTemperatura = Math.floor(Math.random() * 50); // Gera uma temperatura aleatória entre 0 e 50
-    var novaUmidade = Math.floor(Math.random() * 100); // Gera uma umidade aleatória entre 0 e 100
-    var dataHoraAtual = new Date().toLocaleString(); // Obtém a data e hora atuais
-    var lote = "Lote 1"; // Aqui você define o lote correspondente aos dados, isso pode ser obtido de sua lógica existente
+    /* ---------------------------------------------------- AREA TABELAS ----------------------------------------------------*/
 
-    // Adicione uma nova linha à tabela com os últimos dados
-    adicionarLinhaTabela(dataHoraAtual, novaTemperatura + "°C", novaUmidade + "%", lote);
-}
+    // Função para adicionar uma nova linha à tabela com os últimos dados
+    function adicionarLinhaTabela(dataHora, temperatura, umidade, lote) {
+        var tabela = document.getElementById('dadosTabela').getElementsByTagName('tbody')[0];
+        var numeroLinhas = tabela.rows.length;
 
-// Chamada inicial da função para garantir que a tabela seja atualizada assim que a página for carregada
-atualizarTabela();
+        // Se o número de linhas for igual a 15, remove a última linha antes de adicionar uma nova
+        if (numeroLinhas === 20) {
+            tabela.deleteRow(numeroLinhas - 1); // Remove a última linha
+        }
 
-// Chame a função para atualizar os dados da tabela a cada intervalo de tempo (por exemplo, a cada 5 segundos)
-setInterval(atualizarTabela, 5000); // 5000ms = 5 segundos
+        var novaLinha = tabela.insertRow(0);
+        var novaCelulaDataHora = novaLinha.insertCell(0);
+        var novaCelulaTemperatura = novaLinha.insertCell(1);
+        var novaCelulaUmidade = novaLinha.insertCell(2);
+        var novaCelulaLote = novaLinha.insertCell(3); // Nova célula para o campo de lote
+        novaCelulaDataHora.innerHTML = dataHora;
+        novaCelulaTemperatura.innerHTML = temperatura;
+        novaCelulaUmidade.innerHTML = umidade;
+        novaCelulaLote.innerHTML = lote; // Define o valor do campo de lote
+    }
+
+    // Função para atualizar os dados da tabela com os últimos dados de temperatura e umidade
+    function atualizarTabela() {
+        // Obtém os últimos dados de temperatura e umidade dos gráficos
+        var umidadeAtual = dht11Umidade.data.datasets[0].data[dht11Umidade.data.datasets[0].data.length - 1];
+        var temperaturaAtual = lm35Temperatura.data.datasets[0].data[lm35Temperatura.data.datasets[0].data.length - 1];
+        var lote = Math.floor(Math.random() * 4) + 1;
+        // Obtém a data e hora atuais
+        var dataHoraAtual = new Date().toLocaleString();
+
+        // Adiciona uma nova linha à tabela com os últimos dados
+        adicionarLinhaTabela(dataHoraAtual, temperaturaAtual + "°C", umidadeAtual + "%", "Lote " + lote);
+    }
+
+    // Chamada inicial da função para garantir que a tabela seja atualizada assim que a página for carregada
+    atualizarTabela();
+
+    // Chame a função para atualizar os dados da tabela a cada intervalo de tempo (por exemplo, a cada 5 segundos)
+    setInterval(atualizarTabela, 3000); // 3000ms = 3 segundos
+
 
 
 </script>

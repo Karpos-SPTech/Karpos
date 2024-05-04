@@ -14,10 +14,7 @@ var usuario = document.getElementById("section_areaDoUsuario");
     temperatura.style.display = "none";
     umidade.style.display = "none";
     tabelas.style.display = "none";
-    // filtro.style.zIndex = '10';
-    // referencia.style.zIndex = '10';
-    // // filtro.style.position = 'relative';
-    // referencia.style.position = 'relative';
+    
 
     temperatura.classList.remove("fade");
     umidade.classList.remove("fade");
