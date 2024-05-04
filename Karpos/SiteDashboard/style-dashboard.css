@@ -20,8 +20,7 @@ main {
     z-index: 1;
     padding-left: calc(82px + 20px);
     width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+
 }
 
 #sidebar {
@@ -52,6 +51,7 @@ main {
     height: 50px;
     object-fit: cover;
     border-radius: 20px;
+    margin-left: 11%;
 }
 
 #user_infos {
@@ -128,6 +128,8 @@ main {
     cursor: pointer;
     background-color: transparent;
     color: white;
+    margin-left: 18%;
+    width: 3vw;
 }
 
 #open_btn {
@@ -191,21 +193,24 @@ main {
 
 #section_areaDoUsuario {
     display: flex;
-    height: 100vh;
+    height: 97vh;
     width: 93vw;
     margin: auto;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-.mensagem{
-    font-size: 20px;
+
+.mensagem {
+    font-size: 22px;
     margin-bottom: 1%;
 }
 
-.imgf{
-    margin-top: 2%;
+.imgf {
+    margin-top: 1%;
 }
 
 .boxlote {
@@ -224,7 +229,7 @@ main {
     margin-left: 15px;
 }
 
-.lotes{
+.lotes {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -232,29 +237,30 @@ main {
     height: 200px;
 }
 
-.nossos{
+.nossos {
     height: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-left: 107px;
+    margin-left: 08.5%;
 }
 
 
-.cada{
+.cada {
     width: 100%;
-    height: 400px;
+    height: 45vh;
 
 }
 
-.desc{
+.desc {
     font-size: 15px;
     display: flex;
     justify-content: center;
     text-align: center;
     width: 200px;
     font-weight: 600;
+    margin-top: 1%;
 }
 
 .boxalerta {
@@ -306,9 +312,13 @@ main {
 
 }
 
-.setor{
+#setor {
     font-size: 18px;
 }
+#setor1 {
+    font-size: 18px;
+}
+
 #section_temperatura {
     display: flex;
     height: 100vh;
@@ -367,7 +377,7 @@ main {
     border-radius: 10px;
 }
 
-#tempo{
+#tempo {
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -380,7 +390,7 @@ main {
     color: white;
 }
 
-#tempo1{
+#tempo1 {
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -394,7 +404,7 @@ main {
 }
 
 
-.fazenda{
+.fazenda {
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -409,7 +419,7 @@ main {
     flex-direction: column;
 }
 
-#tempData{
+#tempData {
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -424,7 +434,7 @@ main {
     flex-direction: column;
 }
 
-#umiData{
+#umiData {
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -446,7 +456,7 @@ main {
 
 }
 
-#alertas{
+#alertas {
     width: 100%;
     height: 200px;
     display: flex;
@@ -454,7 +464,7 @@ main {
     justify-content: space-between;
 }
 
-#alertasU{
+#alertasU {
     width: 100%;
     height: 200px;
     display: flex;
@@ -468,19 +478,24 @@ main {
 }
 
 
-.titulograf{
+.titulograf {
     margin-top: 30px;
     margin-right: 100px;
-    width: 290px;
+    width: 480px;
     margin-bottom: 5px;
 }
 
-#iconTemp{
-color: red;
-height: 20px;
+#iconTemp {
+    color: rgb(255, 255, 255);
+
 }
 
-#iconUmi{
-    color: green;
-    height: 20px;
-    }
+#iconUmi {
+    color: rgb(255, 255, 255);
+
+}
+
+.icon {
+    font-size: 30px;
+    cursor: pointer;
+}
