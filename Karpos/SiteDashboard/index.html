@@ -82,7 +82,7 @@
                     <a href="#">
                         <i class="fa-solid fa-file-export"></i>
                         <span class="item-description">
-                            Exportar
+                            Exportar Tabela (CSV)
                         </span>
                     </a>
                 </li>
@@ -145,32 +145,40 @@
             <div class="lotes">
                 <div class="boxlote"> <img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">Lote 1
-                    <div style="margin-top: 5%;"><i id="iconTemp1" onclick="scrollToSection('section_temperatura', 'Lote 1')"
+                    <div style="margin-top: 5%;"><i id="iconTemp1"
+                            onclick="scrollToSection('section_temperatura', 'Lote 1')"
                             class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi1" onclick="scrollToSection('section_umidade', 'Lote 1 ')" class="fas fa-tint icon"></i>
+                        <i id="iconUmi1" onclick="scrollToSection('section_umidade', 'Lote 1 ')"
+                            class="fas fa-tint icon"></i>
                     </div>
                 </div>
                 <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">
                     <p>Lote 2</p>
-                    <div style="margin-top: 5%;"><i id="iconTemp2" onclick="scrollToSection('section_temperatura', 'Lote 2')"
+                    <div style="margin-top: 5%;"><i id="iconTemp2"
+                            onclick="scrollToSection('section_temperatura', 'Lote 2')"
                             class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi2" onclick="scrollToSection('section_umidade', 'Lote 2 ')" class="fas fa-tint icon"></i>
+                        <i id="iconUmi2" onclick="scrollToSection('section_umidade', 'Lote 2 ')"
+                            class="fas fa-tint icon"></i>
                     </div>
 
                 </div>
                 <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">Lote 3
-                    <div style="margin-top: 5%;"><i id="iconTemp3" onclick="scrollToSection('section_temperatura','Lote 3')"
+                    <div style="margin-top: 5%;"><i id="iconTemp3"
+                            onclick="scrollToSection('section_temperatura','Lote 3')"
                             class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi3" onclick="scrollToSection('section_umidade','Lote 3 ')" class="fas fa-tint icon"></i>
+                        <i id="iconUmi3" onclick="scrollToSection('section_umidade','Lote 3 ')"
+                            class="fas fa-tint icon"></i>
                     </div>
                 </div>
                 <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
                         style="margin-bottom: 5%;" alt="">Lote 4
-                    <div style="margin-top: 5%;"><i id="iconTemp4" onclick="scrollToSection('section_temperatura', 'Lote 4')"
+                    <div style="margin-top: 5%;"><i id="iconTemp4"
+                            onclick="scrollToSection('section_temperatura', 'Lote 4')"
                             class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi4" onclick="scrollToSection('section_umidade', 'Lote 4 ')" class="fas fa-tint icon"></i>
+                        <i id="iconUmi4" onclick="scrollToSection('section_umidade', 'Lote 4 ')"
+                            class="fas fa-tint icon"></i>
                     </div>
                 </div>
             </div>
@@ -205,6 +213,19 @@
         </section>
         <section id="section_tabelas" style="display: none;">
             <h1>Área das tabelas</h1>
+            <table id="dadosTabela">
+                <thead>
+                    <tr>
+                        <th>Data e Hora</th>
+                        <th>Temperatura (°C)</th>
+                        <th>Umidade (%)</th>
+                        <th>Lote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aqui serão adicionadas as linhas da tabela dinamicamente -->
+                </tbody>
+            </table>
         </section>
 
     </main>
@@ -245,20 +266,20 @@
     // }
 
     function scrollToSection(sectionId, lote) {
-    // Encontra a seção pelo ID fornecido
-    var section = document.getElementById(sectionId);
+        // Encontra a seção pelo ID fornecido
+        var section = document.getElementById(sectionId);
 
-    // Define a propriedade display para 'block'
-    section.style.display = 'block';
-    section_areaDoUsuario.style.display = 'none';
+        // Define a propriedade display para 'block'
+        section.style.display = 'block';
+        section_areaDoUsuario.style.display = 'none';
 
-    // Atualiza o texto da seção
-    document.getElementById('setor').innerHTML = lote;
-    document.getElementById('setor1').innerHTML = lote;
+        // Atualiza o texto da seção
+        document.getElementById('setor').innerHTML = lote;
+        document.getElementById('setor1').innerHTML = lote;
 
-    // Rola até a seção
-    section.scrollIntoView({ behavior: 'smooth' });
-}
+        // Rola até a seção
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
 
     /* -- dht11Umidade -- */
 
@@ -505,6 +526,37 @@
     // Chama a função a cada segundo para manter a data e hora atualizada
     setInterval(updateDateTime, 1000); // 1000ms = 1 segundo
 
+   // Função para adicionar uma nova linha à tabela com os últimos dados
+function adicionarLinhaTabela(dataHora, temperatura, umidade, lote) {
+    var tabela = document.getElementById('dadosTabela').getElementsByTagName('tbody')[0];
+    var novaLinha = tabela.insertRow(0);
+    var novaCelulaDataHora = novaLinha.insertCell(0);
+    var novaCelulaTemperatura = novaLinha.insertCell(1);
+    var novaCelulaUmidade = novaLinha.insertCell(2);
+    var novaCelulaLote = novaLinha.insertCell(3); // Nova célula para o campo de lote
+    novaCelulaDataHora.innerHTML = dataHora;
+    novaCelulaTemperatura.innerHTML = temperatura;
+    novaCelulaUmidade.innerHTML = umidade;
+    novaCelulaLote.innerHTML = lote; // Define o valor do campo de lote
+}
+
+// Função para atualizar os dados da tabela com os últimos dados de temperatura e umidade
+function atualizarTabela() {
+    // Obtenha os últimos dados de temperatura e umidade (você precisará adaptar isso com sua lógica de geração de dados)
+    var novaTemperatura = Math.floor(Math.random() * 50); // Gera uma temperatura aleatória entre 0 e 50
+    var novaUmidade = Math.floor(Math.random() * 100); // Gera uma umidade aleatória entre 0 e 100
+    var dataHoraAtual = new Date().toLocaleString(); // Obtém a data e hora atuais
+    var lote = "Lote 1"; // Aqui você define o lote correspondente aos dados, isso pode ser obtido de sua lógica existente
+
+    // Adicione uma nova linha à tabela com os últimos dados
+    adicionarLinhaTabela(dataHoraAtual, novaTemperatura + "°C", novaUmidade + "%", lote);
+}
+
+// Chamada inicial da função para garantir que a tabela seja atualizada assim que a página for carregada
+atualizarTabela();
+
+// Chame a função para atualizar os dados da tabela a cada intervalo de tempo (por exemplo, a cada 5 segundos)
+setInterval(atualizarTabela, 5000); // 5000ms = 5 segundos
 
 
 </script>
