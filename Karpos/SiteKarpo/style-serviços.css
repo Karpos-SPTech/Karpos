@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-image: url(../SiteKarpo/assets/algodao.png);
     background-repeat: no-repeat;
-    background-color: #B7A19A;
+    background-color: #241a11;
     background-size: cover; /* ou background-size: contain; dependendo da preferência */
     font-family: 'Inter', sans-serif; /* Aplicando a fonte Inter */
     text-align: center; /* Centraliza o conteúdo do corpo */
@@ -63,6 +63,7 @@ ul a {
     text-align: center;
     width: 30%;
     position: relative;
+
 }
 
 .box img {
@@ -81,6 +82,7 @@ ul a {
 }
 
 .box p {
-    font-size: 16px;
+    font-size: 23px;
     line-height: 1.5;
+    text-shadow: 0 15px 15px rgb(32, 21, 21);
 }
