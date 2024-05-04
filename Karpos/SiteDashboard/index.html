@@ -41,8 +41,8 @@
             </div>
 
             <ul id="side_items">
-                <li class="side-item active" id="btnAreaUsuario">
-                    <a href="#">
+                <li class="side-item active" id="btnAreaUsuario" onclick="scrollToSection('section_areaDoUsuario', 'Geral')">
+                    <a href="#" >
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Área do usuário
@@ -117,6 +117,19 @@
                 <div id="tempo1"></div>
                 <div id="umiData">Umidade Atual:</div>
                 <div id="textboxUmi"></div>
+                <div style="width: 17%; display: flex; justify-content: center;
+                flex-direction: column;">
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
+                            style="margin-right: 3%;"></span>
+                        < 49% ou> 70%
+                    </span><br>
+                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
+                            style="margin-right: 3%;"></span>De 50% a 55%</span><br>
+                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
+                            style="margin-right: 3%;"></span>De 65% a 69%</span><br>
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
+                            style="margin-right: 3%;"></span>Entre 56% e 64%</span>
+                </div>
             </div>
         </section>
 
@@ -134,6 +147,19 @@
                 <div id="tempo"></div>
                 <div id="tempData">Temperatura Atual:</div>
                 <div id="textboxTemp"></div>
+                <div style="width: 17%; display: flex; justify-content: center;
+                flex-direction: column;">
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
+                            style="margin-right: 3%;"></span>
+                        < 20ºC ou> 30ºC
+                    </span><br>
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"><span class="cora"
+                            style="margin-right: 3%;"></span> De 20ºC a 22ºC</span><br>
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"><span class="cora"
+                            style="margin-right: 3%;"></span> De 28ºC a 30ºC</span><br>
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
+                            style="margin-right: 3%;"></span>Entre 23ºC e 27ºC</span>
+                </div>
             </div>
         </section>
 
@@ -261,6 +287,12 @@
         section.style.display = 'block';
         section_areaDoUsuario.style.display = 'none';
 
+        if (section == 'section_areaDoUsuario') {
+            section.style.display = 'block';
+            section_temperatura.style.display = 'none';
+            section_umidade.style.display = 'none';
+
+        }
         // Atualiza o texto da seção
         document.getElementById('setor').innerHTML = lote;
         document.getElementById('setor1').innerHTML = lote;
@@ -301,27 +333,27 @@
             }]
         },
         options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    fontColor: 'black'
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: 'black'
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: 'black'
+                    }
+                }]
+            },
+            legend: {
+                labels: {
+                    fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
                 }
-            }],
-            xAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    fontColor: 'black' 
-                }
-            }]
-        },
-        legend: {
-            labels: {
-                fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
             }
         }
-    }
-});
+    });
 
     function updateChartData() {
         // Remove o primeiro elemento da matriz de labels
@@ -390,7 +422,10 @@
     }
 
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada segundo)
-    setInterval(updateChartData, 3000); // 5000ms = 5 segundos
+    setInterval(updateChartData, 3000); // 3000ms = 3 segundos
+
+    // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
+    updateChartData();
 
     /* ------- LM35TEMPERATURA ------- */
 
@@ -423,27 +458,27 @@
             }]
         },
         options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    fontColor: 'black'
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: 'black'
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: 'black'
+                    }
+                }]
+            },
+            legend: {
+                labels: {
+                    fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
                 }
-            }],
-            xAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    fontColor: 'black' 
-                }
-            }]
-        },
-        legend: {
-            labels: {
-                fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
             }
         }
-    }
-});
+    });
 
     function updateChartData1() {
         // Remove o primeiro elemento da matriz de labels
@@ -472,7 +507,7 @@
             document.getElementById('iconTemp3').style.color = 'white';
             document.getElementById('iconTemp4').style.color = 'yellow';
 
-        } else if (newTemperature >= 28 && newTemperature <= 29) {
+        } else if (newTemperature >= 28 && newTemperature <= 30) {
             document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Temperatura próxima de 30°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'yellow';
             document.getElementById('textboxTemp').style.color = 'black';
@@ -482,7 +517,7 @@
             document.getElementById('iconTemp3').style.color = 'yellow';
             document.getElementById('iconTemp4').style.color = 'white';
         }
-        else if (newTemperature >= 21 && newTemperature <= 22) {
+        else if (newTemperature >= 20 && newTemperature <= 22) {
             document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Temperatura próxima de 20°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'yellow';
             document.getElementById('textboxTemp').style.color = 'black';
@@ -502,13 +537,16 @@
             document.getElementById('iconTemp3').style.color = 'yellow';
             document.getElementById('iconTemp4').style.color = 'red';
         } else {
-            // Caso a temperatura não esteja acima de 35°C, limpa o conteúdo e o estilo da div de texto
+            // Caso a temperatura não esteja acima de 30°C, limpa o conteúdo e o estilo da div de texto
             document.getElementById('textboxTemp').innerHTML = ' <img width="60px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg" <b>Tudo Sob-Controle Algodões Protegidos</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'white';
             document.getElementById('textboxTemp').style.color = 'black';
             document.getElementById('textboxTemp').style.border = '1px solid black';
         }
     }
+
+    // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
+    updateChartData1();
 
 
     /* ---------------------------------------------------- DATA E HORARIO ATUAL ----------------------------------------------------*/
@@ -518,9 +556,6 @@
         var formattedDateTime = now.toLocaleString(); // Obtém a data e hora atual no formato local
         return formattedDateTime;
     }
-
-    // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
-    updateChartData1();
 
     // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada cinco segundos)
     setInterval(updateChartData1, 3000); // 5000ms = 5 segundos

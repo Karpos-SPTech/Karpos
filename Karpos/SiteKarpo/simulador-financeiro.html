@@ -17,9 +17,10 @@
         </a>
         <ul>
             <li><a href="../SiteKarpo/index.html">Início</a></li>
-            <li><a href="../SiteKarpo/sobre-nos.html">Sobre Nós</a></li>
+            <li style="width: max-content;"><a href="../SiteKarpo/sobre-nos.html">Sobre Nós</a></li>
             <li><a href="../SiteKarpo/serviços.html">Serviços</a></li>
-            <li><a href="../SiteKarpo/simulador-financeiro.html">Simulador Financeiro</a></li>
+            <li style="width: max-content;"><a href="../SiteKarpo/simulador-financeiro.html">Simulador Financeiro</a>
+            </li>
             <li><a href="../SiteKarpo/contato.html">Contato</a></li>
         </ul>
         <a href="https://linktr.ee/karpostech" target="_blank" id="social-medias"><img
@@ -145,7 +146,7 @@
             cartaoPerda.querySelector('p').innerHTML = `<b style="color:red;">${formatPerdaFungoCiclo}</b>`;
 
             cartaoOportunidade.querySelector('h2').textContent = 'Oportunidade';
-            cartaoOportunidade.querySelector('p').innerHTML = `Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b>sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
+            cartaoOportunidade.querySelector('p').innerHTML = `Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b> sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
 
             const config = {
                 type: 'pie',
@@ -159,16 +160,23 @@
                             '#805b46'
                         ],
                         borderColor: [
-                            '#a17f6c',
-                            '#805b46'
+                            '#745c4f',
+                            '#50392c'
                         ],
-                        borderWidth: 1
+                        borderWidth: 2
                     }]
                 },
                 options: {
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'black' // Define a cor das labels como vermelho
+                            }
+                        }
+                    },
                         y: {
-                            beginAtZero: true
-                    }
+                            beginAtZero: true // Garante que o eixo y comece em zero
+                        }
                 }
             };
             const ctx = document.getElementById('myChart').getContext('2d');
