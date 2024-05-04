@@ -402,6 +402,7 @@ transition: 0.1s;
     align-items: center;
     background-color: #AA6550;
     color: white;
+    font-weight: 500;
 }
 
 #tempo1 {
@@ -415,6 +416,7 @@ transition: 0.1s;
     align-items: center;
     background-color: #AA6550;
     color: white;
+    font-weight: 500;
 }
 
 .fazenda {
@@ -430,7 +432,9 @@ transition: 0.1s;
     color: rgb(255, 255, 255);
     font-size: 16px;
     flex-direction: column;
-
+    font-weight: 500;
+    border: #745c4f;
+    border: #50392c;
 }
 
 #tempData {
@@ -481,7 +485,7 @@ transition: 0.1s;
 }
 
 #alertas {
-    width: 100%;
+    width: 115%;
     height: 200px;
     display: flex;
     flex-direction: row;
@@ -489,7 +493,7 @@ transition: 0.1s;
 }
 
 #alertasU {
-    width: 100%;
+    width: 115%;
     height: 200px;
     display: flex;
     flex-direction: row;
@@ -500,7 +504,6 @@ transition: 0.1s;
     font-size: 30px;
     margin-bottom: 20px;
 }
-
 
 .titulograf {
     margin-top: 30px;
@@ -533,7 +536,6 @@ transition: 0.1s;
     
 }
 
-
 #dadosTabela {
     width: 80%;
     border-collapse: collapse;
@@ -553,9 +555,9 @@ transition: 0.1s;
 
 .legenda{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: row;
-    width: 100%;
+    width: 100vw;
     height: 95px;
 }
 
@@ -565,6 +567,7 @@ transition: 0.1s;
     align-items: start;
     justify-content: center;
     height: 70px;
+    margin-right: 5%;
 }
 .temp{
     font-size: 15px;
@@ -578,6 +581,7 @@ transition: 0.1s;
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-left: 5%;
 }
 
 .branco{
@@ -632,3 +636,4 @@ transition: 0.1s;
     margin-right: 1%;
     border: 1px solid black;
 }
+
