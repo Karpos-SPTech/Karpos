@@ -341,7 +341,8 @@ main {
     display: flex;
     height: 100vh;
     width: 93vw;
-
+    overflow-y: scroll;
+    overflow-x: hidden;
     margin: auto;
 }
 
@@ -353,6 +354,7 @@ main {
 #section_tabelas h1 {
     width: fit-content;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 #textboxTemp {
@@ -498,4 +500,21 @@ main {
 .icon {
     font-size: 30px;
     cursor: pointer;
+}
+
+#dadosTabela {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#dadosTabela th, #dadosTabela td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#dadosTabela th {
+    background-color: #263238;
+    color: #fff;
 }
