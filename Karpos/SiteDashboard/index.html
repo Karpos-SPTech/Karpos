@@ -105,14 +105,14 @@
     <main id="main-class" style="height: 100%;">
         <section id="section_umidade" style="display:none; width: 900px;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
-            <h1 class="titulograf">Análise de Umidade</h1>
+            <h1 class="titulograf">Análise de Umidade na Plantação</h1>
             <canvas id="dht11Umidade"></canvas>
-            <h1 class="titulograf">Situação Atual:</h1>
+            <h1 class="titulograf">Dados Atuais:</h1>
             <div id="alertasU">
                 <div class="fazenda">
                     <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
-                    Fazenda XPTO
-                    <p class="setor">Lote 1</p>
+                    Fazenda Karpos
+                    <p id="setor">Geral</p>
                 </div>
                 <div id="tempo1"></div>
                 <div id="umiData">Umidade Atual:</div>
@@ -122,15 +122,14 @@
 
         <section id="section_temperatura" style="display: none; width: 900px;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
-            <h1 class="titulograf">Análise de Temperatura</h1>
+            <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
             <canvas id="lm35Temperatura"></canvas>
-
             <h1 class="titulograf">Dados Atuais:</h1>
             <div id="alertas">
                 <div class="fazenda">
                     <img width="100px" height="100px" src="../SiteDashboard/assets/fazendaa.png" alt="">
-                    Fazenda XPTO
-                    <p class="setor">Lote 1</p>
+                    Fazenda Karpos
+                    <p id="setor1">Geral</p>
                 </div>
                 <div id="tempo"></div>
                 <div id="tempData">Temperatura Atual:</div>
@@ -139,41 +138,48 @@
         </section>
 
         <section id="section_areaDoUsuario" style="display: block;">
-            <h1 style="font-size: 20px;">Área do Usuário</h1>
-            <img class="imgf" src="../SiteDashboard/assets/fazendaa.png" width="80px" alt="">
+            <h1 style="font-size: 25px;">Área do Usuário</h1>
+            <img class="imgf" src="../SiteDashboard/assets/fazendaa.png" width="100px" alt="">
             <h3 class="mensagem">Fazenda Karpos</h3>
+            <h3>Lotes:</h3>
             <div class="lotes">
-                <a href="#section_temperatura">
-                    <div class="boxlote"> <img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">Lote 1
-                        <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
-                            <i id="iconUmi" class="fas fa-tint icon"></i>
-                        </div>
+                <div class="boxlote"> <img src="../SiteDashboard/assets/logo-contato.png" width="50px"
+                        style="margin-bottom: 5%;" alt="">Lote 1
+                    <div style="margin-top: 5%;"><i id="iconTemp1" onclick="scrollToSection('section_temperatura', 'Lote 1')"
+                            class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi1" onclick="scrollToSection('section_umidade', 'Lote 1 ')" class="fas fa-tint icon"></i>
                     </div>
-                </a>
-                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">
+                </div>
+                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
+                        style="margin-bottom: 5%;" alt="">
                     <p>Lote 2</p>
-                    <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi" class="fas fa-tint icon"></i>
+                    <div style="margin-top: 5%;"><i id="iconTemp2" onclick="scrollToSection('section_temperatura', 'Lote 2')"
+                            class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi2" onclick="scrollToSection('section_umidade', 'Lote 2 ')" class="fas fa-tint icon"></i>
                     </div>
 
                 </div>
-                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">Lote 3
-                    <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi" class="fas fa-tint icon"></i>
+                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
+                        style="margin-bottom: 5%;" alt="">Lote 3
+                    <div style="margin-top: 5%;"><i id="iconTemp3" onclick="scrollToSection('section_temperatura','Lote 3')"
+                            class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi3" onclick="scrollToSection('section_umidade','Lote 3 ')" class="fas fa-tint icon"></i>
                     </div>
                 </div>
-                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px" alt="">Lote 4
-                    <div style><i id="iconTemp" class="fas fa-thermometer-half icon"></i>
-                        <i id="iconUmi" class="fas fa-tint icon"></i>
+                <div class="boxlote"><img src="../SiteDashboard/assets/logo-contato.png" width="50px"
+                        style="margin-bottom: 5%;" alt="">Lote 4
+                    <div style="margin-top: 5%;"><i id="iconTemp4" onclick="scrollToSection('section_temperatura', 'Lote 4')"
+                            class="fas fa-thermometer-half icon"></i>
+                        <i id="iconUmi4" onclick="scrollToSection('section_umidade', 'Lote 4 ')" class="fas fa-tint icon"></i>
                     </div>
                 </div>
             </div>
-            <h3 class="nossosavisos">Nossos Avisos:</h3>
+            <h3 class="nossosavisos" style="margin-top: 2%;">Nossos Avisos:</h3>
             <div class="nossos">
                 <div class="cada">
                     <div class="boxbom">
                         <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
-                        FAVORÁVEL
+                        <b>FAVORÁVEL</b>
                     </div>
                     <p class="desc">Tudo sob controle, mas continue monitorando para garantir a estabilidade e o
                         crescimento saudável da plantação. </p>
@@ -181,7 +187,7 @@
                 <div class="cada">
                     <div class="boxcuidado">
                         <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
-                        CUIDADO
+                        <b>CUIDADO</b>
                     </div>
                     <p class="desc">A temperatura e/ou umidade estão prestes a sair do controle. Monitore de perto e
                         tome medidas preventivas para garantir a saúde dos algodões.</p>
@@ -190,7 +196,7 @@
                 <div class="cada">
                     <div class="boxalerta">
                         <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
-                        ALERTA
+                        <b>ALERTA</b>
                     </div>
                     <p class="desc">A temperatura e/ou umidade estão fora do padrão. Recomendamos ação imediata para
                         evitar possíveis danos à plantação.</p>
@@ -211,6 +217,48 @@
 <script src="verificacao.js"></script>
 
 <script>
+
+    // function scrollToSection(section_temperatura, lote) {
+    //     // Encontra a seção pelo ID fornecido
+    //     var section = document.getElementById(section_temperatura);
+
+    //     // Define a propriedade display para 'block'
+    //     section.style.display = 'block';
+    //     section_areaDoUsuario.style.display = 'none';
+
+    //     // Rola até a seção
+    //     section.scrollIntoView({ behavior: 'smooth' });
+    //     document.getElementById('setor').innerText = lote;
+    // }
+
+    // function scrollToSection1(section_umidade, lote) {
+    //     // Encontra a seção pelo ID fornecido
+    //     var section1 = document.getElementById(section_umidade);
+
+    //     // Define a propriedade display para 'block'
+    //     section1.style.display = 'block';
+    //     section_areaDoUsuario.style.display = 'none';
+
+    //     // Rola até a seção
+    //     section1.scrollIntoView({ behavior: 'smooth' });
+    //     document.getElementById('setor').innerText = lote;
+    // }
+
+    function scrollToSection(sectionId, lote) {
+    // Encontra a seção pelo ID fornecido
+    var section = document.getElementById(sectionId);
+
+    // Define a propriedade display para 'block'
+    section.style.display = 'block';
+    section_areaDoUsuario.style.display = 'none';
+
+    // Atualiza o texto da seção
+    document.getElementById('setor').innerHTML = lote;
+    document.getElementById('setor1').innerHTML = lote;
+
+    // Rola até a seção
+    section.scrollIntoView({ behavior: 'smooth' });
+}
 
     /* -- dht11Umidade -- */
 
@@ -233,7 +281,7 @@
     var dht11Umidade = new Chart(contextoDht11Umidade, {
         type: 'line',
         data: {
-            labels: ['Data 1', 'Data 2', 'Data 3', 'Data 4', 'Data 5'],
+            labels: ['Data Atual', 'Data Atual', 'Data Atual', 'Data Atual', 'Data Atual'],
             datasets: [{
                 data: randomData,
                 label: 'Umidade (%)',
@@ -267,35 +315,51 @@
 
         dht11Umidade.update();
 
-        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> ${newUmidad}%`;
+        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> <b>${newUmidad}%</b>`;
 
         if (newUmidad > 70) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
-            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Alerta: Umidade muito acima de 60%!';
+            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Umidade muito acima de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'red';
             document.getElementById('textboxUmi').style.color = 'white';
             document.getElementById('textboxUmi').style.border = '1px solid black';
+            document.getElementById('iconUmi1').style.color = 'white';
+            document.getElementById('iconUmi2').style.color = 'yellow';
+            document.getElementById('iconUmi3').style.color = 'red';
+            document.getElementById('iconUmi4').style.color = 'yellow';
 
         } else if (newUmidad >= 65 && newUmidad <= 69) {
-            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Cuidado: Umidade pouco acima de 60%!';
+            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Umidade pouco acima de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'yellow';
             document.getElementById('textboxUmi').style.color = 'black';
             document.getElementById('textboxUmi').style.border = '1px solid black';
+            document.getElementById('iconUmi1').style.color = 'yellow';
+            document.getElementById('iconUmi2').style.color = 'white';
+            document.getElementById('iconUmi3').style.color = 'yellow';
+            document.getElementById('iconUmi4').style.color = 'red';
         }
         else if (newUmidad >= 50 && newUmidad <= 55) {
-            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Cuidado: Umidade pouco abaixo de 60%!';
+            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Umidade pouco abaixo de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'yellow';
             document.getElementById('textboxUmi').style.color = 'black';
             document.getElementById('textboxUmi').style.border = '1px solid black';
+            document.getElementById('iconUmi1').style.color = 'red';
+            document.getElementById('iconUmi2').style.color = 'yellow';
+            document.getElementById('iconUmi3').style.color = 'yellow';
+            document.getElementById('iconUmi4').style.color = 'white';
         }
         else if (newUmidad < 49) {
-            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Alerta: Umidade muito abaixo de 60%!';
+            document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Umidade muito abaixo de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'red';
             document.getElementById('textboxUmi').style.color = 'white';
             document.getElementById('textboxUmi').style.border = '1px solid black';
+            document.getElementById('iconUmi1').style.color = 'yellow';
+            document.getElementById('iconUmi2').style.color = 'red';
+            document.getElementById('iconUmi3').style.color = 'white';
+            document.getElementById('iconUmi4').style.color = 'red';
         } else {
             // Caso a temperatura não esteja acima de 35°C, limpa o conteúdo e o estilo da div de texto
-            document.getElementById('textboxUmi').innerHTML = 'Tudo Sob-Controle Algodões Protegidos';
+            document.getElementById('textboxUmi').innerHTML = '<b>Tudo Sob-Controle Algodões Protegidos</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'white';
             document.getElementById('textboxUmi').style.color = 'black';
             document.getElementById('textboxUmi').style.border = '1px solid black';
@@ -327,7 +391,7 @@
     var lm35Temperatura = new Chart(contextoLm35Temperatura, {
         type: 'line',
         data: {
-            labels: ['Data 1', 'Data 2', 'Data 3', 'Data 4', 'Data 5'],
+            labels: ['Data Atual', 'Data Atual', 'Data Atual', 'Data Atual', 'Data Atual'],
             datasets: [{
                 data: randomData1,
                 label: 'Temperatura (°C)',
@@ -361,36 +425,52 @@
         // Atualiza o gráfico
         lm35Temperatura.update();
 
-        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> ${newTemperature}ºC`;
+        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> <b>${newTemperature}ºC</b>`;
 
         // Verifica se a temperatura ultrapassou 35°C
         if (newTemperature > 30) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
-            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Alerta: Temperatura acima de 30°C!';
+            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Temperatura acima de 30°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'red';
             document.getElementById('textboxTemp').style.color = 'white';
             document.getElementById('textboxTemp').style.border = '1px solid black';
+            document.getElementById('iconTemp1').style.color = 'red';
+            document.getElementById('iconTemp2').style.color = 'yellow';
+            document.getElementById('iconTemp3').style.color = 'white';
+            document.getElementById('iconTemp4').style.color = 'yellow';
 
         } else if (newTemperature >= 28 && newTemperature <= 29) {
-            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Cuidado: Temperatura próxima de 30°C!';
+            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Temperatura próxima de 30°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'yellow';
             document.getElementById('textboxTemp').style.color = 'black';
             document.getElementById('textboxTemp').style.border = '1px solid black';
+            document.getElementById('iconTemp1').style.color = 'yellow';
+            document.getElementById('iconTemp2').style.color = 'red';
+            document.getElementById('iconTemp3').style.color = 'yellow';
+            document.getElementById('iconTemp4').style.color = 'white';
         }
         else if (newTemperature >= 21 && newTemperature <= 22) {
-            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Cuidado: Temperatura próxima de 20°C!';
+            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Temperatura próxima de 20°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'yellow';
             document.getElementById('textboxTemp').style.color = 'black';
             document.getElementById('textboxTemp').style.border = '1px solid black';
+            document.getElementById('iconTemp1').style.color = 'white';
+            document.getElementById('iconTemp2').style.color = 'yellow';
+            document.getElementById('iconTemp3').style.color = 'red';
+            document.getElementById('iconTemp4').style.color = 'yellow';
         }
         else if (newTemperature < 20) {
-            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> Alerta: Temperatura abaixo de 20°C!';
+            document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Temperatura abaixo de 20°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'red';
             document.getElementById('textboxTemp').style.color = 'white';
             document.getElementById('textboxTemp').style.border = '1px solid black';
+            document.getElementById('iconTemp1').style.color = 'yellow';
+            document.getElementById('iconTemp2').style.color = 'white';
+            document.getElementById('iconTemp3').style.color = 'yellow';
+            document.getElementById('iconTemp4').style.color = 'red';
         } else {
             // Caso a temperatura não esteja acima de 35°C, limpa o conteúdo e o estilo da div de texto
-            document.getElementById('textboxTemp').innerHTML = 'Tudo Sob-Controle Algodões Protegidos';
+            document.getElementById('textboxTemp').innerHTML = '<b>Tudo Sob-Controle Algodões Protegidos</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'white';
             document.getElementById('textboxTemp').style.color = 'black';
             document.getElementById('textboxTemp').style.border = '1px solid black';
