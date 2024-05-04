@@ -139,7 +139,7 @@
 
         <section id="section_areaDoUsuario" style="display: block;">
             <h1 style="font-size: 25px;">Área do Usuário</h1>
-            <img class="imgf" src="../SiteDashboard/assets/fazendaa.png" width="100px" alt="">
+            <img class="imgf" src="../SiteDashboard/assets/fazendaa.png" width="150px" alt="">
             <h3 class="mensagem">Fazenda Karpos</h3>
             <h3>Lotes:</h3>
             <div class="lotes">
@@ -336,7 +336,7 @@
 
         dht11Umidade.update();
 
-        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> <b>${newUmidad}%</b>`;
+        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> <b class="newUmi">${newUmidad}%</b>`;
 
         if (newUmidad > 70) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
@@ -446,7 +446,7 @@
         // Atualiza o gráfico
         lm35Temperatura.update();
 
-        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> <b>${newTemperature}ºC</b>`;
+        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> <b class="newTemp">${newTemperature}ºC</b>`;
 
         // Verifica se a temperatura ultrapassou 35°C
         if (newTemperature > 30) {
