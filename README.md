@@ -35,7 +35,7 @@ Alexandre Frizon: <a href="https://github.com/frizzon00" target="_blank"><img al
 Higor Tupinambá: <a href="https://github.com/higortupi/karpostech" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
-Lucas Gomes: <a href="hhttps://github.com/Lucas-G-Carvalho" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+Lucas Gomes: <a href="https://github.com/Lucas-G-Carvalho" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
 Marcelo Alves: <a href="https://github.com/marcelo-alves-silva" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
