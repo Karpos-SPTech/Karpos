@@ -55,8 +55,6 @@ function calcular() {
     cartaoOportunidade.querySelector('h2').textContent = 'Oportunidade';
     cartaoOportunidade.querySelector('p').innerHTML = `Olá ${nome_empresa.value}, Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b> sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
 
-    
-
     const total = 100 - porcentagemRecuperacao;
 
     // Verifica se o gráfico já foi criado
