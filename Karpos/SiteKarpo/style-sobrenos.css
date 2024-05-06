@@ -1,25 +1,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 5%;
     background-image: url(../SiteKarpo/assets/algodao.png);
     background-repeat: no-repeat;
     background-color: #241a11;
-    background-size: cover; /* ou background-size: contain; dependendo da preferência */
-    font-family: 'Inter', sans-serif; /* Aplicando a fonte Inter */
+    background-size: cover;
+    /* ou background-size: contain; dependendo da preferência */
+    font-family: 'Inter', sans-serif;
+    /* Aplicando a fonte Inter */
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 100px; /* Espaçamento do cabeçalho */
-    
+    padding: 40px 100px;
+
 }
 
 #logo-karpos img {
-    margin-left: auto; /* Espaçamento da esquerda */
+    margin-left: auto;
+    /* Espaçamento da esquerda */
 }
 
 ul {
@@ -31,12 +35,15 @@ ul {
 
 ul a {
     text-decoration: none;
-    color: #DBEAEC; /* Cor do texto do menu */
-    margin: 0 49px; /* Espaçamento entre os itens do menu */
+    color: #DBEAEC;
+    /* Cor do texto do menu */
+    margin: 0 49px;
+    /* Espaçamento entre os itens do menu */
 }
 
 #social-medias img {
-    margin-right: auto; /* Espaçamento da direita */
+    margin-right: auto;
+    /* Espaçamento da direita */
 }
 
 .containerPai{
@@ -50,8 +57,8 @@ ul a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 800px;
-    height: 350px;
+    width: 700px;
+    height: 150px;
     color: #DBEAEC;
     font-family: 'Inter', sans-serif;
     margin-top: 100px;
@@ -64,6 +71,7 @@ ul a {
     font-size: 60px;
     align-items: center;
     margin-bottom: 20px;
+    margin-right: 5vw;
 }
 
 .texto-sn {  
@@ -74,7 +82,7 @@ ul a {
 }
 
 .container2 {
-    font-size: 19px;
+    font-size: 16px;
     display: flex;
     justify-content: center ;
     align-items: center;
@@ -82,6 +90,5 @@ ul a {
     width: 350px;
     height: 500px;
     color: #DBEAEC ;
-    margin-top: 80px;
-
+    margin-top: 1px;
 }
