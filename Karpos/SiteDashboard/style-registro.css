@@ -60,6 +60,7 @@ body {
     font-weight: bold;
     font-size: 25px;
     color: #fff;
+    /* margin-top: -1px; */
 }
 
 .formulario p {
@@ -76,7 +77,7 @@ body {
     display: block;
     font-size: 15px;
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 .inputs{
    
@@ -89,19 +90,18 @@ body {
 
 .campo input {
     width: 93%;
-    height: 25px;
+    height: 13px;
     border-radius: 10px;
     border: none;
     background-color: #fff;
     padding: 10px;
     font-size: 16px;
-    
-    
+
 }
 
 .botao {
-    width: 310px;
-    height: 60px;
+    width: 280px;
+    height: 50px;
     background-color: #AA6550;
     border: none;
     border-radius: 10px;
@@ -111,10 +111,12 @@ body {
     box-shadow: 4px 4px 4px rgba(170, 101, 80, 0.5); 
     padding: 0; 
     margin: 0; 
-
     line-height: 65px; 
     cursor: pointer;
     text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 } 
 
 .registre-se {
@@ -142,8 +144,10 @@ body {
 }
 
 #div_alertasValidacao{
-    margin-top: 17px;
-    margin-left: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     color: #FF0000;
     text-align: center;
 }
