@@ -6,6 +6,7 @@ function registrar() {
     const documento = input_documento.value
     const documentacao = select_doc.value
     const select = select_doc.value
+    const token = token_input.value
     let verificarLetraMaiuscula = false
     let verificarCaracterEspecial = false
     let caracteresEspeciais = "!@#$%^&*(),.?/:{}|<>"
@@ -20,7 +21,9 @@ function registrar() {
         telefone == "" ||
         senhaConfirmada == "" ||
         documento == "" ||
-        select == "#") {
+        select == "#" ||
+        token == ""
+    ) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "PREENCHA TODOS <br> OS CAMPOS!"
 
@@ -45,9 +48,6 @@ function registrar() {
     } else if (documentacao == "rg" && documento.length < 9) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "O RG deve ter no mínimo 9 dígitos";
-    } else if (documentacao == "cnpj" && documento.length < 14) {
-        div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "O CNPJ deve ter no mínimo 14 dígitos";
     } else if (documentacao == "rne" && documento.length < 7) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "O RNE deve ter no mínimo 7 dígitos";
