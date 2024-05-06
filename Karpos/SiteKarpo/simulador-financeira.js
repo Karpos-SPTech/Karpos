@@ -1,59 +1,105 @@
+let myChart; // Variável global para armazenar o gráfico
+
+document.addEventListener("DOMContentLoaded", function () {
+    const botaoSimular = document.querySelector('.botaoSimular');
+    const resultadoSimulacao = document.querySelector('#resultadoSimulacao');
+    const conteudoContato = document.querySelector('.conteudo-contato');
+    const botaoFechar = document.querySelector('.fecharSimulacao');
+
+    botaoSimular.addEventListener('click', () => {
+        resultadoSimulacao.classList.add('ativa'); // Mostra o resultado da simulação
+        conteudoContato.classList.add('ativa'); // Oculta o conteúdo de contato
+    });
+
+    botaoFechar.addEventListener('click', () => {
+        resultadoSimulacao.classList.remove('ativa'); // Esconde o resultado da simulação
+        conteudoContato.classList.remove('ativa'); // Mostra o conteúdo de contato
+    });
+});
+
 function limpar() {
-    quantidade_perdas_input.value = ""
-    faturamento_input.value = ""
-    nome_empresa.value = ""
+    quantidade_perdas_input.value = "";
+    plantioMedio_input.value = "";
+    nome_empresa.value = "";
+    const tituloPaginaContato = document.querySelector('.titulo');
+    const subtituloPaginaContato = document.querySelector('.subtitulo');
+
+    tituloPaginaContato.textContent = "Bem vindo!";
+    subtituloPaginaContato.textContent = "Preencha o formulário abaixo e faremos um orçamento para a sua empresa";
 }
 
 function calcular() {
+    let perdaFungoCiclo = Number(quantidade_perdas_input.value);
+    let custoPlantioCiclo = Number(plantioMedio_input.value);
+    let porcentagemRecuperacao = (perdaFungoCiclo / custoPlantioCiclo) * 100;
 
+    let formatCustoPlantioCiclo = custoPlantioCiclo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let formatPerdaFungoCiclo = perdaFungoCiclo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    const faturamentoAnual = Number(faturamento_input.value)
-    const qtdPerda = Number(quantidade_perdas_input.value)
-    let valorLiquido = faturamentoAnual - qtdPerda
-    let aumentoLiquido = valorLiquido * 1.75
-    let aumentoLiquidoAnual = aumentoLiquido * 12
-    let qtdPerdaAnual = qtdPerda * 12
-    let valorLiquidoAnual = valorLiquido * 12
+    const tituloPaginaContato = document.querySelector('.titulo');
+    const subtituloPaginaContato = document.querySelector('.subtitulo');
 
+    tituloPaginaContato.textContent = "Simulação Pronta!";
+    subtituloPaginaContato.textContent = "Aqui está a sua simulação de perdas e o quanto você pode lucrar com a nossa solução";
 
-    //formatando as variáveis de números
-    let formatFaturamentoAnual = faturamentoAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    let formatqtdPerda = qtdPerda.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    let formatvalorLiquido = valorLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    let formataumentoLiquido = aumentoLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    let formatvalorLiquidoAnual = valorLiquidoAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    let formatqtdPerdaAnual = qtdPerdaAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    let formataumentoLiquidoAnual = aumentoLiquidoAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-   
-
-    const botaoSimular = document.querySelector('.botaoSimular');
-    const resultadoSimulacao = document.querySelector('#resultadoSimulacao');
-
-    botaoSimular.addEventListener('click', () => {
-        resultadoSimulacao.classList.add('ativa');
-    });
-
-    const botaoFechar = document.querySelector('.fecharSimulacao');
-
-    botaoFechar.addEventListener('click', () => {
-        resultadoSimulacao.classList.remove('ativa');
-    });
-
-    const cartaoPossibilidade = document.querySelector('.cartao:nth-child(1)');
+    const cartaoCustoPlantio = document.querySelector('.cartao:nth-child(1)');
     const cartaoPerda = document.querySelector('.cartao:nth-child(2)');
     const cartaoOportunidade = document.querySelector('.cartao:nth-child(3)');
-    const nomeEmpresaa = document.querySelector('.empresaNome');
 
-    // nomeEmpresaa.querySelector('p').textContent = `Olá ${nomeEmpresa} aqui está a sua simulação de perdas e o quanto você pode lucrar com a nossa solução`
-    nomeempresa.innerHTML = `Olá ${nome_empresa.value} aqui está a sua simulação de perdas e o quanto você pode lucrar com a nossa solução <p>A análise que fizemos sobre os seus resultados revelou alguns insights cruciais: Devido a <span class="italico">falta de monitoramento de temperatura e umidade</span>, o fungo pode estar comprometendo o seu faturamento anual e a qualidade do seu produto<p/>
-        <p>De acordo com uma pesquisa feita pela  <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1112910/1/BOL100ManchaRamularia.pdf" target="blank">Embrapa</a>, uma plantação de algodão pode ser prejudicada <span class="destaque">em até 75%</span> devido a presença do fungo Mancha de Ramulária (o principal fungo das plantações de algodão).</p>                                                         `
+    cartaoCustoPlantio.querySelector('h2').textContent = 'Custo total do Plantio';
+    cartaoCustoPlantio.querySelector('p').innerHTML = `<b>${formatCustoPlantioCiclo}</b>`;
 
-    cartaoPossibilidade.querySelector('h2').textContent = 'Possibilidade de Lucro Atual';
-    cartaoPossibilidade.querySelector('p').textContent = `Anual: ${formatvalorLiquidoAnual} \nMensal: ${formatvalorLiquido}`;
-
-    cartaoPerda.querySelector('h2').textContent = 'Perda por Fungo';
-    cartaoPerda.querySelector('p').textContent = `Anual: ${formatqtdPerdaAnual}`;
+    cartaoPerda.querySelector('h2').textContent = 'Média de perda por ciclo';
+    cartaoPerda.querySelector('p').innerHTML = `<b style="color:red;">${formatPerdaFungoCiclo}</b>`;
 
     cartaoOportunidade.querySelector('h2').textContent = 'Oportunidade';
-    cartaoOportunidade.querySelector('p').textContent = `Faturamento Anual: ${formataumentoLiquidoAnual} \nFaturamento Mensal: ${formataumentoLiquido}`;
+    cartaoOportunidade.querySelector('p').innerHTML = `Olá ${nome_empresa.value}, Com base nos dados informados anteriormente, nosso projeto <br>será capaz de <b>reduzir</b> sua perda em até <b>${porcentagemRecuperacao.toFixed(2)}%</b>`;
+
+    
+
+    const total = 100 - porcentagemRecuperacao;
+
+    // Verifica se o gráfico já foi criado
+    if (!myChart) {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Custo Total do Plantio', 'Média de Perda por Ciclo'],
+                datasets: [{
+                    label: 'Valores',
+                    data: [total, porcentagemRecuperacao],
+                    backgroundColor: [
+                        '#a17f6c',
+                        '#805b46'
+                    ],
+                    borderColor: [
+                        '#745c4f',
+                        '#50392c'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'black' // Define a cor das labels como vermelho
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        display: false
+                    }
+                }
+            }
+        });
+    } else {
+        // Atualiza os valores dos dados com os novos valores
+        myChart.data.datasets[0].data = [total, porcentagemRecuperacao];
+        // Atualiza o gráfico
+        myChart.update();
+    }
 }

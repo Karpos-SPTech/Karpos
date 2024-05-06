@@ -2,10 +2,10 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 5%;
     background-image: url(../SiteKarpo/assets/algodao.png);
     background-repeat: no-repeat;
-    background-color: #38291b;
+    background-color: #241a11;
     background-size: cover;
     /* ou background-size: contain; dependendo da preferência */
     font-family: 'Inter', sans-serif;
@@ -17,7 +17,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 40px 100px;
-    /* Espaçamento do cabeçalho */
 
 }
 
