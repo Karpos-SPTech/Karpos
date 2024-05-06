@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Estilos gerais */
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #241a11;
+    padding: 0 5%;
     background-image: url(../SiteKarpo/assets/algodao.png);
     background-repeat: no-repeat;
+    background-color: #241a11;
     background-size: cover;
+    /* ou background-size: contain; dependendo da preferência */
+    font-family: 'Inter', sans-serif;
+    /* Aplicando a fonte Inter */
+    overflow-y: scroll;
+    height: 119vh;
 }
 
 header {
@@ -16,10 +19,12 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 40px 100px;
+
 }
 
 #logo-karpos img {
     margin-left: auto;
+    /* Espaçamento da esquerda */
 }
 
 ul {
@@ -32,19 +37,21 @@ ul {
 ul a {
     text-decoration: none;
     color: #DBEAEC;
+    /* Cor do texto do menu */
     margin: 0 49px;
+    /* Espaçamento entre os itens do menu */
 }
 
 #social-medias img {
     margin-right: auto;
+    /* Espaçamento da direita */
 }
-
 /* Estilos para a página de contato */
 .pagina-contato {
     width: 1029px;
     margin: 40px auto 20px;
+    margin-top: -8vh;
 }
-
 .container {
     display: flex;
     height: 100%;
@@ -123,8 +130,8 @@ ul a {
     max-width: 900px;
     height: auto;
     background-color: #DBB19B;
-    position: fixed;
-    top: 70%;
+    position: absolute;
+    top: 87%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 50px 50px #b99a7933;
@@ -133,11 +140,13 @@ ul a {
     border-radius: 40px;
     padding: 20px;
     display: none;
+    margin-top: 10vh;
 }
 
 #resultadoSimulacao.ativa {
     display: block;
     opacity: 1;
+    margin-top: -9vh;
 }
 
 .conteudo-contato.ativa {
