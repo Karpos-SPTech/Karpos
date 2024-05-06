@@ -2,7 +2,7 @@ CREATE DATABASE karposTech;
 
 USE karposTech;
 create table empresa(
-idEmpresa int primary key auto_increment,
+token int primary key auto_increment,
 nome varchar(45),
 cnpj char(14),
 cep CHAR(9),
@@ -21,8 +21,8 @@ create table usuario (
     senha varchar(30) not null,
     documento varchar(14) unique,
 	telefone varchar(11),
-    fkEmpresa int, constraint fkEmpresaUsuario
-    foreign key(fkEmpresa) references empresa(idEmpresa)
+    fkToken int, constraint fkEmpresaUsuario
+    foreign key(fktoken) references empresa(token)
 );
 
 insert into usuario values
