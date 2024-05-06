@@ -82,7 +82,21 @@ function registrar() {
 }
 
 function login() {
-    window.location.href = "index.html";
+    const email = input_email.value
+    const senha = input_senha.value
+
+    if (senha == "" || email == "") {
+        div_paiAlertas.style.display = 'block';
+        div_alertasValidacao.innerHTML = "PREENCHA TODOS <br> OS CAMPOS!" 
+    } else if(email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        div_paiAlertas.style.display = 'block';
+        div_alertasValidacao.innerHTML = "DIGITE O E-MAIL CORRETO"
+    } else if(senha != 1){
+        div_paiAlertas.style.display = 'block';
+        div_alertasValidacao.innerHTML = "DIGITE A SENHA CORRETA"
+    } else {
+        window.location.href = "index.html";
+    }
 }
 
 function exit() {
