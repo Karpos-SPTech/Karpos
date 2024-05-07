@@ -140,7 +140,9 @@ body {
     background-color:#fff;
     border-radius: 10px;
     border: solid 2px #ff0000;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #div_alertasValidacao{
@@ -150,6 +152,7 @@ body {
     align-items: center;
     color: #FF0000;
     text-align: center;
+    height: 100%;
 }
 
 

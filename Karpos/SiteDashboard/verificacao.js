@@ -25,8 +25,7 @@ function registrar() {
         token == ""
     ) {
         div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "PREENCHA TODOS <br> OS CAMPOS!"
-
+        div_alertasValidacao.innerHTML = `PREENCHA TODOS OS CAMPOS!`
     }
     // verificação telefone
     else if (telefone.length < 11 || telefone.length > 11) {
