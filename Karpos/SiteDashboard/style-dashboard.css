@@ -403,6 +403,7 @@ transition: 0.1s;
     background-color: #AA6550;
     color: white;
     font-weight: 500;
+    flex-direction: column;
 }
 
 #tempo1 {
@@ -417,6 +418,7 @@ transition: 0.1s;
     background-color: #AA6550;
     color: white;
     font-weight: 500;
+    flex-direction: column;
 }
 
 .fazenda {
@@ -433,8 +435,8 @@ transition: 0.1s;
     font-size: 16px;
     flex-direction: column;
     font-weight: 500;
-    border: #745c4f;
-    border: #50392c;
+    border: 1px solid black;
+    
 }
 
 #tempData {
