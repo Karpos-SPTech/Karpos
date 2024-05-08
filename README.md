@@ -1,4 +1,4 @@
-# 🐑 Karpós Dash
+# 🐑 Karpos Dash
 
 Um projeto Karpós Tech
 
