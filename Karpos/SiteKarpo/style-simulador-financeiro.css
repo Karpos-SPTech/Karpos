@@ -70,12 +70,14 @@ ul a {
 .grafico-container {
     flex: 1;
     width: 50%;
-    margin-left: 10px; /* Espaço entre os elementos */
+    display: flex;
+    justify-content: center;
 }
 
 #myChart {
     width: 100%;
     height: auto;
+    margin-top: 20%;
 }
 
 .logo-contato {
