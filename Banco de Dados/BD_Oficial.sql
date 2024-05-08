@@ -1,6 +1,7 @@
 CREATE DATABASE karposTech;
 
 USE karposTech;
+
 create table empresa(
 token int primary key auto_increment,
 nome varchar(45),
@@ -37,8 +38,8 @@ tempIdealMin float,
 tempIdealMax float,
 tempMin float,
 tempMax float,
-UmidadeMax float,
-UmidadeMin float
+UmidadeMin float,
+UmidadeMax float
 )auto_increment=100;
 
 insert into parametros values
@@ -50,11 +51,10 @@ create table fazenda (
     nome varchar(45),
 	cep char(9) not null,
     numEnd varchar(45),
-	hectares float not null,
+	qtdLotes int,
 	qtdSensores int not null,
     	fkEmpresa int, constraint fkEmpresaFazenda
-    foreign key(fkEmpresa) references empresa(idEmpresa),
-    
+    foreign key(fkEmpresa) references empresa(token),
 		fkParametro int, constraint fkFazendaParametro
 	foreign key (fkParametro) references parametros(idParametro)
 );
@@ -83,29 +83,24 @@ create table dados(
 idDados int auto_increment,
 fkSensor int, primary key(idDados,fkSensor),
 dtHorario datetime,
-valorSensor decimal (5,2),
-valor decimal(4,2),
+temperatura decimal (5,2),
+umidade decimal (5,2),
+valorMockado decimal(4,2),
 constraint fkdadosSensor foreign key (fkSensor)
 references sensor(idSensor));
 
 insert into dados values
-(default,1,'2024-05-03 14:00:00',30.05,1),
-(default,1,'2024-05-03 15:00:00',25.40,1),
-(default,1,'2024-05-03 16:00:00',26.00,1),
-(default,1,'2024-05-03 16:30:00',24.90,1),
-(default,1,'2024-05-03 16:40:00',19.55,1),
-(default,2,'2024-05-04 19:00:00',28.12,0.8),
-(default,2,'2024-05-04 19:10:00',32.10,0.8),
-(default,2,'2024-05-06 10:40:00',30.20,0.8),
-(default,3,'2024-05-04 15:30:00',74.10,1),
-(default,3,'2024-05-04 15:52:00',60.10,1),
-(default,3,'2024-05-05 11:20:00',65.40,1),
-(default,3,'2024-05-05 11:22:00',64.90,1);
+(default,1,'2024-05-03 14:00:00',30.05,60.40, 1),
+(default,1,'2024-05-03 15:00:00',25.40,62.32, 1),
+(default,2,'2024-05-04 19:00:00',28.12,57.10, 0.8),
+(default,2,'2024-05-04 19:10:00',32.10,59.12, 0.8),
+(default,2,'2024-05-06 10:40:00',30.20,58.12, 0.8);
 
+-- dados fora do padrão -------------------------------------------------------------------------------------------------------------------------------------
 insert into dados values
-(default,1,'2024-05-03 14:00:00',38.05,1),
-(default,1,'2024-05-03 14:00:00',39.40,1),
-(default,2,'2024-05-03 14:00:00',15.12,1);
+(default,1,'2024-05-03 14:00:00',38.05,80.23, 1),
+(default,1,'2024-05-03 14:00:00',39.40,87.15, 1),
+(default,2,'2024-05-03 14:00:00',15.12,90.99, 1);
 
 select * from dados;
 
@@ -115,19 +110,19 @@ FROM usuario;
 select * from sensor;
 
 create view captura as
-select s.idSensor , s.tipo, d.dtHorario as 'Horario de captura', round(d.valorSensor*d.valor,2) as Valor from dados as d join sensor as s order by idSensor;
+select s.idSensor , s.tipo, d.dtHorario as 'Horario de captura', round(d.temperatura*d.valorMockado,2) as Valor from dados as d join sensor as s order by idSensor;
 
 create view Estavel as
-SELECT  p.tempMin as tempMin,d.valorSensor as valor, p.tempMax as tempMax
+SELECT  d.fkSensor as sensor,p.tempMin as tempMin,d.temperatura as temperatura, p.tempMax as tempMax
 FROM parametros as p join dados as d
-WHERE valorSensor >= tempMin
-AND valorSensor <= tempMax;
+WHERE temperatura >= tempMin
+AND temperatura <= tempMax;
 
 create view Alerta as
-SELECT  d.fkSensor as sensor, p.tempMin as tempMin,d.valorSensor as valor, p.tempMax as tempMax
+SELECT  d.fkSensor as sensor, p.tempMin as tempMin,d.temperatura as valor, p.tempMax as tempMax
 FROM parametros as p join dados as d
-WHERE d.valorSensor <= tempMin
-or d.valorSensor >= tempMax and d.fkSensor in(1,2) order by d.fkSensor;
+WHERE d.temperatura <= tempMin
+or d.temperatura >= tempMax and d.fkSensor in(1,2) order by d.fkSensor;
 
 -- Trás todos os dados que estão dentro dos parâmetros estabelecidos
 select * from Estavel;

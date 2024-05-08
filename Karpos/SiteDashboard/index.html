@@ -249,7 +249,7 @@
         </section>
         <section id="section_tabelas" style="display: none;">
             <h1>Área das tabelas</h1>
-            <h3 style="display: flex; justify-content: center; margin-bottom: 1%;">Últimas 20 Leituras</h3>
+            <h3 style="display: flex; justify-content: center; margin-bottom: 1%;">Últimas 15 Leituras</h3>
             <table id="dadosTabela">
                 <thead>
                     <tr>
@@ -583,7 +583,7 @@
         var numeroLinhas = tabela.rows.length;
 
         // Se o número de linhas for igual a 15, remove a última linha antes de adicionar uma nova
-        if (numeroLinhas === 20) {
+        if (numeroLinhas === 15) {
             tabela.deleteRow(numeroLinhas - 1); // Remove a última linha
         }
 
