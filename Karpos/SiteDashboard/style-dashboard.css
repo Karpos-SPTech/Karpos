@@ -128,7 +128,6 @@ main {
     background-color: transparent;
     color: white;
     margin-left: 18%;
-    width: 3vw;
 }
 
 #open_btn {
@@ -639,3 +638,18 @@ transition: 0.1s;
     border: 1px solid black;
 }
 
+.divSelect{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1%;
+}
+#loteEspecifico{
+    border-radius: 5px;
+    background-color: #263238;
+    color: white;
+    font-weight: 600;
+    height: 30px;  
+    font-size: 16px;  
+}
