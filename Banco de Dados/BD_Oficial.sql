@@ -112,23 +112,23 @@ select * from sensor;
 create view captura as
 select s.idSensor , s.tipo, d.dtHorario as 'Horario de captura', round(d.temperatura*d.valorMockado,2) as Valor from dados as d join sensor as s order by idSensor;
 
-create view Estavel as
+create view estavel as
 SELECT  d.fkSensor as sensor,p.tempMin as tempMin,d.temperatura as temperatura, p.tempMax as tempMax
 FROM parametros as p join dados as d
 WHERE temperatura >= tempMin
 AND temperatura <= tempMax;
 
-create view Alerta as
+create view alerta as
 SELECT  d.fkSensor as sensor, p.tempMin as tempMin,d.temperatura as valor, p.tempMax as tempMax
 FROM parametros as p join dados as d
 WHERE d.temperatura <= tempMin
 or d.temperatura >= tempMax and d.fkSensor in(1,2) order by d.fkSensor;
 
 -- Trás todos os dados que estão dentro dos parâmetros estabelecidos
-select * from Estavel;
+select * from estavel;
 
 -- Trás todos os dados que estão fora dos parâmetros estabelecidos
-select * from Alerta;
+select * from alerta;
 
 -- Trás todos os dados capturados, tanto temperatura quanto umidade
 select * from captura;
