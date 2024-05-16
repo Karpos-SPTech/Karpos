@@ -51,7 +51,7 @@ function calcular() {
         myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Custo Total do Plantio', 'Média de Perda por Ciclo'],
+                labels: ['Custo Total do Plantios(%)', 'Média de Perda por Ciclo(%)'],
                 datasets: [{
                     data: [total, porcentagem_recuperacao],
                     backgroundColor: ['#a17f6c', '#805b46'],
