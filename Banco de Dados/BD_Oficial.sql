@@ -16,38 +16,36 @@ nome varchar(45),
 cnpj char(14),
 cep CHAR(9),
 numEnd varchar(45),
-complemento varchar(45));
+complemento varchar(45)) auto_increment=1555;
 
 insert into empresa values
 (default,'Caramico Cloud','01456963849','03560-340','450A','Jardim Santa Helena'),
 (default,'Karpos Ltda','85738693019','04980-400','320','Bairro do Limoeiro');
 
+select * from empresa;
 -- Tabela que armazenara os dados do produtor de algodão
 create table usuario (
     idUsuario  int primary key auto_increment,
     nome varchar(50) not null,
     email varchar(100) not null unique,
     senha varchar(30) not null,
-    documento varchar(14) unique,
+     cpf char(14),
 	telefone varchar(11),
-    fkToken int, constraint fkEmpresaUsuario
-    foreign key(fktoken) references empresa(token)
+    fkToken int,
+    constraint fkEmpresaUsuario foreign key(fktoken) references empresa(token)
 );
-
-insert into usuario values
-(default,'Fernanda Caramico','fernanda.caramico@sptech.school','fern4nd4c4r4m1c0','12345678900','11924356879',1),
-(default,'Mauricio Almeida','mauricio.almeida@sptech.school','m4ur1c104lmeid4','12345678901','11924356878',2);
-
-
 
 create table parametros(
 idParametro int primary key auto_increment,
+tempMax float,
 tempIdealMin float,
 tempIdealMax float,
+tempIdeal float,
 tempMin float,
-tempMax float,
-UmidadeMin float,
-UmidadeMax float
+umidadeMin float,
+umidadeIdealMin float,
+umidadeIdealMax float,
+umidadeMax float
 )auto_increment=100;
 
 insert into parametros values
@@ -60,7 +58,6 @@ create table fazenda (
 	cep char(9) not null,
     numEnd varchar(45),
 	qtdLotes int,
-	qtdSensores int not null,
     	fkEmpresa int, constraint fkEmpresaFazenda
     foreign key(fkEmpresa) references empresa(token),
 		fkParametro int, constraint fkFazendaParametro
@@ -87,30 +84,18 @@ insert into sensor values
 (default,'lm35Temperatura',1),
 (default,'dht11Umidade',1);
 
-create table dados(
+create table capturaDoSensor(
 idDados int auto_increment,
 fkSensor int, primary key(idDados,fkSensor),
 dtHorario datetime,
 temperatura decimal (5,2),
 umidade decimal (5,2),
-valorMockado decimal(4,2),
 constraint fkdadosSensor foreign key (fkSensor)
 references sensor(idSensor));
 
-insert into dados values
-(default,1,'2024-05-03 14:00:00',30.05,60.40, 1),
-(default,1,'2024-05-03 15:00:00',25.40,62.32, 1),
-(default,2,'2024-05-04 19:00:00',28.12,57.10, 0.8),
-(default,2,'2024-05-04 19:10:00',32.10,59.12, 0.8),
-(default,2,'2024-05-06 10:40:00',30.20,58.12, 0.8);
+
 
 -- dados fora do padrão -------------------------------------------------------------------------------------------------------------------------------------
-insert into dados values
-(default,1,'2024-05-03 14:00:00',38.05,80.23, 1),
-(default,1,'2024-05-03 14:00:00',39.40,87.15, 1),
-(default,2,'2024-05-03 14:00:00',15.12,90.99, 1);
-
-select * from dados;
 
 SELECT concat('O(a) produtor(a) ', nome, ' possui o email ', email) 
 FROM usuario;
@@ -140,10 +125,3 @@ select * from vw_alerta;
 
 -- Trás todos os dados capturados, tanto temperatura quanto umidade
 select * from vw_captura;
-
-create table dadosTeste(
-idDados int auto_increment primary key,
-dtHorario datetime,
-temperatura decimal (5,2),
-umidade decimal (5,2)
-);

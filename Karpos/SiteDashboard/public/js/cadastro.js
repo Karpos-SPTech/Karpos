@@ -1,11 +1,14 @@
 function registrar() {
+  
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    const nome = input_nome.value
     const senha = input_senha.value
     const telefone = input_telefone.value
     const email = input_email.value
     const senhaConfirmada = input_senhaConfirmada.value
     const documento = input_documento.value
-    const documentacao = select_doc.value
-    const select = select_doc.value
     const token = token_input.value
     let verificarLetraMaiuscula = false
     let verificarCaracterEspecial = false
@@ -13,16 +16,14 @@ function registrar() {
     let letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     let senhaValidada = false
 
-
-
-    // verificação de campos
     if (email == "" ||
         senha == "" ||
         telefone == "" ||
         senhaConfirmada == "" ||
         documento == "" ||
         select == "#" ||
-        token == ""
+        token == "" ||
+        nome == ""
     ) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = `PREENCHA TODOS OS CAMPOS!`
@@ -41,15 +42,9 @@ function registrar() {
     else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "DIGITE UM E-MAIL VÁLIDO!"
-    } else if (documentacao == "cpf" && documento.length < 11) {
+    } else if (documento.length < 14) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "O CPF deve ter no mínimo 11 dígitos";
-    } else if (documentacao == "rg" && documento.length < 9) {
-        div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "O RG deve ter no mínimo 9 dígitos";
-    } else if (documentacao == "rne" && documento.length < 7) {
-        div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "O RNE deve ter no mínimo 7 dígitos";
     }
     // verificação de senha
     else if (senha.length < 8) {
@@ -74,31 +69,70 @@ function registrar() {
         if (senhaValidada == false) {
             div_paiAlertas.style.display = 'block';
             div_alertasValidacao.innerHTML = "DIGITE UMA SENHA COM CARACTER ESPECIAL E LETRA MAISCULA"
-        } else {
-            window.location.href = "login.html";
-        }
+        } 
     }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nome,
+            emailServer: email,
+            senhaServer: senha,
+            documentoServer: documento,
+            telefoneServer: telefone,
+            empresaServer: token
+           
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                div_alertasValidacao.style.display = "block";
+
+                div_alertasValidacao.innerHTML =
+                    "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000");
+
+                limparFormulario();
+            
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+         
+        });
+
+    return false;
 }
 
-function login() {
-    const email = input_email.value
-    const senha = input_senha.value
-
-    if (senha == "" || email == "") {
-        div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "PREENCHA TODOS <br> OS CAMPOS!" 
-    } else if(email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-        div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "DIGITE O E-MAIL CORRETO"
-    } else if(senha != 1){
-        div_paiAlertas.style.display = 'block';
-        div_alertasValidacao.innerHTML = "DIGITE A SENHA CORRETA"
-    } else {
-        window.location.href = "index.html";
-    }
+function listar() {
+    fetch("/empresas/listar", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((empresas) => {
+                empresas.forEach((empresa) => {
+                    token_input.innerHTML += `<option value='${empresa.token}'>${empresa.cnpj}</option>`;
+                });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
 }
 
-function exit() {
-    window.location.href = "tela_inicial_dashb.html";
+function sumirMensagem() {
+    div_alertasValidacao.style.display = "none";
 }
-
