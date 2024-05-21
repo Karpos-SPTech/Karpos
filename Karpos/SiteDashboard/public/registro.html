@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../SiteDashboard/assets/logo-contato.png" type="image/x-icon">
-    <link rel="stylesheet" href="style-registro.css">
+    <link rel="shortcut icon" href="/assets/logo-contato.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style-registro.css">
     <title>Karpos Dash</title>
 </head>
 
@@ -15,7 +15,7 @@
         <div class="formulario">
             <h2>Registre-se</h2>
             <p>Preencha o formulário abaixo para se cadastrar</p>
-            <form>
+            <div>
                 <div class="inputs">
                     <div class="campo">
                         <label for="token">Token da Empresa</label>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="campo">
                         <label for="email">Nome</label>
-                        <input type="nome" id="input_email" name="email" placeholder="Seu Nome">
+                        <input type="nome" id="input_nome" name="email" placeholder="Seu Nome">
                     </div>
                     <div class="campo">
                         <label for="email">Endereço de email</label>
@@ -42,36 +42,31 @@
                         <input type="number" id="input_telefone" name="telefone" placeholder="Seu telefone">
                     </div>
                     <div class="campo">
-                        <label for="documento">Documento</label>
+                        <label for="documento">CPF</label>
                         <div class="documento">
-                        <input type="number" id="input_documento" name="documento" placeholder="Seu documento">
-                        <select id="select_doc" name="documento_select" placeholder="Seu documento">
-                            <option value="#">---</option>
-                            <option value="cpf">CPF</option>
-                            <option value="rg">RG</option>
-                            <option value="rne">RNE</option>
-                        </select>
+                            <input type="number" id="input_documento" name="documento" placeholder="xxx-xxx-xxx.xx">
                         </div>
                     </div>
                 </div>
                 <button type="button" class="botao" id="login_btn" onclick="registrar()">Registre-se</button>
                 <p class="registre-se">Já tem uma conta? <a href="login.html">Entre aqui</a></p>
-            </form>
+            </div>
         </div>
     </div>
     <div class="esquerda">
         <div id="div_paiAlertas">
-        <div id="div_alertasValidacao"></div>
+            <div id="div_alertasValidacao"></div>
         </div>
         <div class="logo">
-            <img src="../SiteDashboard/assets/Vector.png" alt="Logo">
+            <img src="assets/Vector.png" alt="Logo">
         </div>
         <div class="vetor">
-            <img src="../SiteDashboard/assets/Mobile login-pana 1.png" alt="Vetor" height="400px">
+            <img src="assets/Mobile login-pana 1.png" alt="Vetor" height="400px">
         </div>
-        
+
     </div>
     <!-- </div> -->
 </body>
+
 </html>
-<script src="verificacao.js"></script>
+<script src="js/cadastro.js"></script>

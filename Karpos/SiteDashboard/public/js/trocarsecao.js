@@ -277,3 +277,7 @@ var usuario = document.getElementById("section_areaDoUsuario");
     areaUsuario.classList.remove("active");
     areaTabelas.classList.remove("active")
   });
+
+  function exit() {
+    window.location.href = "index.html";
+}

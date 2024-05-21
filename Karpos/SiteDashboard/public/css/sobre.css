@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../SiteDashboard/assets/fundo-fashboard-sobre.png);
+    background-image: url(../assets/fundo-fashboard-sobre.png);
     background-repeat: no-repeat;
     background-color: #AA6550;
     background-size: cover; /* ou background-size: contain; dependendo da preferência */

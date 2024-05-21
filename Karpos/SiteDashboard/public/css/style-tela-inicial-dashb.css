@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../SiteDashboard/assets/background-Dash.jpg);
+    background-image: url(../assets/background-Dash.jpg);
     background-repeat: no-repeat;
     background-color: #AA6550;
     background-size: cover; /* ou background-size: contain; dependendo da preferência */
