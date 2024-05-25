@@ -11,7 +11,7 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #ceafa5;
+    background-color: #fff2ef;
 }
 
 main {
@@ -232,9 +232,9 @@ main {
 
 
 .boxlote:hover {
-border: 6px outset rgb(117, 74, 49);
-background-color: #AA6550;
-transition: 0.1s;
+    border: 6px outset rgb(117, 74, 49);
+    background-color: #AA6550;
+    transition: 0.1s;
 }
 
 .lotes {
@@ -319,7 +319,7 @@ transition: 0.1s;
 
 }
 
-.lotesbox{
+.lotesbox {
     margin-top: 5%;
     display: flex;
     justify-content: space-around;
@@ -329,6 +329,7 @@ transition: 0.1s;
 #setor {
     font-size: 18px;
 }
+
 #setor1 {
     font-size: 18px;
 }
@@ -435,7 +436,7 @@ transition: 0.1s;
     flex-direction: column;
     font-weight: 500;
     border: 1px solid black;
-    
+
 }
 
 #tempData {
@@ -454,7 +455,7 @@ transition: 0.1s;
     flex-direction: column;
 }
 
-.newTemp{
+.newTemp {
     font-size: 40px;
     color: rgb(255, 255, 255);
 }
@@ -473,7 +474,8 @@ transition: 0.1s;
     font-size: 17px;
     flex-direction: column;
 }
-.newUmi{
+
+.newUmi {
     font-size: 40px;
     color: rgb(255, 255, 255);
 }
@@ -534,7 +536,7 @@ transition: 0.1s;
 
 .icon1 {
     font-size: 22px;
-    
+
 }
 
 #dadosTabela {
@@ -543,7 +545,8 @@ transition: 0.1s;
     margin: auto;
 }
 
-#dadosTabela th, #dadosTabela td {
+#dadosTabela th,
+#dadosTabela td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -554,7 +557,7 @@ transition: 0.1s;
     color: #fff;
 }
 
-.legenda{
+.legenda {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -562,7 +565,7 @@ transition: 0.1s;
     height: 95px;
 }
 
-.legendaicones{
+.legendaicones {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -570,22 +573,25 @@ transition: 0.1s;
     height: 70px;
     margin-right: 5%;
 }
-.temp{
+
+.temp {
     font-size: 15px;
     color: #000000;
     font-weight: 500;
 }
-.tempe{
+
+.tempe {
     margin-bottom: 3%;
 }
-.legendacores{
+
+.legendacores {
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-left: 5%;
 }
 
-.branco{
+.branco {
     display: flex;
     justify-content: start;
     flex-direction: row;
@@ -594,7 +600,8 @@ transition: 0.1s;
     width: 100%;
     margin-bottom: 2%;
 }
-.amarelo{
+
+.amarelo {
     display: flex;
     justify-content: start;
     flex-direction: row;
@@ -603,7 +610,8 @@ transition: 0.1s;
     width: 240px;
     margin-bottom: 2%;
 }
-.vermelho{
+
+.vermelho {
     display: flex;
     justify-content: start;
     flex-direction: row;
@@ -612,44 +620,63 @@ transition: 0.1s;
     width: 100%;
 }
 
-.corb{
+.corb {
     width: 17px;
-    height:17px;
+    height: 17px;
     background-color: white;
     display: block;
     margin-right: 1%;
     border: 1px solid black;
 }
 
-.cora{
+.cora {
     width: 17px;
-    height:17px;
+    height: 17px;
     background-color: yellow;
     display: block;
     margin-right: 1%;
     border: 1px solid black;
 }
-.corv{
+
+.corv {
     width: 17px;
-    height:17px;
+    height: 17px;
     background-color: red;
     display: block;
     margin-right: 1%;
     border: 1px solid black;
 }
 
-.divSelect{
+.divSelect {
     display: flex;
     justify-content: center;
     flex-direction: row;
     width: 100%;
     margin-bottom: 1%;
 }
-#loteEspecifico{
+
+#loteEspecifico {
     border-radius: 5px;
     background-color: #263238;
     color: white;
     font-weight: 600;
-    height: 30px;  
-    font-size: 16px;  
+    height: 30px;
+    font-size: 16px;
+}
+
+.grafico-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.grafico-item {
+    flex: 1 1 80%; /* Faz com que cada item tenha pelo menos 45% do espaço disponível */
+    min-width: 300px; /* Define uma largura mínima para cada gráfico */
+}
+
+.grafico-item canvas {
+    width: 100%; /* Faz com que os gráficos se ajustem à largura do contêiner */
+    height: auto; /* Mantém a proporção dos gráficos */
 }
