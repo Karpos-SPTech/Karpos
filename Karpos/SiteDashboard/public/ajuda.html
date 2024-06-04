@@ -43,40 +43,79 @@
         <h1 class="titulo1">Dúvidas?</h1>
     </div>
     <ul class="duvidas-frequentes">
-        <a href="" class="click">
+        <a href="#click" class="click">
             <li class="item1">
                 <div class="painel-item">
-                        <h3 class="texto-item">Como os sensores LM-35 e DHT-11 ajudam no monitoramento da plantação de algodão?</h3>
-                        <div class="explicacao">
-                            <p>Os sensores LM-35 e DHT-11 são utilizados para medir a temperatura e umidade do ambiente onde a plantação de algodão está localizada. Esses dados são essenciais para garantir que as condições ideais para o cultivo do algodão sejam mantidas e para prevenir o desenvolvimento do fungo da ramulária, que é favorecido por certos níveis de temperatura e umidade.</p>
-                        </div>
+                    <h3 class="texto-item">Como os sensores LM-35 e DHT-11 ajudam no monitoramento da plantação de
+                        algodão?</h3>
+                    <div class="explicacao">
+                        <p>Os sensores LM-35 e DHT-11 são utilizados para medir a temperatura e umidade do ambiente onde
+                            a plantação de algodão está localizada. Esses dados são essenciais para garantir que as
+                            condições ideais para o cultivo do algodão sejam mantidas e para prevenir o desenvolvimento
+                            do fungo da ramulária, que é favorecido por certos níveis de temperatura e umidade.</p>
+                    </div>
                 </div>
             </li>
         </a>
-        <a href="" class="click">
+        <a href="#click" class="click">
             <li class="item2">
                 <div class="painel-item">
-                        <h3 class="texto-item">Qual é a importância da temperatura e umidade na prevenção do desenvolvimento do fungo da ramulária?</h3>
+                    <h3 class="texto-item">Qual é a importância da temperatura e umidade na prevenção do desenvolvimento
+                        do fungo da ramulária?</h3>
+                    <div class="explicacao">
+                        <p>A temperatura e umidade adequadas são essenciais para evitar o desenvolvimento do fungo da
+                            ramulária na plantação de algodão. Condições de alta umidade e temperatura são favoráveis ao
+                            crescimento e propagação deste fungo, portanto, monitorar e manter esses fatores dentro de
+                            níveis ideais ajuda a prevenir infestações. </p>
+                    </div>
                 </div>
             </li>
         </a>
-        <a href="" class="click">
+        <a href="#click" class="click">
             <li class="item3">
                 <div class="painel-item">
-                        <h3 class="texto-item">Como os dados coletados pelos sensores são usados para evitar o desenvolvimento do fungo da ramulária na plantação?</h3>
+                    <h3 class="texto-item">Como os dados coletados pelos sensores são usados para evitar o
+                        desenvolvimento do fungo da ramulária na plantação?</h3>
+                    <div class="explicacao">
+                        <p>Os dados coletados pelos sensores são analisados para garantir que a temperatura e umidade na
+                            plantação permaneçam dentro de uma faixa ideal. Se os níveis se desviarem dos parâmetros
+                            ideais, medidas corretivas podem ser tomadas, como ajuste da irrigação, ventilação ou
+                            aplicação de fungicidas, para evitar o desenvolvimento do fungo da ramulária. </p>
+                    </div>
                 </div>
             </li>
         </a>
-        <a href="" class="click">
+        <a href="#click" class="click">
             <li class="item4">
                 <div class="painel-item">
-                        <h3 class="texto-item">Como os dados coletados pelos sensores podem ser visualizados e interpretados pelos agricultores?</h3>
+                    <h3 class="texto-item">Qual é a faixa ideal de temperatura e umidade para a plantação de algodão e
+                        como os sensores ajudam a mantê-la?</h3>
+                    <div class="explicacao">
+                        <p>A faixa ideal de temperatura e umidade para a plantação de algodão varia dependendo da fase
+                            de crescimento da planta, mas geralmente está entre 20°C e 30°C de temperatura e 60% a 80%
+                            de umidade relativa do ar. Os sensores ajudam a monitorar esses parâmetros e permitem que os
+                            agricultores tomem medidas para manter as condições dentro desses limites. </p>
+                    </div>
                 </div>
             </li>
-    
+
         </a>
-        
+
     </ul>
+    <script>
+        const items = document.querySelectorAll('.duvidas-frequentes .painel-item');
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Mostrar ou ocultar a explicação
+                const explicacao = item.querySelector('.explicacao');
+                explicacao.style.display = explicacao.style.display === 'none' ? 'block' : 'none';
+
+
+            });
+
+        });
+    </script>
 </body>
 
 </html>
