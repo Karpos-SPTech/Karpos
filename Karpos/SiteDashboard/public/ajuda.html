@@ -44,7 +44,7 @@
     </div>
     <ul class="duvidas-frequentes">
         <a href="#click" class="click">
-            <li class="item1">
+            <li class="item">
                 <div class="painel-item">
                     <h3 class="texto-item">Como os sensores LM-35 e DHT-11 ajudam no monitoramento da plantação de
                         algodão?</h3>
@@ -58,7 +58,7 @@
             </li>
         </a>
         <a href="#click" class="click">
-            <li class="item2">
+            <li class="item">
                 <div class="painel-item">
                     <h3 class="texto-item">Qual é a importância da temperatura e umidade na prevenção do desenvolvimento
                         do fungo da ramulária?</h3>
@@ -72,7 +72,7 @@
             </li>
         </a>
         <a href="#click" class="click">
-            <li class="item3">
+            <li class="item">
                 <div class="painel-item">
                     <h3 class="texto-item">Como os dados coletados pelos sensores são usados para evitar o
                         desenvolvimento do fungo da ramulária na plantação?</h3>
@@ -86,7 +86,7 @@
             </li>
         </a>
         <a href="#click" class="click">
-            <li class="item4">
+            <li class="item">
                 <div class="painel-item">
                     <h3 class="texto-item">Qual é a faixa ideal de temperatura e umidade para a plantação de algodão e
                         como os sensores ajudam a mantê-la?</h3>
@@ -100,7 +100,49 @@
             </li>
 
         </a>
+        <a href="#click" class="click">
+            <li class="item">
+                <div class="painel-item">
+                    <h3 class="texto-item">Como os dados coletados pelos sensores podem ser visualizados e interpretados
+                        pelos agricultores? </h3>
+                    <div class="explicacao">
+                        <p>Os dados coletados pelos sensores podem ser visualizados no nosso site, Esses dados são
+                            apresentados em forma de gráficos ou tabelas, facilitando a interpretação pelos
+                            agricultores. Além disso, alertas podem ser configurados para notificar os agricultores caso
+                            os níveis de temperatura e umidade atinjam níveis críticos. </p>
+                    </div>
+                </div>
+            </li>
+        </a>
 
+        <a href="#click" class="click">
+            <li class="item">
+                <div class="painel-item">
+                    <h3 class="texto-item">Quais medidas podem ser tomadas com base nos dados coletados pelos sensores
+                        para prevenir o desenvolvimento do fungo da ramulária? </h3>
+                    <div class="explicacao">
+                        <p>Com base nos dados coletados pelos sensores, os agricultores podem ajustar a irrigação,
+                            aumentar a ventilação, aplicar fungicidas preventivos e tomar outras medidas para manter as
+                            condições ideais de temperatura e umidade na plantação, prevenindo assim o desenvolvimento
+                            do fungo da ramulária. </p>
+                    </div>
+                </div>
+            </li>
+        </a>
+        <a href="#click" class="click">
+            <li class="item">
+                <div class="painel-item">
+                    <h3 class="texto-item">Os sensores requerem manutenção regular? Se sim, qual é o procedimento de
+                        manutenção recomendado? </h3>
+                        <div class="explicacao">
+                            <p>Sim, os sensores requerem manutenção regular para garantir o seu bom funcionamento. Isso pode
+                                incluir limpeza periódica para remover poeira e sujeira, verificação da calibração e
+                                substituição de baterias, se aplicável. Recomenda-se seguir as instruções fornecidas pelo
+                                fabricante de cada sensor para o procedimento de manutenção adequado. </p>
+                        </div>
+                    </div>
+            </li>
+        </a>
     </ul>
     <script>
         const items = document.querySelectorAll('.duvidas-frequentes .painel-item');
@@ -110,7 +152,6 @@
                 // Mostrar ou ocultar a explicação
                 const explicacao = item.querySelector('.explicacao');
                 explicacao.style.display = explicacao.style.display === 'none' ? 'block' : 'none';
-
 
             });
 
