@@ -114,43 +114,43 @@
         </div>
     </nav>
     <main id="main-class" style="height: 100%;">
-        <section id="section_dashboard" style="display:none; width: 900px;">
+        <section id="section_dashboard" style="display:none;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
-            <div class="grafico-container">
-                <div class="grafico-item">
+            <!-- <div class="grafico-container"> -->
+                <div class="grafico-item" style="width: 50%;">
                     <h1 class="titulograf">Análise de Umidade na Plantação</h1>
                     <canvas id="dht11Umidade"></canvas>
                 </div>
-                <div class="grafico-item">
+                <h1 class="titulograf">Dados Atuais:</h1>
+                <div id="alertasU" style="width: 60%;">
+                    <div class="fazenda">
+                        <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
+                        Fazenda Karpos
+                        <p id="setor">Geral</p>
+                    </div>
+                    <div id="tempo1"></div>
+                    <div id="umiData">Umidade Atual:</div>
+                    <div id="textboxUmi"></div>
+                    <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
+                        <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
+                                style="margin-right: 3%;"></span>
+                            <49% ou>70%
+                        </span><br>
+                        <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span
+                                class="cora" style="margin-right: 3%;"></span>De 49% a 55%</span><br>
+                        <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span
+                                class="cora" style="margin-right: 3%;"></span>De 65% a 70%</span><br>
+                        <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
+                                style="margin-right: 3%;"></span>Entre 56% e 64%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grafico-item" style="width: 50%;">
                     <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
                     <canvas id="lm35Temperatura"></canvas>
                 </div>
-            </div>
             <h1 class="titulograf">Dados Atuais:</h1>
-            <div id="alertasU">
-                <div class="fazenda">
-                    <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
-                    Fazenda Karpos
-                    <p id="setor">Geral</p>
-                </div>
-                <div id="tempo1"></div>
-                <div id="umiData">Umidade Atual:</div>
-                <div id="textboxUmi"></div>
-                <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
-                            style="margin-right: 3%;"></span>
-                        <49% ou>70%
-                    </span><br>
-                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
-                            style="margin-right: 3%;"></span>De 49% a 55%</span><br>
-                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
-                            style="margin-right: 3%;"></span>De 65% a 70%</span><br>
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
-                            style="margin-right: 3%;"></span>Entre 56% e 64%</span>
-                </div>
-            </div>
-            <h1 class="titulograf">Dados Atuais:</h1>
-            <div id="alertas">
+            <div id="alertas" style="width: 50%;">
                 <div class="fazenda">
                     <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
                     Fazenda Karpos

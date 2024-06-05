@@ -20,6 +20,11 @@ main {
     z-index: 1;
     padding-left: calc(82px + 20px);
     width: 100%;
+    overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {
+    width: 0; /* Largura zero para ocultar a barra de rolagem vertical */
 }
 
 #sidebar {
@@ -198,8 +203,7 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    position: fixed;
 }
 
 .mensagem {
@@ -356,6 +360,7 @@ main {
     height: 100vh;
     width: 93vw;
     margin: auto;
+    position: fixed;
 }
 
 #section_areaDoUsuario h1 {
@@ -691,6 +696,7 @@ main {
     align-items: center;
     height: 100vh;
     width: 100%;
+    position: fixed;
 }
 
 #container-ajuda {
@@ -729,6 +735,10 @@ textarea {
     transition: background-color 0.3s;
 }
 
+#session_dashboard {
+    width: 100%;
+}
+
 .botaoAjuda:hover {
     background-color: #45a049;
 }
@@ -764,12 +774,15 @@ textarea {
     margin-right: 5px;
     /* Espaçamento entre o ícone e o texto */
 }
+
 .titulo-ajuda {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px; /* Espaçamento entre o título e o conteúdo abaixo */
+    margin-bottom: 20px;
+    /* Espaçamento entre o título e o conteúdo abaixo */
 }
 
 .titulo-ajuda h2 {
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    /* Centraliza o texto */
 }

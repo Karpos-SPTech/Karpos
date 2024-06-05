@@ -22,6 +22,7 @@ areaUsuario.addEventListener("click", function () {
   areaDashboard.classList.remove("active");
   areaUsuario.classList.add("active");
   areaTabelas.classList.remove("active");
+  areaAjuda.classList.remove("active");
 });
 
 // Adicionar um evento de clique a cada botão
