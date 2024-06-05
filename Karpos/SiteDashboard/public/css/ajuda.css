@@ -67,7 +67,7 @@ ul {
   background-color: #ffffff;
   display: flex;
   width: 100%;
-  height: 200px;
+  height: 300px;
 }
 
 .titulo1 {
@@ -81,7 +81,6 @@ ul {
   margin-top: 10%;
   margin-left: 8%;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -89,7 +88,7 @@ ul {
   display: flex;
   background-color: #ffffff;
   width: 90%;
-  height: 100px;
+  height: 200px;
   border-radius: 10px;
 }
 
@@ -100,12 +99,13 @@ ul {
 }
 
 .explicacao {
-  display: none;
+  display: block;
+  background-color: #ffffff;
+  width: 90%;
 }
 
 .duvidas-frequentes .click {
     text-decoration: none;
   color: black;
   width: 100%;
-  height: 100px;
 }
