@@ -672,11 +672,104 @@ main {
 }
 
 .grafico-item {
-    flex: 1 1 80%; /* Faz com que cada item tenha pelo menos 45% do espaço disponível */
-    min-width: 300px; /* Define uma largura mínima para cada gráfico */
+    flex: 1 1 80%;
+    /* Faz com que cada item tenha pelo menos 45% do espaço disponível */
+    min-width: 300px;
+    /* Define uma largura mínima para cada gráfico */
 }
 
 .grafico-item canvas {
-    width: 100%; /* Faz com que os gráficos se ajustem à largura do contêiner */
-    height: auto; /* Mantém a proporção dos gráficos */
+    width: 100%;
+    /* Faz com que os gráficos se ajustem à largura do contêiner */
+    height: auto;
+    /* Mantém a proporção dos gráficos */
+}
+
+#section_ajuda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#container-ajuda {
+    width: 50%;
+    background-color: #AA6550;
+    margin: auto;
+    /* Centraliza horizontalmente */
+    margin-top: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    resize: none;
+}
+
+.botaoAjuda {
+    background-color: #a17f6c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.botaoAjuda:hover {
+    background-color: #45a049;
+}
+
+#resposta {
+    margin-top: 20px;
+}
+
+.botoes-download {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.botao-download {
+    background-color: #a17f6c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 0 10px;
+    /* Espaçamento entre os botões */
+}
+
+.botao-download:hover {
+    background-color: #a17f6c;
+}
+
+.botao-download i {
+    margin-right: 5px;
+    /* Espaçamento entre o ícone e o texto */
+}
+.titulo-ajuda {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Espaçamento entre o título e o conteúdo abaixo */
+}
+
+.titulo-ajuda h2 {
+    text-align: center; /* Centraliza o texto */
 }
