@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+
+    background-color: #aa6550;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section {
+    width: 80%;
+    max-width: 600px;
+    
+}
+
+details {
+    padding: 2%;
+}
+
+section details summary {
+    cursor: pointer;
+    background-color: #FFF;
+    padding: 2%;
+    /* border-bottom: 2px solid #000; */
+    color: #000;
+    font-weight: 600;
+    
+
+}
+
+section details p {
+    height: 100px;
+    background-color: #FFF;
+    color: #000;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
