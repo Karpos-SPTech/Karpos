@@ -76,12 +76,11 @@ ul {
   margin-left: 5%;
 }
 
-.duvidas-frequentes {
+.duvidas-frequentes{
   display: flex;
   margin-top: 10%;
   margin-left: 8%;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -101,6 +100,9 @@ ul {
   margin-top: 3%;
 }
 
+.item{
+  display: flex;
+}
 
 .duvidas-frequentes .click {
     text-decoration: none;
@@ -114,4 +116,9 @@ ul {
   height: 200px;
   background-color: #ffffff;
   border-radius: 10px;
+  position: relative;
+}
+
+.containerDuvidas{
+  display: flex;
 }
