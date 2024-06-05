@@ -23,6 +23,7 @@ insert into empresa values
 (default,'Karpos Ltda','85738693019','04980-400','320','Bairro do Limoeiro');
 
 select * from empresa;
+
 -- Tabela que armazenara os dados do produtor de algodão
 create table usuario (
     idUsuario  int primary key auto_increment,
@@ -49,7 +50,9 @@ umidadeMax float
 )auto_increment=100;
 
 insert into parametros values
-(default,25,30,16,34,60,70);
+(default,25,30,16,34,60,70,80,80,80);
+
+select * from parametros;
 
 -- Tabela responsavel por armazenar os dados da fazenda
 create table fazenda (
@@ -64,9 +67,9 @@ create table fazenda (
 	foreign key (fkParametro) references parametros(idParametro)
 );
 insert into fazenda values
-(default,'Cotton Farm 1','08234-350','335',5,10,1,100),
-(default,'Cotton Farm','07560-432','960B',8,15,1,100),
-(default,'Fazenda Almeida','07639-345','490A',4,3,2,100);
+(default,'Cotton Farm 1','08234-350','335',5,1555,100),
+(default,'Cotton Farm','07560-432','960B',8,1556,100),
+(default,'Fazenda Almeida','07639-345','490A',4,1557,100);
 
 select * from fazenda;
 
@@ -80,9 +83,9 @@ CREATE TABLE sensor (
 );
 
 insert into sensor values
-(default,'lm35Temperatura',1),
-(default,'lm35Temperatura',1),
-(default,'dht11Umidade',1);
+(default,'lm35Temperatura',7),
+(default,'lm35Temperatura',8),
+(default,'dht11Umidade',9);
 
 create table capturaDoSensor(
 idDados int auto_increment,
@@ -93,6 +96,7 @@ umidade decimal (5,2),
 constraint fkdadosSensor foreign key (fkSensor)
 references sensor(idSensor));
 
+select * from capturaDoSensor;
 
 
 -- dados fora do padrão -------------------------------------------------------------------------------------------------------------------------------------

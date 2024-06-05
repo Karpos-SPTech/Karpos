@@ -27,10 +27,10 @@ const serial = async (
             // altere!
             // Credenciais do banco de dados
             host: 'localhost',
-            user: 'aluno',
-            password: 'Sptech#2024',
+            user: 'root',
+            password: 'marcelo1234',
             database: 'karposTech',
-            port: 3307
+            port: 3306
         }
     ).promise();
 
@@ -71,11 +71,9 @@ const serial = async (
             // altere!
             // Este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO dadosTeste ( dtHorario, umidade, temperatura) VALUES (now(), ?, ?)',
-                [dht11Umidade, lm35Temperatura]
+                'INSERT INTO capturaDoSensor(fkSensor,dtHorario, temperatura, umidade) VALUES (13,now(), ?, ?)',
+                [lm35Temperatura,dht11Umidade]
             );
-            console.log("valores inseridos no banco: ", dht11Umidade + "," + lm35Temperatura)
-        
         }
         
     });
