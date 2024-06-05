@@ -78,43 +78,17 @@ ul {
 }
 
 .container1 {
-<<<<<<< HEAD
-  background-color: #ffffff;
-  display: flex;
-  width: 100%;
-  height: 300px;
-=======
     background-color: #ffffff;
     display: flex;
     width: 100%;
     height: 250px;
->>>>>>> 897a677e8bbde6e8559f6379b4b63dbccaf5d776
 }
 
 .titulo1 {
     color: #aa6550;
     margin-top: 7%;
-    
     margin-left: 5%;
 }
-
-<<<<<<< HEAD
-.duvidas-frequentes {
-  display: flex;
-  margin-top: 10%;
-  margin-left: 8%;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.painel-item {
-  display: flex;
-  background-color: #ffffff;
-  width: 90%;
-  height: 200px;
-  border-radius: 10px;
-=======
-
 .containerDuvidas {
     width: 100%;
     height: 100vh;
@@ -127,25 +101,13 @@ ul {
 section {
     width: 80%;
     margin-top: 60%;
->>>>>>> 897a677e8bbde6e8559f6379b4b63dbccaf5d776
+
 }
 
 details {
     padding: 2%;
 }
 
-<<<<<<< HEAD
-.explicacao {
-  display: block;
-  background-color: #ffffff;
-  width: 90%;
-}
-
-.duvidas-frequentes .click {
-    text-decoration: none;
-  color: black;
-  width: 100%;
-=======
 section details summary {
     cursor: pointer;
     background-color: #FFF;
@@ -166,5 +128,4 @@ section details p {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
->>>>>>> 897a677e8bbde6e8559f6379b4b63dbccaf5d776
 }
