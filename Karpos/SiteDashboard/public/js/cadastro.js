@@ -21,7 +21,6 @@ function registrar() {
         telefone == "" ||
         senhaConfirmada == "" ||
         documento == "" ||
-        select == "#" ||
         token == "" ||
         nome == ""
     ) {

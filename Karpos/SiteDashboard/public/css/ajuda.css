@@ -1,81 +1,103 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #aa6550;
-  font-family: "Inter", sans-serif; /* Aplicando a fonte Inter */
+    margin: 0;
+    padding: 0;
+    background-color: #aa6550;
+    font-family: "Inter", sans-serif;
+    /* Aplicando a fonte Inter */
 }
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 100px; /* Espaçamento do cabeçalho */
-  justify-content: space-around;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 100px;
+    /* Espaçamento do cabeçalho */
+    justify-content: space-around;
 }
 
 #logo-karpos img {
-  margin-left: auto; /* Espaçamento da esquerda */
+    margin-left: auto;
+    /* Espaçamento da esquerda */
 }
 
 ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .header-link {
-  text-decoration: none;
-  color: #ffffff; /* Cor do texto do menu */
-  margin: 0 49px; /* Espaçamento entre os itens do menu */
+    text-decoration: none;
+    color: #ffffff;
+    /* Cor do texto do menu */
+    margin: 0 49px;
+    /* Espaçamento entre os itens do menu */
 }
 
 #botao-registrar {
-  background-color: #b7a19a;
-  border-radius: 10px;
-  border-color: #b7a19a;
-  color: #ffffff;
-  border: none;
-  width: 107px;
-  height: 32px;
-  cursor: pointer;
+    background-color: #b7a19a;
+    border-radius: 10px;
+    border-color: #b7a19a;
+    color: #ffffff;
+    border: none;
+    width: 107px;
+    height: 32px;
+    cursor: pointer;
 }
 
 #botao-login {
-  background-color: #b7a19a;
-  border-color: #b7a19a;
-  border-radius: 10px;
-  color: #ffffff;
-  border: none;
-  width: 107px;
-  height: 32px;
-  cursor: pointer;
+    background-color: #b7a19a;
+    border-color: #b7a19a;
+    border-radius: 10px;
+    color: #ffffff;
+    border: none;
+    width: 107px;
+    height: 32px;
+    cursor: pointer;
 }
 
 #entrar {
-  text-decoration: none;
-  color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #registro {
-  text-decoration: none;
-  color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .container1 {
+<<<<<<< HEAD
   background-color: #ffffff;
   display: flex;
   width: 100%;
   height: 300px;
+=======
+    background-color: #ffffff;
+    display: flex;
+    width: 100%;
+    height: 250px;
+>>>>>>> 897a677e8bbde6e8559f6379b4b63dbccaf5d776
 }
 
 .titulo1 {
-  color: #aa6550;
-  margin-top: 6%;
-  margin-left: 5%;
+    color: #aa6550;
+    margin-top: 7%;
+    margin-left: 5%;
 }
 
+<<<<<<< HEAD
 .duvidas-frequentes {
   display: flex;
   margin-top: 10%;
@@ -90,14 +112,28 @@ ul {
   width: 90%;
   height: 200px;
   border-radius: 10px;
+=======
+
+.containerDuvidas {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.texto-item {
-  width: 80%;
-  margin-left: 3%;
-  margin-top: 3%;
+section {
+    width: 80%;
+    margin-top: 60%;
+>>>>>>> 897a677e8bbde6e8559f6379b4b63dbccaf5d776
 }
 
+details {
+    padding: 2%;
+}
+
+<<<<<<< HEAD
 .explicacao {
   display: block;
   background-color: #ffffff;
@@ -108,4 +144,26 @@ ul {
     text-decoration: none;
   color: black;
   width: 100%;
+=======
+section details summary {
+    cursor: pointer;
+    background-color: #FFF;
+    padding: 2%;
+    color: #000;
+    font-weight: 600;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+section details p {
+    height: 100px;
+    background-color: #FFF;
+    color: #000;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+>>>>>>> 897a677e8bbde6e8559f6379b4b63dbccaf5d776
 }
