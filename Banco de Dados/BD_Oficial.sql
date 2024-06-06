@@ -36,6 +36,7 @@ create table usuario (
     constraint fkEmpresaUsuario foreign key(fktoken) references empresa(token)
 );
 
+select * from usuario;
 create table parametros(
 idParametro int primary key auto_increment,
 tempMax float,
@@ -69,7 +70,7 @@ create table fazenda (
 insert into fazenda values
 (default,'Cotton Farm 1','08234-350','335',5,1555,100),
 (default,'Cotton Farm','07560-432','960B',8,1556,100),
-(default,'Fazenda Almeida','07639-345','490A',4,1557,100);
+(default,'Fazenda Almeida','07639-345','490A',4,1556,100);
 
 select * from fazenda;
 
@@ -83,9 +84,9 @@ CREATE TABLE sensor (
 );
 
 insert into sensor values
-(default,'lm35Temperatura',7),
-(default,'lm35Temperatura',8),
-(default,'dht11Umidade',9);
+(default,'lm35Temperatura',4),
+(default,'lm35Temperatura',5),
+(default,'dht11Umidade',6);
 
 create table capturaDoSensor(
 idDados int auto_increment,
@@ -98,6 +99,17 @@ references sensor(idSensor));
 
 select * from capturaDoSensor;
 
+insert into capturaDoSensor values
+(2,5,now(),25,80),
+(3,5,now(),27,70),
+(4,5,now(),29,60);
+
+insert into capturaDoSensor values
+(5,5,now(),60,10);
+
+select * from capturaDoSensor;
+
+select dtHorario, temperatura, umidade from capturaDoSensor;
 
 -- dados fora do padrão -------------------------------------------------------------------------------------------------------------------------------------
 
