@@ -1,5 +1,23 @@
 var medidaModel = require("../models/medidaModel");
 
+function captura(req, res) {
+    medidaModel.captura()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json({ umidade: resultado[resultado.length - 1].umidade,
+                    temperatura:resultado[resultado.length - 1].temperatura,
+                    horario: resultado[resultado.length - 1].horario
+                 });
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!");
+            }
+        })
+        .catch(function (erro) {
+            console.error(erro);
+            res.status(500).json(erro);
+        });
+}
+
 function buscarUltimasMedidas(req, res) {
 
     const limite_linhas = 7;
@@ -42,6 +60,7 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 module.exports = {
+    captura,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 

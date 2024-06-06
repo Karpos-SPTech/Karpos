@@ -204,7 +204,15 @@ main::-webkit-scrollbar {
     align-items: center;
     text-align: center;
     position: fixed;
+    overflow-y: scroll;
 }
+
+#section_areaDoUsuario::-webkit-scrollbar {
+    width: 0; /* Largura zero para ocultar a barra de rolagem vertical */
+}
+
+
+
 
 .mensagem {
     font-size: 35px;
@@ -461,7 +469,7 @@ main::-webkit-scrollbar {
 }
 
 .newTemp {
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(255, 255, 255);
 }
 
@@ -481,7 +489,7 @@ main::-webkit-scrollbar {
 }
 
 .newUmi {
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(255, 255, 255);
 }
 
@@ -695,9 +703,12 @@ main::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100%;
+    width: 93vw;
     position: fixed;
+    margin: auto;
 }
+
+
 
 #container-ajuda {
     width: 50%;
@@ -739,9 +750,6 @@ textarea {
     width: 100%;
 }
 
-.botaoAjuda:hover {
-    background-color: #45a049;
-}
 
 #resposta {
     margin-top: 20px;

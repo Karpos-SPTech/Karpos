@@ -1,5 +1,13 @@
 var database = require("../database/config");
 
+function captura() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function captura(): ")
+    var instrucaoSql = `
+    select dtHorario, temperatura, umidade, DATE_FORMAT(dtHorario,'%H:%i:%s') as horario from capturaDoSensor;`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function buscarUltimasMedidas(idFazenda, limite_linhas) {
 
     var instrucaoSql = `SELECT 
@@ -30,6 +38,7 @@ function buscarMedidasEmTempoReal(idFazenda) {
 }
 
 module.exports = {
+    captura,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 }

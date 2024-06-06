@@ -117,38 +117,38 @@
         <section id="section_dashboard" style="display:none;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
             <!-- <div class="grafico-container"> -->
-                <div class="grafico-item" style="width: 50%;">
-                    <h1 class="titulograf">Análise de Umidade na Plantação</h1>
-                    <canvas id="dht11Umidade"></canvas>
+            <div class="grafico-item" style="width: 50%;">
+                <h1 class="titulograf">Análise de Umidade na Plantação</h1>
+                <canvas id="dht11Umidade"></canvas>
+            </div>
+            <h1 class="titulograf">Dados Atuais:</h1>
+            <div id="alertasU" style="width: 60%;">
+                <div class="fazenda">
+                    <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
+                    Fazenda Karpos
+                    <p id="setor">Geral</p>
                 </div>
-                <h1 class="titulograf">Dados Atuais:</h1>
-                <div id="alertasU" style="width: 60%;">
-                    <div class="fazenda">
-                        <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
-                        Fazenda Karpos
-                        <p id="setor">Geral</p>
-                    </div>
-                    <div id="tempo1"></div>
-                    <div id="umiData">Umidade Atual:</div>
-                    <div id="textboxUmi"></div>
-                    <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
-                        <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
-                                style="margin-right: 3%;"></span>
-                            <49% ou>70%
-                        </span><br>
-                        <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span
-                                class="cora" style="margin-right: 3%;"></span>De 49% a 55%</span><br>
-                        <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span
-                                class="cora" style="margin-right: 3%;"></span>De 65% a 70%</span><br>
-                        <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
-                                style="margin-right: 3%;"></span>Entre 56% e 64%</span>
-                    </div>
+                <div id="tempo1"></div>
+                <div id="umiData">Umidade Atual:</div>
+                <div id="textboxUmi"></div>
+                <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
+                            style="margin-right: 3%;"></span>
+                        <49% ou>70%
+                    </span><br>
+                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
+                            style="margin-right: 3%;"></span>De 49% a 55%</span><br>
+                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
+                            style="margin-right: 3%;"></span>De 65% a 70%</span><br>
+                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
+                            style="margin-right: 3%;"></span>Entre 56% e 64%</span>
                 </div>
             </div>
+            </div>
             <div class="grafico-item" style="width: 50%;">
-                    <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
-                    <canvas id="lm35Temperatura"></canvas>
-                </div>
+                <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
+                <canvas id="lm35Temperatura"></canvas>
+            </div>
             <h1 class="titulograf">Dados Atuais:</h1>
             <div id="alertas" style="width: 50%;">
                 <div class="fazenda">
@@ -287,21 +287,27 @@
             <h2 class="titulo-ajuda">Área de Ajuda</h2>
             <div id="container-ajuda">
                 <center>
-                    <h1>Karpos IA</h1>
+                    <h1 style="margin-bottom: 20px;">Karpos IA</h1>
                     <textarea id="pergunta" type="text" placeholder="Digite a sua pergunta..."></textarea>
                     <br><br>
                     <button class="botaoAjuda" onclick="gerarResposta()">Perguntar</button>
-                    <h3>Resposta da IA:</h3>
+                    <h3 style="margin-top: 20px;">Resposta da IA:</h3>
                     <div id="resposta"></div>
                 </center>
             </div>
             <div class="botoes-download">
-                <button class="botao-download">
-                    <i class="fas fa-download"></i> Manual Físico
-                </button>
-                <button class="botao-download">
-                    <i class="fas fa-download"></i> Manual Lógico
-                </button>
+                <a style="text-decoration: none;" href="./assets/Manual de Instalação - Sensores.pdf" download>
+                    <button class="botao-download" id="manualFisico">
+                        <i class="fas fa-download"></i> Manual Físico
+                    </button>
+                </a>
+
+
+                <a style="text-decoration: none;" href="./assets/Manual De Instalação - Software.pdf" download>
+                    <button class="botao-download" id="manualLogico">
+                        <i class="fas fa-download"></i> Manual Lógico
+                    </button>
+                </a>
             </div>
         </section>
     </main>
@@ -311,7 +317,6 @@
 </html>
 <script src="js/script.js"></script>
 <script src="js/trocarsecao.js"></script>
-
 
 <script>
 
@@ -340,19 +345,53 @@
         section.scrollIntoView({ behavior: 'smooth' });
     }
 
-    /* ------- DHT11UMIDADE ------- */
 
-    // Função para gerar números aleatórios entre um intervalo específico
-    function generateRandomData() {
-        var data = [];
-        for (var i = 0; i < 5; i++) {
-            data.push(Math.floor(Math.random() * 100)); // Gera números aleatórios entre 0 e 100
-        }
-        return data;
+
+
+    /* ---------------------------------------------------- CAPTURA DOS DADOS ----------------------------------------------------*/
+
+    var umidadeAtualW = [];
+    var temperaturaAtualW = []
+    var horario = [];
+    var maxDataPoints = 5; // Número máximo de pontos a serem exibidos no gráfico
+
+    function captura() {
+        fetch("/medidas/captura")
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    throw new Error('Houve um erro na API!');
+                }
+            })
+            .then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                // Adiciona os novos dados de umidade, temperatura e horário
+                umidadeAtualW.push(parseFloat(resposta.umidade));
+                temperaturaAtualW.push(parseFloat(resposta.temperatura));
+                horario.push(resposta.horario);
+
+                // Mantém apenas os últimos maxDataPoints pontos
+                if (umidadeAtualW.length > maxDataPoints) {
+                    umidadeAtualW.shift();
+                    temperaturaAtualW.shift();
+                    horario.shift();
+                }
+
+                // Atualiza os elementos HTML com os dados mais recentes
+                tempData.innerHTML = `Temperatura Atual:<br> <b class="newTemp">${resposta.temperatura}ºC</b>`;
+                umiData.innerHTML = `Umidade Atual:<br> <b class="newUmi">${resposta.umidade}%</b>`;
+
+                // Atualiza os dados dos gráficos
+                updateChartData();
+                updateChartData1();
+            })
+            .catch(function (erro) {
+                console.error(erro);
+            });
     }
 
-    // Dados aleatórios para o gráfico
-    var randomData = generateRandomData();
 
     // Criação do gráfico
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
@@ -361,12 +400,11 @@
     var dht11Umidade = new Chart(contextoDht11Umidade, {
         type: 'line',
         data: {
-            labels: ['Data Atual', 'Data Atual', 'Data Atual', 'Data Atual', 'Data Atual'],
+            labels: horario,
             datasets: [{
-                data: randomData,
+                data: umidadeAtualW,
                 label: 'Umidade (%)',
-                type: 'line',
-                borderColor: ['#45b3e7'],
+                borderColor: '#45b3e7',
                 backgroundColor: 'rgba(137, 207, 240)',
                 borderWidth: 2
             }]
@@ -388,28 +426,23 @@
             },
             legend: {
                 labels: {
-                    fontColor: 'black' // Define a cor do texto do rótulo (label) como azul
+                    fontColor: 'black'
                 }
             }
         }
     });
 
     function updateChartData() {
-        // Remove o primeiro elemento da matriz de labels
-        dht11Umidade.data.labels.shift();
-        // Adiciona uma nova label ao final da matriz de labels
-        dht11Umidade.data.labels.push(getFormattedDateTime());
-        // Remove o primeiro elemento da matriz de dados
-        dht11Umidade.data.datasets[0].data.shift();
-        // Adiciona um novo valor aleatório ao final da matriz de dados
-        var newUmidad = Math.floor(Math.random() * 100);
-        dht11Umidade.data.datasets[0].data.push(newUmidad);
+        // Atualiza os dados do gráfico
+        dht11Umidade.data.labels = horario.slice(-maxDataPoints);
+        dht11Umidade.data.datasets[0].data = umidadeAtualW.slice(-maxDataPoints);
 
+        // Atualiza o gráfico
         dht11Umidade.update();
 
-        document.getElementById('umiData').innerHTML = `Umidade Atual:<br> <b class="newUmi">${newUmidad}%</b>`;
+        let valorAtualUmidade = umidadeAtualW[umidadeAtualW.length - 1];
 
-        if (newUmidad >= 70) {
+        if (valorAtualUmidade >= 70) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
             document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Umidade muito acima de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'red';
@@ -420,7 +453,7 @@
             document.getElementById('iconUmi3').style.color = 'red';
             document.getElementById('iconUmi4').style.color = 'yellow';
 
-        } else if (newUmidad >= 65 && newUmidad <= 69) {
+        } else if (valorAtualUmidade >= 65 && valorAtualUmidade <= 69) {
             document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Umidade pouco acima de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'yellow';
             document.getElementById('textboxUmi').style.color = 'black';
@@ -430,7 +463,7 @@
             document.getElementById('iconUmi3').style.color = 'yellow';
             document.getElementById('iconUmi4').style.color = 'red';
         }
-        else if (newUmidad >= 50 && newUmidad <= 55) {
+        else if (valorAtualUmidade >= 49 && valorAtualUmidade <= 55) {
             document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Umidade pouco abaixo de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'yellow';
             document.getElementById('textboxUmi').style.color = 'black';
@@ -440,7 +473,7 @@
             document.getElementById('iconUmi3').style.color = 'yellow';
             document.getElementById('iconUmi4').style.color = 'white';
         }
-        else if (newUmidad <= 49) {
+        else if (valorAtualUmidade < 49) {
             document.getElementById('textboxUmi').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Umidade muito abaixo de 60%!</b>';
             document.getElementById('textboxUmi').style.backgroundColor = 'red';
             document.getElementById('textboxUmi').style.color = 'white';
@@ -457,27 +490,15 @@
             document.getElementById('textboxUmi').style.border = '1px solid black';
         }
 
-
     }
 
-    // Chamada da função para atualizar os dados a cada intervalo de tempo (por exemplo, a cada segundo)
-    setInterval(updateChartData, 3000); // 3000ms = 3 segundos
+    // Inicia a captura de dados
+    setInterval(captura, 3000);
 
-    // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
-    updateChartData();
+
+
 
     /* ------- LM35TEMPERATURA ------- */
-
-    function generateRandomData1() {
-        var data1 = [];
-        for (var i = 0; i < 5; i++) {
-            data1.push(Math.floor(Math.random() * 50)); // Gera números aleatórios entre 0 e 50
-        }
-        return data1;
-    }
-
-    // Dados aleatórios para o gráfico
-    var randomData1 = generateRandomData1();
 
     // Criação do gráfico
     var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
@@ -486,9 +507,9 @@
     var lm35Temperatura = new Chart(contextoLm35Temperatura, {
         type: 'line',
         data: {
-            labels: ['Data Atual', 'Data Atual', 'Data Atual', 'Data Atual', 'Data Atual'],
+            labels: horario,
             datasets: [{
-                data: randomData1,
+                data: temperaturaAtualW,
                 label: 'Temperatura (°C)',
                 type: 'line',
                 borderColor: ['#caac01'],
@@ -520,22 +541,14 @@
     });
 
     function updateChartData1() {
-        // Remove o primeiro elemento da matriz de labels
-        lm35Temperatura.data.labels.shift();
-        // Adiciona uma nova label ao final da matriz de labels
-        lm35Temperatura.data.labels.push(getFormattedDateTime());
-        // Remove o primeiro elemento da matriz de dados
-        lm35Temperatura.data.datasets[0].data.shift();
-        // Adiciona um novo valor aleatório ao final da matriz de dados
-        var newTemperature = Math.floor(Math.random() * 50);
-        lm35Temperatura.data.datasets[0].data.push(newTemperature);
+
+        lm35Temperatura.data.labels = horario.slice(-maxDataPoints);
+        lm35Temperatura.data.datasets[0].data = temperaturaAtualW.slice(-maxDataPoints);
+
         // Atualiza o gráfico
         lm35Temperatura.update();
 
-        document.getElementById('tempData').innerHTML = `Temperatura Atual:<br> <b class="newTemp">${newTemperature}ºC</b>`;
-
-        // Verifica se a temperatura ultrapassou 35°C
-        if (newTemperature > 34) {
+        if (temperaturaAtualW[temperaturaAtualW.length - 1] > 34) {
             // Atualiza o conteúdo e o estilo da div de texto para exibir o alerta
             document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Temperatura acima de 34°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'red';
@@ -546,7 +559,7 @@
             document.getElementById('iconTemp3').style.color = 'white';
             document.getElementById('iconTemp4').style.color = 'yellow';
 
-        } else if (newTemperature >= 30 && newTemperature <= 34) {
+        } else if (temperaturaAtualW[temperaturaAtualW.length - 1] >= 30 && temperaturaAtualW[temperaturaAtualW.length - 1] <= 34) {
             document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Temperatura próxima a 34°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'yellow';
             document.getElementById('textboxTemp').style.color = 'black';
@@ -556,7 +569,7 @@
             document.getElementById('iconTemp3').style.color = 'yellow';
             document.getElementById('iconTemp4').style.color = 'white';
         }
-        else if (newTemperature >= 16 && newTemperature <= 20) {
+        else if (temperaturaAtualW[temperaturaAtualW.length - 1] >= 16 && temperaturaAtualW[temperaturaAtualW.length - 1] <= 20) {
             document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Cuidado: Temperatura próxima a 16°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'yellow';
             document.getElementById('textboxTemp').style.color = 'black';
@@ -566,7 +579,7 @@
             document.getElementById('iconTemp3').style.color = 'red';
             document.getElementById('iconTemp4').style.color = 'yellow';
         }
-        else if (newTemperature <= 16) {
+        else if (temperaturaAtualW[temperaturaAtualW.length - 1] < 16) {
             document.getElementById('textboxTemp').innerHTML = '<img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt=""> <b>Alerta: Temperatura abaixo de 16°C!</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'red';
             document.getElementById('textboxTemp').style.color = 'white';
@@ -575,8 +588,7 @@
             document.getElementById('iconTemp2').style.color = 'white';
             document.getElementById('iconTemp3').style.color = 'yellow';
             document.getElementById('iconTemp4').style.color = 'red';
-        } else {
-            // Caso a temperatura não esteja acima de 30°C, limpa o conteúdo e o estilo da div de texto
+        } else if (temperaturaAtualW[temperaturaAtualW.length - 1] >= 21 && temperaturaAtualW[temperaturaAtualW.length - 1] <= 29) {
             document.getElementById('textboxTemp').innerHTML = ' <img width="60px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg" <b>Tudo Sob-Controle Algodões Protegidos</b>';
             document.getElementById('textboxTemp').style.backgroundColor = 'white';
             document.getElementById('textboxTemp').style.color = 'black';
@@ -584,8 +596,14 @@
         }
     }
 
-    // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
+
+    // Verifica se a temperatura ultrapassou 35°C
+
+
+
+    // // Chamada inicial da função para garantir que os dados sejam atualizados assim que a página for carregada
     updateChartData1();
+    captura();
 
 
     /* ---------------------------------------------------- DATA E HORARIO ATUAL ----------------------------------------------------*/
@@ -615,6 +633,8 @@
 
 
     /* ---------------------------------------------------- AREA TABELAS ----------------------------------------------------*/
+
+
 
     // Função para adicionar uma nova linha à tabela com os últimos dados
     function adicionarLinhaTabela(dataHora, temperatura, umidade, lote) {
