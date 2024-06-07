@@ -9,7 +9,7 @@ function registrar() {
     const senhaConfirmada = input_senhaConfirmada.value
     let verificarLetraMaiuscula = false
     let verificarCaracterEspecial = false
-    let caracteresEspeciais = ["!", "@", "#", "$", "%", "^", "&", "*", "()", ",", "?", "/", ":", "{}", "|", "<", ">",]
+    let caracteresEspeciais = ["!", ".", "@", "#", "$", "%", "^", "&", "*", "()", ",", "?", "/", ":", "{}", "|", "<", ">",]
     let letrasMaiusculas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     let senhaValidada = false
 
@@ -38,7 +38,7 @@ function registrar() {
         div_alertasValidacao.innerHTML = "AS SENHAS PRECISAM SER IGUAIS!"
     }
     // verificação email
-    else if (email.indexOf("@") == -1 || email.indexOf(".") == -1 || email.indexOf("gmail") == -1) {
+    else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
         div_paiAlertas.style.display = 'block';
         div_alertasValidacao.innerHTML = "DIGITE UM E-MAIL VÁLIDO!"
     }
@@ -54,8 +54,8 @@ function registrar() {
     }
     // verificação de caracter especial + letra maiuscula + for
     else {
-        for (let senhaVerificiar = 0; senhaVerificiar < senha.length; senhaVerificiar++) {
-            let char = senha[senhaVerificiar]
+        for (let validacaoSenha = 0; validacaoSenha < senha.length; validacaoSenha++) {
+            let char = senha[validacaoSenha]
             if (caracteresEspeciais.indexOf(char) != -1) {
                 verificarCaracterEspecial = true;
             }

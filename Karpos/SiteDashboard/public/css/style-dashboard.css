@@ -11,7 +11,8 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #fff2ef;
+    background: rgb(209,176,166);
+    background: linear-gradient(180deg, rgb(204, 183, 177) 2%, rgb(151, 129, 123) 86%);
 }
 
 main {
@@ -215,38 +216,40 @@ main::-webkit-scrollbar {
 
 
 .mensagem {
-    font-size: 35px;
+    font-size: 45px;
     margin-bottom: 1%;
     text-shadow: 0 3px 5px rgba(88, 55, 33, 0.616);
 }
 
-.imgf {
+/* .imgf {
     margin-top: 1%;
     text-shadow: 0 15px 15px black;
-}
+} */
 
 .boxlote {
-    margin-top: 20px;
-    width: 170px;
-    height: 150px;
+    margin-top: 4%;
+    width: 200px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
-    background-color: #AA6550;
+    background-color: #c49e89d7;
     border: 3px outset rgb(105, 72, 50);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-left: 15px;
     transition: 0.1s;
+    box-shadow: 2px 2px 10px black;
+    font-weight: bold;
 }
 
 
 .boxlote:hover {
     border: 6px outset rgb(117, 74, 49);
-    background-color: #AA6550;
-    transition: 0.1s;
+    background-color: #a57e68d7;
+    transition:all 0.1s;
 }
 
 .lotes {
@@ -258,33 +261,20 @@ main::-webkit-scrollbar {
 
 }
 
-.nossos {
-    height: 200px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-}
-
-
-.cada {
-    height: 45vh;
-
-}
-
 .desc {
     font-size: 15px;
     display: flex;
     justify-content: center;
     text-align: center;
     width: 200px;
-    font-weight: 600;
-    margin-top: 1%;
+    font-weight: 700;
+    margin-top: 5%;
+
 }
 
 .boxalerta {
     margin-top: 20px;
-    width: 170px;
+    width: 180px;
     height: 150px;
     display: flex;
     align-items: center;
@@ -296,11 +286,12 @@ main::-webkit-scrollbar {
     border: 1px solid black;
     color: white;
     margin-left: 15px;
+    box-shadow: 4px 4px 6px black;
 }
 
 .boxbom {
     margin-top: 20px;
-    width: 170px;
+    width:180px;
     height: 150px;
     display: flex;
     align-items: center;
@@ -312,11 +303,12 @@ main::-webkit-scrollbar {
     border: 1px solid black;
     color: black;
     margin-left: 15px;
+    box-shadow: 4px 4px 6px black;
 }
 
 .boxcuidado {
     margin-top: 20px;
-    width: 170px;
+    width:180px;
     height: 150px;
     display: flex;
     align-items: center;
@@ -328,6 +320,7 @@ main::-webkit-scrollbar {
     border: 1px solid black;
     color: rgb(0, 0, 0);
     margin-left: 15px;
+    box-shadow: 4px 4px 6px black;
 
 }
 
@@ -374,6 +367,7 @@ main::-webkit-scrollbar {
 #section_areaDoUsuario h1 {
     width: fit-content;
     margin: auto;
+    margin-bottom: 2%;
 }
 
 #section_tabelas h1 {
@@ -569,13 +563,43 @@ main::-webkit-scrollbar {
     background-color: #263238;
     color: #fff;
 }
+.titulosFlexBox{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    justify-content: space-around;
+}
+.flexBox{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+
+}
+.nossos {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+}
+
+.nossosavisos{
+    margin-right: 4%;
+}
+
+.cada {
+    height: 45vh;
+    margin-left: 4%;
+    margin-top: 2%;
+}
 
 .legenda {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100vw;
-    height: 95px;
+    width: 40vw;
+    height: 150px;
+    margin-left: 5%;
+    margin-top: 1%;
+
 }
 
 .legendaicones {
@@ -585,30 +609,62 @@ main::-webkit-scrollbar {
     justify-content: center;
     height: 70px;
     margin-right: 5%;
+    margin-top: 4%;
 }
-
+.tituloLegendas{
+    margin-right: 15%;
+    margin-bottom: 2%;
+}
 .temp {
     font-size: 15px;
     color: #000000;
-    font-weight: 500;
+    font-weight: bold;
+    margin-top: 10%;    
 }
 
 .tempe {
-    margin-bottom: 3%;
+    margin-top: 15%;
+    background-color: #d1b0a6;
+    padding: 8px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 25px;
 }
 
+.legendacoresUmidade {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    margin-top: 2%;
+    margin-right: 10%;
+    padding-left: 10px;
+    padding-top: 5px;
+    background-color: #d1b0a6;
+    width: 26%;
+    height: 100%;
+    border: 1px solid black;
+    box-shadow: 4px 4px 7px black;
+    border-radius: 10px;
+}
 .legendacores {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-right: 10%;
+    padding-left: 10px;
+    padding-top: 5px;
+    background-color: #d1b0a6;
+    width: 26%;
+    height: 100%;
+    border: 1px solid black;
+    box-shadow: 4px 4px 7px black;
+    border-radius: 10px;
 }
-
 .branco {
     display: flex;
     justify-content: start;
     flex-direction: row;
-    font-weight: 500;
+    font-weight: 650;
     color: #000000;
     width: 100%;
     margin-bottom: 2%;
@@ -618,7 +674,7 @@ main::-webkit-scrollbar {
     display: flex;
     justify-content: start;
     flex-direction: row;
-    font-weight: 500;
+    font-weight: 650;
     color: #000000;
     width: 240px;
     margin-bottom: 2%;
@@ -628,7 +684,7 @@ main::-webkit-scrollbar {
     display: flex;
     justify-content: start;
     flex-direction: row;
-    font-weight: 500;
+    font-weight: 650;
     color: #000000;
     width: 100%;
 }
@@ -640,6 +696,8 @@ main::-webkit-scrollbar {
     display: block;
     margin-right: 1%;
     border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 5%;
 }
 
 .cora {
@@ -649,6 +707,8 @@ main::-webkit-scrollbar {
     display: block;
     margin-right: 1%;
     border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 5%;
 }
 
 .corv {
@@ -658,6 +718,8 @@ main::-webkit-scrollbar {
     display: block;
     margin-right: 1%;
     border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 5%;
 }
 
 .divSelect {
