@@ -117,18 +117,14 @@
         <section id="section_dashboard" style="display:none;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
             <!-- <div class="grafico-container"> -->
-            <div class="grafico-item" style="width: 50%;">
-                <h1 class="titulograf">Análise de Umidade na Plantação</h1>
-                <canvas id="dht11Umidade"></canvas>
-            </div>
             <h1 class="titulograf">Dados Atuais:</h1>
-            <div id="alertasU" style="width: 60%;">
+            <div id="alertas">
                 <div class="fazenda">
                     <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
                     Fazenda Karpos
                     <p id="setor">Geral</p>
                 </div>
-                <div id="tempo1"></div>
+                <div id="tempo"></div>
                 <div id="umiData">Umidade Atual:</div>
                 <div id="textboxUmi"></div>
                 <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
@@ -143,20 +139,6 @@
                     <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
                             style="margin-right: 3%;"></span>Entre 56% e 64%</span>
                 </div>
-            </div>
-            </div>
-            <div class="grafico-item" style="width: 50%;">
-                <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
-                <canvas id="lm35Temperatura"></canvas>
-            </div>
-            <h1 class="titulograf">Dados Atuais:</h1>
-            <div id="alertas" style="width: 50%;">
-                <div class="fazenda">
-                    <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
-                    Fazenda Karpos
-                    <p id="setor1">Geral</p>
-                </div>
-                <div id="tempo"></div>
                 <div id="tempData">Temperatura Atual:</div>
                 <div id="textboxTemp"></div>
                 <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
@@ -172,6 +154,16 @@
                             style="margin-right: 3%;"></span>Entre 21ºC e 29ºC</span>
                 </div>
             </div>
+            <div class="graficosContainer" style="display: flex; flex-direction: row;">
+                <div class="grafico-item">
+                    <h1 class="titulograf">Análise de Umidade na Plantação</h1>
+                    <canvas id="dht11Umidade"></canvas>
+                </div>
+                <div class="grafico-item">
+                    <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
+                    <canvas id="lm35Temperatura"></canvas>
+                </div>
+            </div>    
         </section>
 
         <section id="section_areaDoUsuario" style="display: block;">
@@ -634,9 +626,8 @@
     function updateDateTime() {
         var now = new Date();
         var datetimeElement = document.getElementById('tempo');
-        var datetimeElement1 = document.getElementById('tempo1');
-        datetimeElement.innerHTML = `<span style="font-size: 17px;">Data e Hora Atual:</span><br> <span style="font-size: 22px;">${now.toLocaleString()}</span><br>Horário de Brasília`; // Exibe a data e hora no formato local
-        datetimeElement1.innerHTML = `<span style="font-size: 17px;">Data e Hora Atual:</span><br> <span style="font-size: 22px;">${now.toLocaleString()}</span><br>Horário de Brasília`; // Exibe a data e hora no formato local
+        datetimeElement.innerHTML = `<span style="font-size: 17px;">Data e Hora Atual:</span><br> 
+        <span style="font-size: 22px;">${now.toLocaleString()}</span><br>Horário de Brasília`; // Exibe a data e hora no formato local
     }
 
     // Chama inicialmente a função para exibir a data e hora atual
