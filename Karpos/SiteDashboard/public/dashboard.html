@@ -175,12 +175,12 @@
         </section>
 
         <section id="section_areaDoUsuario" style="display: block;">
-            <h1 style="font-size: 25px;">Área do Usuário</h1>
-            <img class="imgf" src="assets/fazendaa.png" width="150px" alt="">
+            <h1 style="font-size: 30px;">Área do Usuário</h1>
+            <!-- <img class="imgf" src="assets/fazendaa.png" width="150px" alt=""> -->
             <h3 class="mensagem">Fazenda Karpos</h3>
-            <h3 style="font-size: 22px;">Lotes:</h3>
+            <h3 style="font-size: 30px;">Lotes:</h3>
             <div class="lotes">
-                <div class="boxlote"> <img src="assets/logo-contato.png" width="50px" style="margin-bottom: 5%;"
+                <div class="boxlote"> <img src="assets/logo-Dashboard.png" width="50px" style="margin-bottom: 5%;"
                         alt="">Lote 1
                     <div class="lotesbox"><i id="iconTemp1" onclick="scrollToSection('section_temperatura', 'Lote 1')"
                             class="fas fa-thermometer-half icon"></i>
@@ -188,7 +188,7 @@
                             class="fas fa-tint icon"></i>
                     </div>
                 </div>
-                <div class="boxlote"><img src="assets/logo-contato.png" width="50px" style="margin-bottom: 5%;" alt="">
+                <div class="boxlote"><img src="assets/logo-Dashboard.png" width="50px" style="margin-bottom: 5%;" alt="">
                     <p>Lote 2</p>
                     <div class="lotesbox"><i id="iconTemp2" onclick="scrollToSection('section_temperatura', 'Lote 2')"
                             class="fas fa-thermometer-half icon"></i>
@@ -197,7 +197,7 @@
                     </div>
 
                 </div>
-                <div class="boxlote"><img src="assets/logo-contato.png" width="50px" style="margin-bottom: 5%;"
+                <div class="boxlote"><img src="assets/logo-Dashboard.png" width="50px" style="margin-bottom: 5%;"
                         alt="">Lote 3
                     <div class="lotesbox"><i id="iconTemp3" onclick="scrollToSection('section_temperatura','Lote 3')"
                             class="fas fa-thermometer-half icon"></i>
@@ -205,7 +205,7 @@
                             class="fas fa-tint icon"></i>
                     </div>
                 </div>
-                <div class="boxlote"><img src="assets/logo-contato.png" width="50px" style="margin-bottom: 5%;"
+                <div class="boxlote"><img src="assets/logo-Dashboard.png" width="50px" style="margin-bottom: 5%;"
                         alt="">Lote 4
                     <div class="lotesbox"><i id="iconTemp4" onclick="scrollToSection('section_temperatura', 'Lote 4')"
                             class="fas fa-thermometer-half icon"></i>
@@ -214,48 +214,62 @@
                     </div>
                 </div>
             </div>
-            <div class="legenda">
-                <div class="legendaicones">
-                    <i style="color: black;" id="iconTemp" class="fas fa-thermometer-half icon1 tempe"> <span
-                            class="temp">Temperatura (ºC)</span></i>
-                    <i style="color: black;" id="iconUmi" class="fas fa-tint icon1"> <span class="temp">Umidade
-                            (%)</span></i>
-                </div>
-                <div class="legendacores">
-                    <div class="branco"> <span class="corb"></span>Números Favoráveis</div>
-                    <div class="amarelo"><span class="cora"></span>Números Próximos ao Limite</div>
-                    <div class="vermelho"><span class="corv"></span>Números Fora de Controle</div>
-                </div>
+            <div class="titulosFlexBox">
+                <h3 class="legendaFazenda" style="font-size: 30px;">Legenda:</h3>
+                <h3 class="nossosavisos" style="font-size: 30px;">Avisos:</h3>
             </div>
-            <h3 class="nossosavisos" style="font-size: 22px;">Avisos:</h3>
-            <div class="nossos">
-                <div class="cada">
-                    <div class="boxbom">
-                        <img width="50px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg"
-                            alt="">
-                        <b>FAVORÁVEL</b>
+            <div class="flexBox">
+                <div class="legenda">
+                    <div class="legendaicones">
+                        <i style="color: black;" id="iconTemp" class="fas fa-thermometer-half icon1 tempe">
+                            <span class="temp">Temperatura (ºC)</span></i>
+                        <i style="color: black;" id="iconUmi" class="fas fa-tint icon1 tempe"> 
+                            <span class="temp">Umidade(%)</span></i>
                     </div>
-                    <p class="desc">Tudo sob controle, mas continue monitorando para garantir a estabilidade e o
-                        crescimento saudável da plantação. </p>
-                </div>
-                <div class="cada">
-                    <div class="boxcuidado">
-                        <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
-                        <b>CUIDADO</b>
+                    <div class="legendacoresUmidade">
+                        <h3 class="tituloLegendas">Umidade:</h3>
+                        <div class="branco"> <span class="corb"></span>Entre 56% e 64%</div>
+                        <div class="amarelo"><span class="cora"></span>De 49% a 55%</div>
+                        <div class="amarelo"><span class="cora"></span>De 65% a 70%</div>
+                        <div class="vermelho"><span class="corv"></span> <49% ou>70%</div>
                     </div>
-                    <p class="desc">A temperatura e/ou umidade estão prestes a sair do controle. Monitore de perto e
-                        tome medidas preventivas para garantir a saúde dos algodões.</p>
+                    <div class="legendacores">
+                        <h3 class="tituloLegendas">Temperatura:</h3>
+                        <div class="branco"> <span class="corb"></span>Entre 21ºC e 29ºC</div>
+                        <div class="amarelo"><span class="cora"></span>De 30ºC a 34ºC</div>
+                        <div class="amarelo"><span class="cora"></span>De 16ºC a 20ºC</div>
+                        <div class="vermelho"><span class="corv"></span><16ºC ou>34ºC</div>
+                    </div>
                 </div>
+                <div class="nossos">
+                    <div class="cada">
+                        <div class="boxbom">
+                            <img width="50px" src="https://i.pinimg.com/564x/41/6f/34/416f3480436ae4aa96261a26ba718d04.jpg"
+                                alt="">
+                            <b>FAVORÁVEL</b>
+                        </div>
+                        <p class="desc">Tudo sob controle, mas continue monitorando para garantir a estabilidade e o
+                            crescimento saudável da plantação. </p>
+                    </div>
+                    <div class="cada">
+                        <div class="boxcuidado">
+                            <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
+                            <b>CUIDADO</b>
+                        </div>
+                        <p class="desc">A temperatura e/ou umidade estão prestes a sair do controle. Monitore de perto e
+                            tome medidas preventivas para garantir a saúde dos algodões.</p>
+                    </div>
 
-                <div class="cada">
-                    <div class="boxalerta">
-                        <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
-                        <b>ALERTA</b>
+                    <div class="cada">
+                        <div class="boxalerta">
+                            <img width="50px" src="https://cdn-icons-png.flaticon.com/512/272/272340.png" alt="">
+                            <b>ALERTA</b>
+                        </div>
+                        <p class="desc">A temperatura e/ou umidade estão fora do padrão. Recomendamos ação imediata para
+                            evitar possíveis danos à plantação.</p>
                     </div>
-                    <p class="desc">A temperatura e/ou umidade estão fora do padrão. Recomendamos ação imediata para
-                        evitar possíveis danos à plantação.</p>
                 </div>
-            </div>
+            </div>    
         </section>
         <section id="section_tabelas" style="display: none;">
             <h1>Área das tabelas</h1>
