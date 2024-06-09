@@ -412,6 +412,7 @@ main::-webkit-scrollbar {
     color: white;
     font-weight: 500;
     flex-direction: column;
+    margin-left: 2%;
 }
 
 .fazenda {
@@ -429,6 +430,7 @@ main::-webkit-scrollbar {
     flex-direction: column;
     font-weight: 500;
     border: 1px solid black;
+    box-shadow: 5px 5px 8px black;
 
 }
 
@@ -446,6 +448,7 @@ main::-webkit-scrollbar {
     color: rgb(255, 255, 255);
     font-size: 20px;
     flex-direction: column;
+    box-shadow: 5px 5px 8px black;
 }
 
 .newTemp {
@@ -463,9 +466,10 @@ main::-webkit-scrollbar {
     text-align: center;
     align-items: center;
     background-color: #AA6550;
+    box-shadow: 5px 5px 8px black;
     color: rgb(255, 255, 255);
     font-size: 17px;
-    flex-direction: column;
+    margin-left: 2%;
 }
 
 .newUmi {
@@ -480,11 +484,17 @@ main::-webkit-scrollbar {
 
 }
 
-#alertas {
+.alertas {
     width: 100%;
-    height: 200px;
+    height: 10%;
     display: flex;
     flex-direction: row;
+}
+.boxAlertasLegenda{
+    display: flex;
+    flex-direction: row;
+    margin-right: 3%;
+    font-weight: 600;
 }
 
 .titulotemp {
@@ -492,11 +502,8 @@ main::-webkit-scrollbar {
     margin-bottom: 20px;
 }
 
-.titulograf {
-    margin-top: 30px;
-    margin-right: 100px;
-    width: 480px;
-    margin-bottom: 5px;
+.titulograf1{
+    margin-top: 6%;
 }
 
 #iconTemp {
@@ -611,7 +618,6 @@ main::-webkit-scrollbar {
 .legendacoresUmidade {
     display: flex;
     flex-direction: column;
-    margin-right: 0;
     margin-top: 2%;
     margin-right: 10%;
     padding-left: 10px;
@@ -644,7 +650,7 @@ main::-webkit-scrollbar {
     font-weight: 650;
     color: #000000;
     width: 100%;
-    margin-bottom: 2%;
+    margin: 2%;
 }
 
 .amarelo {
@@ -653,8 +659,8 @@ main::-webkit-scrollbar {
     flex-direction: row;
     font-weight: 650;
     color: #000000;
-    width: 240px;
-    margin-bottom: 2%;
+    width: 100%;
+    margin: 2%;
 }
 
 .vermelho {
@@ -664,6 +670,7 @@ main::-webkit-scrollbar {
     font-weight: 650;
     color: #000000;
     width: 100%;
+    margin: 2%;
 }
 
 .corb {
@@ -671,10 +678,8 @@ main::-webkit-scrollbar {
     height: 17px;
     background-color: white;
     display: block;
-    margin-right: 1%;
     border: 1px solid black;
     border-radius: 10px;
-    margin-right: 5%;
 }
 
 .cora {
@@ -682,10 +687,8 @@ main::-webkit-scrollbar {
     height: 17px;
     background-color: yellow;
     display: block;
-    margin-right: 1%;
     border: 1px solid black;
     border-radius: 10px;
-    margin-right: 5%;
 }
 
 .corv {
@@ -693,10 +696,8 @@ main::-webkit-scrollbar {
     height: 17px;
     background-color: red;
     display: block;
-    margin-right: 1%;
     border: 1px solid black;
     border-radius: 10px;
-    margin-right: 5%;
 }
 
 .divSelect {
@@ -715,30 +716,45 @@ main::-webkit-scrollbar {
     height: 30px;
     font-size: 16px;
 }
-
-.grafico-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+.titulograf {
+    margin-top: 40%;
+    margin-right: 100px;
+    width: 480px;
+    margin-bottom: 5px;
 }
-
-.grafico-item {
-
-    flex: 1 1 80%;
-    /* Faz com que cada item tenha pelo menos 45% do espaço disponível */
-    min-width: 300px;
-    /* Define uma largura mínima para cada gráfico */
+.graficosContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .grafico-item canvas {
-    background-color: rgb(199, 173, 155);
-    width: 100%;
-    /* Faz com que os gráficos se ajustem à largura do contêiner */
+    margin-top: 10%;
+    background-color: #cfb09b;
+    width: 50%;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px black;
     height: auto;
-    /* Mantém a proporção dos gráficos */
 }
-
+.grafico-item1 canvas {
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color: #cfb09b;
+    width: 50%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px black;
+    height: auto;
+}
+.alertasDIV{
+    margin-left: 1%;
+    width: 17%;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
 
 
 #section_ajuda {
@@ -750,8 +766,6 @@ main::-webkit-scrollbar {
     position: fixed;
     margin: auto;
 }
-
-
 
 #container-ajuda {
     width: 50%;
@@ -823,14 +837,12 @@ textarea {
 
 .botao-download i {
     margin-right: 5px;
-    /* Espaçamento entre o ícone e o texto */
 }
 
 .titulo-ajuda {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    /* Espaçamento entre o título e o conteúdo abaixo */
 }
 
 .titulo-ajuda h2 {
