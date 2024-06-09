@@ -117,8 +117,8 @@
         <section id="section_dashboard" style="display:none;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
             <!-- <div class="grafico-container"> -->
-            <h1 class="titulograf">Dados Atuais:</h1>
-            <div id="alertas">
+            <h1 class="titulograf1">Dados Atuais:</h1>
+            <div class="alertas">
                 <div class="fazenda">
                     <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
                     Fazenda Karpos
@@ -127,39 +127,27 @@
                 <div id="tempo"></div>
                 <div id="umiData">Umidade Atual:</div>
                 <div id="textboxUmi"></div>
-                <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
-                            style="margin-right: 3%;"></span>
-                        <49% ou>70%
-                    </span><br>
-                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
-                            style="margin-right: 3%;"></span>De 49% a 55%</span><br>
-                    <span style="display: flex; flex-direction: row; width: 100%; font-weight: 600;"><span class="cora"
-                            style="margin-right: 3%;"></span>De 65% a 70%</span><br>
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
-                            style="margin-right: 3%;"></span>Entre 56% e 64%</span>
+                <div class="alertasDIV">
+                    <span class="boxAlertasLegenda"> <span class="corv"></span><49% ou>70%</span><br>
+                    <span class="boxAlertasLegenda"><span class="cora"></span>De 49% a 55%</span><br>
+                    <span class="boxAlertasLegenda"><span class="cora"></span>De 65% a 70%</span><br>
+                    <span class="boxAlertasLegenda"> <span class="corb"></span>Entre 56% e 64%</span>
                 </div>
                 <div id="tempData">Temperatura Atual:</div>
                 <div id="textboxTemp"></div>
-                <div style="width: 17%; display: flex; justify-content: center; flex-direction: column;">
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corv"
-                            style="margin-right: 3%;"></span>
-                        <16ºC ou>34ºC
-                    </span><br>
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"><span class="cora"
-                            style="margin-right: 3%;"></span> De 16ºC a 20ºC</span><br>
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"><span class="cora"
-                            style="margin-right: 3%;"></span> De 30ºC a 34ºC</span><br>
-                    <span style="display: flex; flex-direction: row; font-weight: 600;"> <span class="corb"
-                            style="margin-right: 3%;"></span>Entre 21ºC e 29ºC</span>
+                <div class="alertasDIV">
+                    <span class="boxAlertasLegenda"><span class="corv" ></span> <16ºC ou>34ºC</span><br>
+                    <span class="boxAlertasLegenda"><span class="cora"></span> De 16ºC a 20ºC</span><br>
+                    <span class="boxAlertasLegenda"><span class="cora"></span> De 30ºC a 34ºC</span><br>
+                    <span class="boxAlertasLegenda"> <span class="corb"></span>Entre 21ºC e 29ºC</span>
                 </div>
             </div>
-            <div class="graficosContainer" style="display: flex; flex-direction: row;">
+            <div class="graficosContainer">
                 <div class="grafico-item">
                     <h1 class="titulograf">Análise de Umidade na Plantação</h1>
                     <canvas id="dht11Umidade"></canvas>
                 </div>
-                <div class="grafico-item">
+                <div class="grafico-item1">
                     <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
                     <canvas id="lm35Temperatura"></canvas>
                 </div>
@@ -401,8 +389,8 @@
 
     // Criação do gráfico
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-    contextoDht11Umidade.canvas.width = 950;
-    contextoDht11Umidade.canvas.height = 300;
+    contextoDht11Umidade.canvas.width = 450;
+    contextoDht11Umidade.canvas.height = 150;
     var dht11Umidade = new Chart(contextoDht11Umidade, {
         type: 'line',
         data: {
@@ -508,8 +496,8 @@
 
     // Criação do gráfico
     var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
-    contextoLm35Temperatura.canvas.width = 950;
-    contextoLm35Temperatura.canvas.height = 300;
+    contextoLm35Temperatura.canvas.width = 450;
+    contextoLm35Temperatura.canvas.height = 150;
     var lm35Temperatura = new Chart(contextoLm35Temperatura, {
         type: 'line',
         data: {
