@@ -100,8 +100,8 @@ ul {
 
 section {
     width: 80%;
-    margin-top: 60%;
-
+    margin-top: 20%;
+    max-height: 600px;
 }
 
 details {
