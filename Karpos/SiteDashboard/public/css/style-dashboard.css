@@ -11,7 +11,7 @@
 body {
     display: flex;
     min-height: 100vh;
-    background: rgb(209,176,166);
+    background: rgb(209, 176, 166);
     background: linear-gradient(180deg, rgb(204, 183, 177) 2%, rgb(151, 129, 123) 86%);
 }
 
@@ -25,7 +25,8 @@ main {
 }
 
 main::-webkit-scrollbar {
-    width: 0; /* Largura zero para ocultar a barra de rolagem vertical */
+    width: 0;
+    /* Largura zero para ocultar a barra de rolagem vertical */
 }
 
 #sidebar {
@@ -205,11 +206,11 @@ main::-webkit-scrollbar {
     align-items: center;
     text-align: center;
     position: fixed;
-    overflow-y: scroll;
 }
 
 #section_areaDoUsuario::-webkit-scrollbar {
-    width: 0; /* Largura zero para ocultar a barra de rolagem vertical */
+    width: 0;
+    /* Largura zero para ocultar a barra de rolagem vertical */
 }
 
 
@@ -249,7 +250,7 @@ main::-webkit-scrollbar {
 .boxlote:hover {
     border: 6px outset rgb(117, 74, 49);
     background-color: #a57e68d7;
-    transition:all 0.1s;
+    transition: all 0.1s;
 }
 
 .lotes {
@@ -291,7 +292,7 @@ main::-webkit-scrollbar {
 
 .boxbom {
     margin-top: 20px;
-    width:180px;
+    width: 180px;
     height: 150px;
     display: flex;
     align-items: center;
@@ -308,7 +309,7 @@ main::-webkit-scrollbar {
 
 .boxcuidado {
     margin-top: 20px;
-    width:180px;
+    width: 180px;
     height: 150px;
     display: flex;
     align-items: center;
@@ -332,11 +333,7 @@ main::-webkit-scrollbar {
 }
 
 #setor {
-    font-size: 18px;
-}
-
-#setor1 {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #section_temperatura {
@@ -398,11 +395,36 @@ main::-webkit-scrollbar {
     border-radius: 10px;
 }
 
-
-#tempo {
+.fazenda {
+    min-width: 200px;
     width: 200px;
     height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #AA6550;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    flex-direction: column;
+    font-weight: 500;
     border: 1px solid black;
+    box-shadow: 5px 5px 8px black;
+}
+
+.hoje {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+#tempo {
+    min-width: 200px;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -412,70 +434,45 @@ main::-webkit-scrollbar {
     color: white;
     font-weight: 500;
     flex-direction: column;
-    margin-left: 2%;
+    border: 1px solid black;
+    box-shadow: 5px 5px 8px black;
 }
 
-.fazenda {
+#clima {
+    min-width: 200px;
     width: 200px;
     height: 200px;
-    border: 1px solid black;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     background-color: #AA6550;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    flex-direction: column;
+    color: white;
     font-weight: 500;
-    border: 1px solid black;
-    box-shadow: 5px 5px 8px black;
-
-}
-
-#tempData {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    margin-top: 0px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: #AA6550;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
     flex-direction: column;
+    border: 1px solid black;
     box-shadow: 5px 5px 8px black;
 }
 
-.newTemp {
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-}
 
-#umiData {
+.historico {
+    min-width: 200px;
     width: 200px;
     height: 200px;
-    border: 1px solid black;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     background-color: #AA6550;
+    color: white;
+    font-weight: 500;
+    flex-direction: column;
+    border: 1px solid black;
     box-shadow: 5px 5px 8px black;
-    color: rgb(255, 255, 255);
-    font-size: 17px;
-    margin-left: 2%;
 }
 
-.newUmi {
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-}
 
 .principal {
     font-size: 25px;
@@ -489,12 +486,14 @@ main::-webkit-scrollbar {
     height: 10%;
     display: flex;
     flex-direction: row;
+    gap: 2%;
 }
-.boxAlertasLegenda{
+
+.boxAlertasLegenda {
     display: flex;
     flex-direction: row;
-    margin-right: 3%;
     font-weight: 600;
+    gap: 3%;
 }
 
 .titulotemp {
@@ -502,8 +501,8 @@ main::-webkit-scrollbar {
     margin-bottom: 20px;
 }
 
-.titulograf1{
-    margin-top: 6%;
+.titulograf1 {
+    margin-top: 1%;
 }
 
 #iconTemp {
@@ -541,69 +540,68 @@ main::-webkit-scrollbar {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    font-weight: 600;
 }
 
 #dadosTabela th {
     background-color: #263238;
     color: #fff;
 }
-.titulosFlexBox{
+
+.titulosFlexBox {
     display: flex;
     flex-direction: row;
-    margin-top: 10%;
+    margin-top: 6.5%;
     justify-content: space-around;
+
 }
-.flexBox{
+
+.flexBox {
     display: flex;
     flex-direction: row;
     margin-top: 1%;
-
+    justify-content: space-evenly;
 }
+
 .nossos {
     display: flex;
     flex-direction: row;
-    margin-left: 4%;
-}
-
-.nossosavisos{
-    margin-right: 4%;
+    justify-content: center;
+    gap: 5%;
 }
 
 .cada {
     height: 45vh;
-    margin-left: 4%;
     margin-top: 2%;
 }
 
 .legenda {
     display: flex;
-    justify-content: center;
     flex-direction: row;
     width: 40vw;
     height: 150px;
-    margin-left: 5%;
     margin-top: 1%;
-
+    gap: 5%;
 }
 
 .legendaicones {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
-    height: 70px;
-    margin-right: 5%;
-    margin-top: 4%;
+    height: 100%;
 }
-.tituloLegendas{
-    margin-right: 15%;
+
+.tituloLegendas {
     margin-bottom: 2%;
+    width: fit-content;
 }
+
 .temp {
     font-size: 15px;
     color: #000000;
     font-weight: bold;
-    margin-top: 10%;    
+    margin-top: 10%;
 }
 
 .tempe {
@@ -619,7 +617,6 @@ main::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
-    margin-right: 10%;
     padding-left: 10px;
     padding-top: 5px;
     background-color: #d1b0a6;
@@ -628,12 +625,14 @@ main::-webkit-scrollbar {
     border: 1px solid black;
     box-shadow: 4px 4px 7px black;
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
+
 .legendacores {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
-    margin-right: 10%;
     padding-left: 10px;
     padding-top: 5px;
     background-color: #d1b0a6;
@@ -642,7 +641,10 @@ main::-webkit-scrollbar {
     border: 1px solid black;
     box-shadow: 4px 4px 7px black;
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
+
 .branco {
     display: flex;
     justify-content: start;
@@ -651,6 +653,7 @@ main::-webkit-scrollbar {
     color: #000000;
     width: 100%;
     margin: 2%;
+    gap: 3%;
 }
 
 .amarelo {
@@ -661,6 +664,7 @@ main::-webkit-scrollbar {
     color: #000000;
     width: 100%;
     margin: 2%;
+    gap: 3%;
 }
 
 .vermelho {
@@ -671,6 +675,7 @@ main::-webkit-scrollbar {
     color: #000000;
     width: 100%;
     margin: 2%;
+    gap: 3%;
 }
 
 .corb {
@@ -716,43 +721,114 @@ main::-webkit-scrollbar {
     height: 30px;
     font-size: 16px;
 }
-.titulograf {
-    margin-top: 40%;
-    margin-right: 100px;
-    width: 480px;
-    margin-bottom: 5px;
-}
+
 .graficosContainer {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
+    height: 750px;
 }
 
-.grafico-item canvas {
-    margin-top: 10%;
-    background-color: #cfb09b;
+.grafico-item {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grafico-item1 {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulograf {
+    margin-top: 1%;
+}
+
+.dois {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.graficos {
     width: 50%;
+    height: 100%;
+}
+
+#dht11Umidade {
+    margin-top: 2%;
+    background-color: #cfb09b;
     padding: 10px;
     border-radius: 15px;
     box-shadow: 5px 5px 8px black;
-    height: auto;
 }
-.grafico-item1 canvas {
-    margin-top: 10%;
-    margin-left: 10%;
+
+#lm35Temperatura {
+    margin-top: 2%;
     background-color: #cfb09b;
-    width: 50%;
-    height: 100px;
     padding: 10px;
     border-radius: 15px;
     box-shadow: 5px 5px 8px black;
-    height: auto;
 }
-.alertasDIV{
-    margin-left: 1%;
+
+#gauge {
+    height: 282px;
+    width: 290px;
+    background-color: #cfb09b;
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px black;
+    margin-bottom: 0.75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gauge2 {
+    height: 282px;
+    width: 290px;
+    background-color: #cfb09b;
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px black;
+    margin-bottom: 0.75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloGauge {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8%;
+}
+
+.parametros {
+    display: flex;
+    justify-content: center;
+    margin-left: 4%;
+    margin-bottom: 10%;
+    gap: 53%;
+    width: 100%;
+    font-weight: bold;
+}
+
+.alertasDIV {
     width: 17%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -806,6 +882,8 @@ textarea {
 #session_dashboard {
     width: 100%;
 }
+
+
 
 
 #resposta {
