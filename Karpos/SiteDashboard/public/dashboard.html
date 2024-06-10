@@ -53,15 +53,6 @@
 
                 </li>
 
-                <!-- <li class="side-item" id="btnAreaTemperatura">
-                    <a href="#">
-                       <i class="fa-solid fa-chart-line"></i>
-                        <span class="item-description">
-                            Dashboard
-                        </span>
-                    </a>
-                </li> -->
-
                 <li class="side-item" id="btnAreaDashboard">
                     <a href="#">
                         <i class="fa-solid fa-chart-line"></i>
@@ -79,7 +70,14 @@
                         </span>
                     </a>
                 </li>
-
+                <li class="side-item" id="btnAreaExportar" onclick="exportar()">
+                    <a href="#">
+                        <i class="fa-solid fa-file-export"></i>
+                        <span class="item-description">
+                            Exportar Tabela
+                        </span>
+                    </a>
+                </li>
                 <li class="side-item" id="btnAreaAjuda">
                     <a href="#">
                         <i class="fa-solid fa-circle-question"></i>
@@ -88,21 +86,11 @@
                         </span>
                     </a>
                 </li>
-
                 <li class="side-item" id="btnSuporte">
                     <a href="https://karpos.atlassian.net/servicedesk/customer/portal/1" target="_blank">
                         <i class="fa-solid fa-headset"></i>
                         <span class="item-description">
                             Suporte
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item" id="btnAreaExportar" onclick="exportar()">
-                    <a href="#">
-                        <i class="fa-solid fa-file-export"></i>
-                        <span class="item-description">
-                            Exportar Tabela
                         </span>
                     </a>
                 </li>
@@ -125,40 +113,77 @@
     <main id="main-class" style="height: 100%;">
         <section id="section_dashboard" style="display:none;">
             <h1 class="principal"> MONITORAMENTO DOS ALGODÕES</h1>
-            <!-- <div class="grafico-container"> -->
-            <h1 class="titulograf1">Dados Atuais:</h1>
+
             <div class="alertas">
-                <div class="fazenda">
-                    <img width="100px" height="100px" src="assets/fazendaa.png" alt="">
-                    Fazenda Karpos
-                    <p id="setor">Geral</p>
+                <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+                    <h1 class="titulograf1">Local:</h1>
+                    <div class="fazenda">
+                        <img width="120px" height="120px" src="assets/fazendaa.png" alt="">
+                        Fazenda Karpos
+                        <p id="setor">Geral</p>
+                    </div>
                 </div>
-                <div id="tempo"></div>
-                <div id="umiData">Umidade Atual:</div>
-                <div id="textboxUmi"></div>
-                <div class="alertasDIV">
-                    <span class="boxAlertasLegenda"> <span class="corv"></span><49% ou>70%</span><br>
-                    <span class="boxAlertasLegenda"><span class="cora"></span>De 49% a 55%</span><br>
-                    <span class="boxAlertasLegenda"><span class="cora"></span>De 65% a 70%</span><br>
-                    <span class="boxAlertasLegenda"> <span class="corb"></span>Entre 56% e 64%</span>
+                <span style="border: 2px solid rgb(245,222,179, 0.4);"></span>
+                <div style="display: flex; flex-direction: column; height: 100%;">
+                    <h1 class="titulograf1">Dados Atuais:</h1>
+                    <div class="hoje">
+                        <div id="tempo"></div>
+                        <div id="clima"></div>
+                    </div>
                 </div>
-                <div id="tempData">Temperatura Atual:</div>
-                <div id="textboxTemp"></div>
-                <div class="alertasDIV">
-                    <span class="boxAlertasLegenda"><span class="corv" ></span> <16ºC ou>34ºC</span><br>
-                    <span class="boxAlertasLegenda"><span class="cora"></span> De 16ºC a 20ºC</span><br>
-                    <span class="boxAlertasLegenda"><span class="cora"></span> De 30ºC a 34ºC</span><br>
-                    <span class="boxAlertasLegenda"> <span class="corb"></span>Entre 21ºC e 29ºC</span>
+                <span style="border: 2px solid rgb(245,222,179, 0.4); margin-left: 1%;"></span>
+                <div style="display: flex; flex-direction: column; height: 100%;">
+                    <h1 class="titulograf1">Histórico:</h1>
+                    <div class="hoje">
+                        <div class="historico 1">Ultimo Alerta</div>
+                        <div class="historico 2">Algum Indicador</div>
+                        <div class="historico 3">Algum Indicador</div>
+                        <div class="historico 4">Algum Indicador</div>
+                    </div>
                 </div>
             </div>
             <div class="graficosContainer">
                 <div class="grafico-item">
                     <h1 class="titulograf">Análise de Umidade na Plantação</h1>
-                    <canvas id="dht11Umidade"></canvas>
+                    <div class="dois">
+                        <div class="graficos">
+                            <canvas id="dht11Umidade"></canvas>
+                        </div>
+                        <div id="gauge">
+                            <div class="parametros"><span> 0% </span><span>100%</span></div>
+                            <div class="tituloGauge">Umidade Atual (%)</div>
+                        </div>
+                        <div class="alertasDIV">
+                            <span class="boxAlertasLegenda"> <span class="corv"></span>
+                                <49% ou >70%
+                            </span><br>
+                            <span class="boxAlertasLegenda"><span class="cora"></span>De 49% a 55%</span><br>
+                            <span class="boxAlertasLegenda"><span class="cora"></span>De 65% a 70%</span><br>
+                            <span class="boxAlertasLegenda"> <span class="corb"></span>Entre 56% e 64%</span>
+                        </div>
+                        <div id="textboxTemp"></div>
+                    </div>
                 </div>
                 <div class="grafico-item1">
                     <h1 class="titulograf">Análise de Temperatura na Plantação</h1>
-                    <canvas id="lm35Temperatura"></canvas>
+                    <div class="dois">
+                        <div class="graficos">
+                            <canvas id="lm35Temperatura"></canvas>
+                        </div>
+                        <div id="gauge2">
+                            <div class="parametros"><span>0ºC</span><span>100ºC</span></div>
+                            <div class="tituloGauge">Temperatura Atual (ºC)</div>
+                        </div>
+                        <div class="alertasDIV">
+                            <span class="boxAlertasLegenda"><span class="corv"></span>
+                                <16ºC ou >34ºC
+                            </span><br>
+                            <span class="boxAlertasLegenda"><span class="cora"></span> De 16ºC a 20ºC</span><br>
+                            <span class="boxAlertasLegenda"><span class="cora"></span> De 30ºC a 34ºC</span><br>
+                            <span class="boxAlertasLegenda"> <span class="corb"></span>Entre 21ºC e 29ºC</span>
+                        </div>
+                        <div id="textboxUmi"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -214,7 +239,7 @@
                         <i style="color: black;" id="iconTemp" class="fas fa-thermometer-half icon1 tempe">
                             <span class="temp">Temperatura (ºC)</span></i>
                         <i style="color: black;" id="iconUmi" class="fas fa-tint icon1 tempe">
-                            <span class="temp">Umidade(%)</span></i>
+                            <span class="temp">Umidade (%)</span></i>
                     </div>
                     <div class="legendacoresUmidade">
                         <h3 class="tituloLegendas">Umidade:</h3>
@@ -222,16 +247,16 @@
                         <div class="amarelo"><span class="cora"></span>De 49% a 55%</div>
                         <div class="amarelo"><span class="cora"></span>De 65% a 70%</div>
                         <div class="vermelho"><span class="corv"></span>
-                            <49% ou>70%
+                            <49% ou >70%
                         </div>
                     </div>
                     <div class="legendacores">
                         <h3 class="tituloLegendas">Temperatura:</h3>
                         <div class="branco"> <span class="corb"></span>Entre 21ºC e 29ºC</div>
-                        <div class="amarelo"><span class="cora"></span>De 30ºC a 34ºC</div>
                         <div class="amarelo"><span class="cora"></span>De 16ºC a 20ºC</div>
+                        <div class="amarelo"><span class="cora"></span>De 30ºC a 34ºC</div>
                         <div class="vermelho"><span class="corv"></span>
-                            <16ºC ou>34ºC
+                            <16ºC ou >34ºC
                         </div>
                     </div>
                 </div>
@@ -323,12 +348,129 @@
 </body>
 
 </html>
+
+<script>
+    // Substitua 'YOUR_API_KEY' pela sua chave de API da OpenWeatherMap
+    const apiKey = 'c19433e50596af7f4bad734138dfeef4';
+    const city = 'São Paulo'; // Substitua pela cidade desejada
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    // Dicionário de tradução para descrições do clima
+    const weatherTranslations = {
+        "clear sky": "Céu Limpo",
+        "few clouds": "Poucas Nuvens",
+        "scattered clouds": "Nuvens Dispersas",
+        "broken clouds": "Nuvens Quebradas",
+        "shower rain": "Chuva de Banho",
+        "rain": "Chuva",
+        "thunderstorm": "Trovoada",
+        "snow": "Neve",
+        "mist": "Névoa"
+    };
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const weatherDescription = data.weather[0].description;
+            const translatedDescription = weatherTranslations[weatherDescription] || weatherDescription;
+
+            const weatherDiv = document.getElementById('weather');
+            clima.innerHTML = `
+                <p style="font-size: 17px;"></i>Clima em ${data.name}:</p><br>
+                <p style="font-size: 17px;">${translatedDescription}</p><br>
+
+                <p style="font-size: 17px;">Temperatura: ${data.main.temp}°C</p><br>
+                
+                <p style="font-size: 17px;">Umidade: ${data.main.humidity}%</p>
+            `;
+        })
+        .catch(error => {
+            console.error('Erro ao buscar os dados climáticos:', error);
+        });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/justgage@1.4.0/dist/justgage.min.js"></script>
+
+<script>
+    var gauge = new JustGage({
+        id: "gauge",
+        value: 77,
+        min: 0,
+        max: 100,
+        levelColors: [
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff1000",
+            "#ffc000",
+            "#def233",
+            "#00ff00",
+            "#bef233",
+            "#ffa000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000"
+        ],
+        pointer: true
+    });
+</script>
+
+<script>
+    var gauge2 = new JustGage({
+        id: "gauge2",
+        value: 33,
+        min: 0,
+        max: 100,
+        levelColors: [
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#fff000",
+            "#a0f000",
+            "#00ff00",
+            "#fff000",
+            "#ffa000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000",
+            "#ff0000"
+        ],
+        pointer: true
+    });
+
+    setInterval(function () {
+        gauge.refresh(Math.floor(Math.random() * 100));
+    }, 2000);
+
+    setInterval(function () {
+        gauge2.refresh(Math.floor(Math.random() * 40));
+    }, 2000);
+</script>
+
 <script src="js/script.js"></script>
 <script src="js/trocarsecao.js"></script>
 
 <script>
-
-
     /* ---------------------------------------------------- AREA GRAFICOS ----------------------------------------------------*/
 
     function scrollToSection(sectionId, lote) {
@@ -628,7 +770,7 @@
     function updateDateTime() {
         var now = new Date();
         var datetimeElement = document.getElementById('tempo');
-        datetimeElement.innerHTML = `<span style="font-size: 17px;">Data e Hora Atual:</span><br> 
+        datetimeElement.innerHTML = `<span style="font-size: 17px;">Data e Hora:</span><br> 
         <span style="font-size: 22px;">${now.toLocaleString()}</span><br>Horário de Brasília`; // Exibe a data e hora no formato local
     }
 
