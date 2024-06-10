@@ -109,6 +109,8 @@ insert into capturaDoSensor values
 
 select * from capturaDoSensor;
 
+truncate table capturaDoSensor;
+
 select dtHorario, temperatura, umidade from capturaDoSensor;
 
 -- dados fora do padrão -------------------------------------------------------------------------------------------------------------------------------------
