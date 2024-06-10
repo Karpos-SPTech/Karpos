@@ -9,7 +9,6 @@ function login() {
         div_alertasValidacao.innerHTML = "PREENCHA TODOS <br> OS CAMPOS!"
     }
 
-
     console.log("FORM LOGIN: ", emailVar);
     console.log("FORM SENHA: ", senhaVar);
 
