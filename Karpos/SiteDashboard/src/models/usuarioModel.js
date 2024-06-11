@@ -11,6 +11,7 @@ function autenticar(email, senha) {
         FROM usuario
         WHERE email = '${email}';
     `;
+    
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
