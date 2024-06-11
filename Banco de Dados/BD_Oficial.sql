@@ -10,6 +10,8 @@ assunto varchar(100),
 mensagem varchar(500)
 );
 
+select * from leads;
+
 create table empresa(
 token int primary key auto_increment,
 nome varchar(45),
@@ -29,14 +31,28 @@ create table usuario (
     idUsuario  int primary key auto_increment,
     nome varchar(50) not null,
     email varchar(100) not null unique,
-    senha varchar(30) not null,
-     cpf char(14),
+    senha varchar(200) not null,
+	cpf char(14),
 	telefone varchar(11),
     fkToken int,
     constraint fkEmpresaUsuario foreign key(fktoken) references empresa(token)
 );
-
+     
 select * from usuario;
+
+DELIMITER $  
+ CREATE FUNCTION fun_valida_usuario
+	(p_useremail VARCHAR(45), p_senha VARCHAR(200) ) 
+RETURNS INT(1)  
+DETERMINISTIC
+ BEGIN  
+ DECLARE l_ret INT(1) DEFAULT 0;  
+     SET l_ret = IFNULL((SELECT DISTINCT 1 FROM usuario WHERE email = p_useremail  
+                       AND senha = SHA2(p_senha,256)),0);                           
+ RETURN l_ret;  
+ END$  
+ DELIMITER ;
+
 create table parametros(
 idParametro int primary key auto_increment,
 tempMax float,
@@ -67,6 +83,7 @@ create table fazenda (
 		fkParametro int, constraint fkFazendaParametro
 	foreign key (fkParametro) references parametros(idParametro)
 );
+
 insert into fazenda values
 (default,'Cotton Farm 1','08234-350','335',5,1555,100),
 (default,'Cotton Farm','07560-432','960B',8,1556,100),
@@ -98,18 +115,6 @@ constraint fkdadosSensor foreign key (fkSensor)
 references sensor(idSensor));
 
 select * from capturaDoSensor;
-
-insert into capturaDoSensor values
-(2,5,now(),25,80),
-(3,5,now(),27,70),
-(4,5,now(),29,60);
-
-insert into capturaDoSensor values
-(5,5,now(),60,10);
-
-select * from capturaDoSensor;
-
-truncate table capturaDoSensor;
 
 select dtHorario, temperatura, umidade from capturaDoSensor;
 
