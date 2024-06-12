@@ -84,9 +84,9 @@ CREATE TABLE sensor (
 );
 
 insert into sensor values
-(default,'lm35Temperatura',4),
-(default,'lm35Temperatura',5),
-(default,'dht11Umidade',6);
+(default,'lm35Temperatura',1),
+(default,'lm35Temperatura',2),
+(default,'dht11Umidade',3);
 
 create table capturaDoSensor(
 idDados int auto_increment,

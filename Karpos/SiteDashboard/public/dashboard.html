@@ -886,7 +886,7 @@
     async function gerarResposta() {
         const pergunta = document.getElementById('pergunta').value;
 
-        const response = await fetch('http://localhost:8080/perguntar', {
+        const response = await fetch('10.18.36.150:8080/perguntar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
