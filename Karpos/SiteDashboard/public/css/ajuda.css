@@ -5,9 +5,12 @@ body {
     padding: 0;
     background-color: #aa6550;
     font-family: "Inter", sans-serif;
-    /* Aplicando a fonte Inter */
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+    /* Largura zero para ocultar a barra de rolagem vertical */
+}
 
 * {
     margin: 0;
@@ -20,9 +23,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 100px;
+    padding: 20px 100px;
     /* Espaçamento do cabeçalho */
     justify-content: space-around;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #aa6550;
+    width: 100%;
 }
 
 #logo-karpos img {
@@ -86,12 +94,22 @@ ul {
 
 .titulo1 {
     color: #aa6550;
-    margin-top: 7%;
+    margin-top:9.5%;
     margin-left: 5%;
 }
+
+.container2 {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 12%;
+    height: 10px;
+    color: #FFF;
+}
+
+
 .containerDuvidas {
     width: 100%;
-    height: 100vh;
+    height: 38vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,8 +118,8 @@ ul {
 
 section {
     width: 80%;
-    margin-top: 60%;
-
+    margin-top: 20%;
+    max-height: 600px;
 }
 
 details {
@@ -118,6 +136,7 @@ section details summary {
     border-bottom-left-radius: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    font-weight: 600;
 }
 
 section details p {
@@ -128,4 +147,9 @@ section details p {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
 }
