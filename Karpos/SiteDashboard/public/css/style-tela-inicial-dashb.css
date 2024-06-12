@@ -14,8 +14,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 100px; /* Espaçamento do cabeçalho */
-    justify-content: space-around;
+    padding: 20px 100px; /* Espaçamento do cabeçalho */
+    justify-content: space-around;   
 }
 
 #logo-karpos img {

@@ -163,7 +163,6 @@ main::-webkit-scrollbar {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 14px;
     transition: width .6s;
     height: 0px;
 }
@@ -300,7 +299,7 @@ main::-webkit-scrollbar {
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
-    background-color: white;
+    background-color: #00ff00;
     border: 1px solid black;
     color: black;
     margin-left: 15px;
@@ -374,25 +373,33 @@ main::-webkit-scrollbar {
 }
 
 #textboxTemp {
-    width: 200px;
-    height: 200px;
+    width: 290px;
+    height: 282px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
+    margin-bottom: 0.75%;
+    font-size: 20px;
+    padding: 2px;
+    box-shadow: 5px 5px 8px black;
 }
 
 #textboxUmi {
-    width: 200px;
-    height: 200px;
+    width: 290px;
+    height: 282px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
+    margin-bottom: 0.75%;
+    font-size: 20px;
+    padding: 2px;
+    box-shadow: 5px 5px 8px black;
 }
 
 .fazenda {
@@ -419,6 +426,59 @@ main::-webkit-scrollbar {
     display: flex;
     flex-direction: row;
     gap: 5%;
+}
+
+/* .parametrosTotal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+} */
+
+.parametroU{
+    border: 1px solid black;
+    width: 40vw;
+    height: 44px;
+    background: linear-gradient(to right, 
+                rgba(255, 0, 0, 0.75),  
+                rgba(255, 255, 0, 0.75), 
+                rgba(0, 255, 0, 0.75),  
+                rgba(255, 255, 0, 0.75), 
+                rgba(255, 0, 0, 0.75)
+            );
+    margin-bottom: 3.5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px black;
+}
+
+.parametroT{
+    border: 1px solid black;
+    width: 40vw;
+    height: 44px;
+    background: linear-gradient(to right, 
+    rgba(255, 0, 0, 0.75),
+    rgba(255, 255, 0, 0.75),
+    rgba(0, 255, 0, 0.75),
+    rgba(255, 255, 0, 0.75),
+    rgba(255, 0, 0, 0.75)
+);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px black;
 }
 
 #tempo {
@@ -487,6 +547,7 @@ main::-webkit-scrollbar {
     display: flex;
     flex-direction: row;
     gap: 2%;
+    margin-left: 5%;
 }
 
 .boxAlertasLegenda {
@@ -681,7 +742,7 @@ main::-webkit-scrollbar {
 .corb {
     width: 17px;
     height: 17px;
-    background-color: white;
+    background-color: #00ff00;
     display: block;
     border: 1px solid black;
     border-radius: 10px;
@@ -711,6 +772,9 @@ main::-webkit-scrollbar {
     flex-direction: row;
     width: 100%;
     margin-bottom: 1%;
+    align-items: center;
+    gap: 15%;
+    border-radius: 8px;
 }
 
 #loteEspecifico {
@@ -718,8 +782,28 @@ main::-webkit-scrollbar {
     background-color: #263238;
     color: white;
     font-weight: 600;
-    height: 30px;
-    font-size: 16px;
+    height: 40px;
+    font-size: 18px;
+}
+
+#intervaloEspecifico {
+    border-radius: 5px;
+    background-color: #263238;
+    color: white;
+    font-weight: 600;
+    height: 40px;
+    font-size: 18px;
+}
+
+.btnExport {
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    background-color: #263238;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .graficosContainer {
@@ -826,7 +910,7 @@ main::-webkit-scrollbar {
 }
 
 .alertasDIV {
-    width: 17%;
+    width: 9.5%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -845,12 +929,13 @@ main::-webkit-scrollbar {
 
 #container-ajuda {
     width: 50%;
+    height: 60%;
     background-color: #AA6550;
     margin: auto;
     /* Centraliza horizontalmente */
-    margin-top: 10%;
+    margin-top: 5%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 8px black;
     padding: 20px;
 }
 
@@ -858,15 +943,6 @@ h1 {
     margin-top: 0;
 }
 
-textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    resize: none;
-}
 
 .botaoAjuda {
     background-color: #a17f6c;
@@ -878,9 +954,32 @@ textarea {
     font-size: 16px;
     transition: background-color 0.3s;
 }
+.botaoAjuda:hover{
+    background-color: #c79f87;
+    border: 1px solid #815a42;
+    color: rgb(207, 179, 179);
+    box-shadow: 2px 2px 10px #866752;;
+}
+
+#pergunta{
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    resize: none;
+}
 
 #session_dashboard {
     width: 100%;
+}
+
+#section_dashboard{
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -906,6 +1005,7 @@ textarea {
     font-size: 16px;
     transition: background-color 0.3s;
     margin: 0 10px;
+    box-shadow: 2px 2px 10px black;
     /* Espaçamento entre os botões */
 }
 
@@ -927,3 +1027,5 @@ textarea {
     text-align: center;
     /* Centraliza o texto */
 }
+
+

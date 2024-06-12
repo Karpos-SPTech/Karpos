@@ -12,7 +12,7 @@
 //     }
 // }
 
-function limparSessao() {
+function exit() {
     sessionStorage.clear();
     window.location = "../login.html";
 }
