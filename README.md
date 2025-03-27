@@ -29,7 +29,7 @@ Produtores de algodão;
 
 ## 🖇️ Colaboradores
 
-Alexandre Frizon: <a href="https://github.com/frizzon00" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+Alexandre Frizon: <a href="https://github.com/AlexandreFrizzon" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
 Higor Tupinambá: <a href="https://github.com/higortupi/karpostech" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
